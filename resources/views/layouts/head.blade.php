@@ -318,6 +318,8 @@
                         <!--begin::User-->
                         <div class="topbar-item ">
                             <div class="btn btn-icon btn-sm btn-clean btn-text-dark-75" id="kt_quick_user_toggle">
+
+                                <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
                                 <span class="svg-icon svg-icon-lg">
                                     <!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -333,6 +335,8 @@
                                     </svg>
                                     <!--end::Svg Icon-->
                                 </span>
+                                </a>
+                            </a>
                             </div>
                         </div>
                         <!--end::User-->
@@ -346,7 +350,8 @@
             <!--end::Header-->
 
 
-
+<form action="{{ route('logout') }}" method="POST" hidden id="logout_form">
+@csrf</form>
 
 
 
