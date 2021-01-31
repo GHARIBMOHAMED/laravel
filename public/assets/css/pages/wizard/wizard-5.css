@@ -1,6 +1,6 @@
 .wizard.wizard-5 .wizard-aside {
-  border-top-left-radius: 0.42rem;
-  border-bottom-left-radius: 0.42rem; }
+  border-top-left-radius: 0.85rem;
+  border-bottom-left-radius: 0.85rem; }
   .wizard.wizard-5 .wizard-aside .wizard-nav {
     padding: 0; }
     .wizard.wizard-5 .wizard-aside .wizard-nav .wizard-steps {
@@ -110,16 +110,16 @@
 
 .wizard.wizard-5 .wizard-content {
   background-color: #F3F6F9;
-  border-top-right-radius: 0.42rem;
-  border-bottom-right-radius: 0.42rem; }
+  border-top-right-radius: 0.85rem;
+  border-bottom-right-radius: 0.85rem; }
   .wizard.wizard-5 .wizard-content .form-group .fv-help-block {
     font-size: 1.1rem !important;
     padding-top: 3px; }
 
 @media (max-width: 991.98px) {
   .wizard.wizard-5 .wizard-aside {
-    border-top-left-radius: 0.42rem;
-    border-top-right-radius: 0.42rem;
+    border-top-left-radius: 0.85rem;
+    border-top-right-radius: 0.85rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
     .wizard.wizard-5 .wizard-aside .wizard-nav {
@@ -133,5 +133,5 @@
   .wizard.wizard-5 .wizard-content {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    border-bottom-left-radius: 0.42rem;
-    border-bottom-right-radius: 0.42rem; } }
+    border-bottom-left-radius: 0.85rem;
+    border-bottom-right-radius: 0.85rem; } }

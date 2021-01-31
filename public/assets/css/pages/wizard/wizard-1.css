@@ -40,22 +40,22 @@
       .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow.last {
         display: none; }
     .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-icon, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-icon {
-      color: #0BB783; }
+      color: #F64E60; }
       .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-icon svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-icon svg g [fill] {
         -webkit-transition: fill 0.3s ease;
         transition: fill 0.3s ease;
-        fill: #0BB783; }
+        fill: #F64E60; }
       .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-icon svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-icon svg:hover g [fill] {
         -webkit-transition: fill 0.3s ease;
         transition: fill 0.3s ease; }
     .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-title, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-title {
-      color: #0BB783; }
+      color: #F64E60; }
     .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-arrow, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-arrow {
-      color: #0BB783; }
+      color: #F64E60; }
       .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-arrow svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-arrow svg g [fill] {
         -webkit-transition: fill 0.3s ease;
         transition: fill 0.3s ease;
-        fill: #0BB783; }
+        fill: #F64E60; }
       .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-arrow svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-arrow svg:hover g [fill] {
         -webkit-transition: fill 0.3s ease;
         transition: fill 0.3s ease; }

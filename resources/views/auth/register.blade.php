@@ -165,24 +165,46 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <!--begin::Form Group-->
                         <div class="form-group">
-                            <label class="font-size-h6 font-weight-bolder text-dark">First Name</label>
-                            <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="name" placeholder="First Name" value="" />
+                            <label class="font-size-h6 font-weight-bolder text-dark">Full Name</label>
+                            <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('name') is-invalid @enderror" required name="name" placeholder="First Name" value="" />
+
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                             @enderror
+
                         </div>
                         <!--end::Form Group-->
 
                         <div class="form-group">
                             <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-                            <input type="email" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="email" placeholder="Email" autofill="off" />
+                            <input type="email" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('email') is-invalid @enderror" name="email" placeholder="Email" autofill="off" />
+                             @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                             @enderror
                         </div>
 
                         <div class="form-group">
                             <label class="font-size-h6 font-weight-bolder text-dark">Password</label>
-                            <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="password" placeholder="Password" value="" />
+                            <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('password') is-invalid @enderror" name="password" placeholder="Password" value="" />
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                         @enderror
                         </div>
                           <!--begin::Form Group-->
                      <div class="form-group">
                         <label class="font-size-h6 font-weight-bolder text-dark">Confirm Password</label>
-                        <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="password_confirmation" placeholder="Confirm Password" value="" />
+                        <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required placeholder="Confirm Password" value="" />
+                        @error('password_confirmation')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                     @enderror
                     </div>
                     <!--end::Form Group-->
                     </div>
@@ -208,7 +230,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!--begin::Input-->
                                 <div class="form-group">
                                     <label class="font-size-h6 font-weight-bolder text-dark">Address Line 1</label>
-                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="address1" placeholder="Address Line 1" value="" />
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="add-1" placeholder="Address Line 1" value="" />
                                     <span class="form-text text-muted">Please enter your Address.</span>
                                 </div>
                                 <!--end::Input-->
@@ -217,7 +239,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!--begin::Input-->
                                 <div class="form-group">
                                     <label class="font-size-h6 font-weight-bolder text-dark">Address Line 2</label>
-                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="address2" placeholder="Address Line 2" value="" />
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="add-2" placeholder="Address Line 2" value="" />
                                     <span class="form-text text-muted">Please enter your Address.</span>
                                 </div>
                                 <!--end::Input-->
@@ -571,7 +593,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--end::Main-->
 
 
-        <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
+
         <!--begin::Global Config(global config for global JS scripts)-->
         <script>
             var KTAppSettings = {
@@ -632,6 +654,8 @@ License: You must have a valid license purchased only from themeforest(the above
     },
     "font-family": "Poppins"
 };
+
+
         </script>
         <!--end::Global Config-->
 

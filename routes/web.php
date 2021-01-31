@@ -1,6 +1,9 @@
 <?php
 
+use BaconQrCode\Renderer\Color\Rgb;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
+use Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::view('/', 'welcome')->middleware(['auth','verified']);
+
+Route::view('add', 'profile.add');
+Route::view('index', 'profile.index');
+
+Route::resource('edit', UserController::class);
+
+Route::group(['prefix' => 'admin'], function () {
+
+
+});

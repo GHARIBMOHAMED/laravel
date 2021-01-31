@@ -12,7 +12,7 @@ var KTAppsUsersListDatatable = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: HOST_URL + '/api/datatables/demos/default.php',
+						url: 'preview.keenthemes.com/metronic/theme/html/tools/preview/api/datatables/demos/default.php',
 					},
 				},
 				pageSize: 10, // display 20 records per page

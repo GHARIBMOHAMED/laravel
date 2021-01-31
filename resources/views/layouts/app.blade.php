@@ -1,66 +1,49 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <!--begin::Head-->
-    <head><base href="">
-        <meta charset="utf-8"/>
-        <title>Metronic | Dashboard</title>
-        <meta name="description" content="Updates and statistics"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+ @include('layouts.head')
+ @yield('head')
+ <!--begin::Content-->
+   <div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Subheader-->
+<div class="subheader py-3 py-lg-8  subheader-transparent " id="kt_subheader">
+<div class=" container  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+<!--begin::Info-->
+<div class="d-flex align-items-center flex-wrap mr-1">
 
-        <!--begin::Fonts-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>        <!--end::Fonts-->
+<!--begin::Page Heading-->
+<div class="d-flex align-items-baseline flex-wrap mr-5">
+<!--begin::Page Title-->
+<h2 class="subheader-title text-dark font-weight-bold my-1 mr-3">
 
-                    <!--begin::Page Vendors Styles(used by this page)-->
-                            <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-                        <!--end::Page Vendors Styles-->
+</h2>
+<!--end::Page Title-->
 
+</div>
+<!--end::Page Heading-->
+</div>
+<!--end::Info-->
 
-        <!--begin::Global Theme Styles(used by all pages)-->
-                    <link href="assets/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-                    <link href="assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-                    <link href="assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-                <!--end::Global Theme Styles-->
+<!--begin::Toolbar-->
 
-        <!--begin::Layout Themes(used by all pages)-->
-                <!--end::Layout Themes-->
+<!--end::Toolbar-->
+</div>
+</div>
+<!--end::Subheader-->
 
-        <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
+<!--begin::Entry-->
+<div class="d-flex flex-column-fluid">
+<!--begin::Container-->
+<div class=" container ">
 
-        @include('layouts.head')
-        @yield('head')
-
-            
-        
-        @yield('content')
-
-	
-			</div>
-			<!--end::Wrapper-->
-		</div>
-		<!--end::Page-->
-	</div>
-<!--end::Main-->
+@yield('main')
 
 
+</div>
+<!--end::Container-->
+</div>
+<!--end::Entry-->
+@yield('add')
+</div>
 
+<!--end::Content-->
 
-
- 
 @include('layouts.footer')
 @yield('footer')
-    	<!--begin::Global Theme Bundle(used by all pages)-->
-    	    	   <script src="assets/plugins/global/plugins.bundle.js?v=7.0.6"></script>
-		    	   <script src="assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
-		    	   <script src="assets/js/scripts.bundle.js?v=7.0.6"></script>
-				<!--end::Global Theme Bundle-->
-
-                    <!--begin::Page Vendors(used by this page)-->
-                            <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>
-                        <!--end::Page Vendors-->
-
-                    <!--begin::Page Scripts(used by this page)-->
-                            <script src="assets/js/pages/widgets.js?v=7.0.6"></script>
-                        <!--end::Page Scripts-->
-            </body>
-    <!--end::Body-->
-</html>
