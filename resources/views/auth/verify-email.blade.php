@@ -57,7 +57,8 @@ License: You must have a valid license purchased only from themeforest(the above
 		</p>
 		<p class="font-size-h1 font-weight-boldest text-dark-75">
 		We have sent you a verification to your email
-		</p>
+        </p>
+        <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();"  class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Logout</a>
 
 	</div>
 	<!--end::Content-->
@@ -65,6 +66,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--end::Error-->
 	</div>
 <!--end::Main-->
+<form action="{{ route('logout') }}" method="POST" hidden id="logout_form">
+    @csrf</form>
 
 
         <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
