@@ -55,7 +55,7 @@ class LoginController extends Controller
         $this->_registerOrLoginUser($user);
 
         // Return home after login
-        return view('welcome');
+        return redirect('/')->with('message','Congrats you are looged in');
     }
     protected function _registerOrLoginUser($data)
     {

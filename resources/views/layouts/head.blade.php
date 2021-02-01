@@ -315,7 +315,7 @@
                                 <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
 
                                         <div class="">
-                                            <img alt="Logo" src="{{ auth()->user()->avatar }}" height="50"  />
+                                            <img alt="Logo" src="{{ auth()->user()->avatar }}" height="45"  />
                                         </div>
 
                                 </a>

@@ -32,6 +32,7 @@
 
 
 
+
         <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
         <!--begin::Global Config(global config for global JS scripts)-->
         <script>
@@ -111,6 +112,10 @@
                     <!--begin::Page Scripts(used by this page)-->
                             <script src="assets/js/pages/widgets.js?v=7.0.6"></script>
                         <!--end::Page Scripts-->
+
+
+
+
             </body>
     <!--end::Body-->
 </html>
