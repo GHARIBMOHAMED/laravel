@@ -98,7 +98,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-3 text-lg-right text-left">Avatar</label>
                                                 <div class="col-9">
-                                                    <div class="image-input image-input-empty image-input-outline" id="kt_user_edit_avatar" style="background-image: url(assets/media/users/blank.png)">
+                                                    <div class="image-input image-input-empty image-input-outline" id="kt_user_edit_avatar" style="background-image: url({{ auth()->user()->avatar }})">
                                                         <div class="image-input-wrapper"></div>
 
                                                         <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
@@ -122,7 +122,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-3 text-lg-right text-left">Full Name</label>
                                                 <div class="col-9">
-                                                    <input name="name" class="form-control form-control-lg form-control-solid" type="text" value="Anna"/>
+                                                    <input name="name" class="form-control form-control-lg form-control-solid" type="text" value="{{ auth()->user()->name }}"/>
                                                 </div>
                                             </div>
                                             <!--end::Group-->
@@ -154,7 +154,7 @@
                                                 <div class="col-9">
                                                     <div class="input-group input-group-lg input-group-solid">
                                                         <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                                        <input type="text" class="form-control form-control-lg form-control-solid" value="anna.krox@loop.com" placeholder="Email" />
+                                                        <input type="text" class="form-control form-control-lg form-control-solid" value="{{ auth()->user()->email }}" placeholder="Email" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,7 +197,7 @@
                                                     <label class="col-form-label col-3 text-lg-right text-left">Username</label>
                                                     <div class="col-9">
                                                         <div class="spinner spinner-sm spinner-success spinner-right spinner-input">
-                                                            <input class="form-control form-control-lg form-control-solid" type="text" value="nick84"/>
+                                                            <input class="form-control form-control-lg form-control-solid" type="text" value="{{ auth()->user()->name }}"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -208,7 +208,7 @@
                                                     <div class="col-9">
                                                         <div class="input-group input-group-lg input-group-solid">
                                                             <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                                            <input type="text" class="form-control form-control-lg form-control-solid" value="nick.watson@loop.com" placeholder="Email" />
+                                                            <input type="text" class="form-control form-control-lg form-control-solid" value="{{ auth()->user()->email }}" placeholder="Email" />
                                                         </div>
                                                         <span class="form-text text-muted">Email will not be publicly displayed. <a href="#">Learn more</a>.</span>
                                                     </div>
@@ -468,7 +468,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-3 text-lg-right text-left">Login verification</label>
                                                 <div class="col-9">
-                                                    <button type="button" class="btn btn-light-primary font-weight-bold btn-sm">Setup login verification</button>
+                                                    <button type="button" class="btn btn-light-success font-weight-bold btn-sm">your account is verifaied</button>
                                                     <div class="form-text text-muted mt-3">
                                                         After you log in, you will be asked for additional information to confirm your identity and protect your account from being compromised.
                                                         <a href="#">Learn more</a>.
