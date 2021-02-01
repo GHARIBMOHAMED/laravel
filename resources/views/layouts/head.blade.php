@@ -1,6 +1,17 @@
 @section('head')
 <!DOCTYPE html>
 
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+
+
+
 <html lang="en">
     <!--begin::Head-->
     <head>
@@ -312,7 +323,7 @@
                         <div class="topbar-item ">
                             <div class="btn btn-icon btn-sm btn-clean btn-text-dark-75" id="kt_quick_user_toggle">
 
-                                <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
+                                <a href="{{ route('logout') }}" id="loll" onclick="event.preventDefault(); ">
 
                                         <div class="">
                                             <img alt="Logo" src="{{ auth()->user()->avatar }}" height="45"  />
@@ -322,8 +333,26 @@
 
                             </div>
                         </div>
-                        <!--end::User-->
 
+                        <!--end::User-->
+                        <script>
+                            $('#loll').click(function(){
+                                Swal.fire({icon: 'error',title: 'DO you really want to log out',showCloseButton: 'true',
+                                }).then(
+                                    function(isConfirmed){
+                                if (isConfirmed) {
+                                    event.preventDefault();
+                                    document.getElementById('logout_form').submit();
+                                }
+                                if(isDismissed){
+                                    Swal.close()
+                                }
+
+                               });
+
+                            });
+
+                        </script>
 
                     </div>
                     <!--end::Topbar-->
