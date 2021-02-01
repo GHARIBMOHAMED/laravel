@@ -340,13 +340,13 @@
                                 Swal.fire({icon: 'error',title: 'DO you really want to log out',showCloseButton: 'true',
                                 }).then(
                                     function(isConfirmed){
-                                if (isConfirmed) {
+                                        if(isDismissed){
+                                    Swal.close()
+                                }else{
                                     event.preventDefault();
                                     document.getElementById('logout_form').submit();
                                 }
-                                if(isDismissed){
-                                    Swal.close()
-                                }
+
 
                                });
 
