@@ -30,6 +30,8 @@ Route::view('add', 'profile.add');
 Route::view('index', 'profile.index');
 
 Route::resource('edit', UserController::class);
+Route::get('data', 'Admin\UserController@create');
+//Route::resource('edit.update/{id}', 'UserController@update');
 
 Route::group(['prefix' => 'admin'], function () {
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -14,7 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('profile.edit');
+
+      return view('profile.edit');
+      $user = User::all();
+        return response()->json($user);
+
     }
 
     /**
@@ -24,6 +30,8 @@ class UserController extends Controller
      */
     public function create()
     {
+        $user = User::all();
+        return response()->json($user);
 
     }
 
@@ -69,7 +77,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
