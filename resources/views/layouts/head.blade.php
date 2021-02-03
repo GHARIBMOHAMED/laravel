@@ -2,27 +2,19 @@
 <!DOCTYPE html>
 
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-
-
-
-
 
 <html lang="en">
     <!--begin::Head-->
     <head>
         <base href="../../" />
         <meta charset="utf-8" />
-        <title>Metronic | Empty Page</title>
+        <title>Marrakech auction</title>
         <meta name="description" content="Page with empty content" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!--begin::Fonts-->
+            <!--begin::Fonts-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
         <!--end::Fonts-->
 
@@ -39,7 +31,7 @@
         <!--begin::Layout Themes(used by all pages)-->
         <!--end::Layout Themes-->
 
-        <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="assets/media/logos/logo.png" />
     </head>
     <!--end::Head-->
 
@@ -49,8 +41,8 @@
         <!--begin::Header Mobile-->
         <div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
             <!--begin::Logo-->
-            <a href="index.html">
-                <img alt="Logo" src="assets/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
+            <a href="">
+                <img alt="Logo" src="assets/media/logos/logo.png" class="logo-default max-h-30px"/>
             </a>
             <!--end::Logo-->
 
@@ -87,7 +79,7 @@
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
                 <li class="menu-item menu-item-active" aria-haspopup="true">
-                    <a href="index.html" class="menu-link">
+                    <a href="" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -177,8 +169,8 @@
                         <!--end::Aside Toggle-->
 
                         <!--begin::Logo-->
-                        <a href="index.html">
-                            <img alt="Logo" src="assets/media/logos/logo-letter-1.png" class="logo-sticky max-h-35px" />
+                        <a href="">
+                            <img alt="Logo" src="assets/media/logos/logo.png" class="logo-sticky max-h-35px" />
                         </a>
                         <!--end::Logo-->
 

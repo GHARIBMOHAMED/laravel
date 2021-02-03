@@ -3,14 +3,13 @@
 @section('main')
 
 
-
 <!--begin::Card-->
 <div class="card card-custom">
 	<div class="card-header flex-wrap border-0 pt-6 pb-0">
 		<div class="card-title">
 			<h3 class="card-label">
-				Remote Datasource
-				<span class="d-block text-muted pt-2 font-size-sm">Sorting & pagination remote datasource</span>
+				All Users
+				<span class="d-block text-muted pt-2 font-size-sm">Sorting & pagination users datasource</span>
 			</h3>
 		</div>
 		<div class="card-toolbar">
@@ -97,38 +96,10 @@
 					</div>
 				</div>
 
-                				<div class="col-md-4 my-2 my-md-0">
-					<div class="d-flex align-items-center">
-						<label class="mr-3 mb-0 d-none d-md-block">Status:</label>
-						<select class="form-control" id="kt_datatable_search_status">
-							<option value="">All</option>
-							<option value="1">Pending</option>
-							<option value="2">Delivered</option>
-							<option value="3">Canceled</option>
-							<option value="4">Success</option>
-							<option value="5">Info</option>
-							<option value="6">Danger</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-md-4 my-2 my-md-0">
-					<div class="d-flex align-items-center">
-						<label class="mr-3 mb-0 d-none d-md-block">Type:</label>
-						<select class="form-control" id="kt_datatable_search_type">
-							<option value="">All</option>
-							<option value="1">Online</option>
-							<option value="2">Retail</option>
-							<option value="3">Direct</option>
-						</select>
-					</div>
-				</div>
+
                 			</div>
 		</div>
-		<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
-			<a href="#" class="btn btn-light-primary px-6 font-weight-bold">
-				Search
-			</a>
-		</div>
+
 	</div>
 </div>
 <!--end::Search Form-->
@@ -161,17 +132,17 @@
 				<!--begin: Search Form-->
                 <!--begin::Search Form-->
                 <form class="form">
-                    <div class="card-body">
+
                         <div class="form-group row mt-3">
                             <label class="col-lg-1 col-form-label text-right">Full Name:</label>
                             <div class="col-lg-3">
                                 <input type="email" class="form-control" placeholder="Full name"/>
-                                <span class="form-text text-muted">Please enter your full name</span>
+
                             </div>
                             <label class="col-lg-1 col-form-label text-right">Email:</label>
                             <div class="col-lg-3">
                                 <input type="email" class="form-control" placeholder="Email"/>
-                                <span class="form-text text-muted">Please enter your email</span>
+
                             </div>
                             <label class="col-lg-1 col-form-label text-right">Username:</label>
                             <div class="col-lg-3">
@@ -179,7 +150,7 @@
                                     <div class="input-group-prepend"><span class="input-group-text"><i class="la la-user"></i></span></div>
                                     <input type="text" class="form-control" placeholder=""/>
                                 </div>
-                                <span class="form-text text-muted">Please enter your username</span>
+
                             </div>
                         </div>
 
@@ -189,7 +160,7 @@
                             <label class="col-lg-1 col-form-label text-right">Contact:</label>
                             <div class="col-lg-3">
                                 <input type="email" class="form-control" placeholder="Enter contact number"/>
-                                <span class="form-text text-muted">Please enter your contact</span>
+
                             </div>
                             <label class="col-lg-1 col-form-label text-right">Fax:</label>
                             <div class="col-lg-3">
@@ -197,7 +168,7 @@
                                     <input type="text" class="form-control" placeholder="Fax number"/>
                                     <div class="input-group-append"><span class="input-group-text"><i class="la la-info-circle"></i></span></div>
                                 </div>
-                                <span class="form-text text-muted">Please enter fax</span>
+
                             </div>
                             <label class="col-lg-1 col-form-label text-right">Address:</label>
                             <div class="col-lg-3">
@@ -205,7 +176,7 @@
                                     <input type="text" class="form-control" placeholder="Enter your address"/>
                                     <div class="input-group-append"><span class="input-group-text"><i class="la la-map-marker"></i></span></div>
                                 </div>
-                                <span class="form-text text-muted">Please enter your address</span>
+
                             </div>
                         </div>
 
@@ -218,36 +189,41 @@
                                     <input type="text" class="form-control" placeholder="Enter your postcode"/>
                                     <div class="input-group-append"><span class="input-group-text"><i class="la la-bookmark-o"></i></span></div>
                                 </div>
-                                <span class="form-text text-muted">Please enter your postcode</span>
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">User Group:</label>
-                            <div class="col-lg-3">
-                                <div class="radio-inline">
-                                    <label class="radio radio-solid">
-                                        <input type="radio" name="example_2" checked="checked" value="2"/> Sales Person
-                                        <span></span>
-                                    </label>
-                                    <label class="radio radio-solid">
-                                        <input type="radio" name="example_2" value="2"/> Customer
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <span class="form-text text-muted">Please select user group</span>
-                            </div>
-                        </div>
-                    </div>
 
-				<!--begin: Datatable-->
-				<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_sub"></div>
-				<!--end: Datatable-->
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
-			</div>
-		</div>
-	</div>
-</div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="image-input image-input-outline image-input-circle " style="margin-left: 30%" id="kt_image_3">
+                                    <div class="image-input-wrapper" style="background-image: url(assets/media/users/100_3.jpg)"></div>
+
+                                    <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+                                        <i class="fa fa-pen icon-sm text-muted"></i>
+                                        <input type="file" name="avatar" accept=".png, .jpg, .jpeg"/>
+                                        <input type="hidden" name="avatar"/>
+                                    </label>
+
+                                    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <!--begin: Datatable-->
+                        <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_sub"></div>
+                        <!--end: Datatable-->
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!--end::Modal-->
 
 
@@ -302,7 +278,7 @@ var KTDatatableRemoteAjaxDemo = function() {
 
             search: {
                 input: $('#kt_datatable_search_query'),
-                key: 'generalSearch'
+                key: 'Search'
             },
 
             // columns definition
@@ -370,7 +346,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                 template: function() {
                     return '\
                     <button data-record-id="" class="btn btn-sm btn-clean" title="View records">\
-		                      <i class="flaticon2-document"></i> Details\
+		                      <i class="flaticon2-document"></i>\
 		                  </button>\
                         <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">\
                             <span class="svg-icon svg-icon-md">\
@@ -394,10 +370,8 @@ var KTDatatableRemoteAjaxDemo = function() {
         });
 
         $('#kt_datatable_search_type').on('change', function() {
-            datatable.search($(this).val().toLowerCase(), 'Type');
+            datatable.search($(this).val().toLowerCase(), 'name');
         });
-
-        $('#kt_datatable_search_status, #kt_datatable_search_type').selectpicker();
 
         datatable.on('click', '[data-record-id]', function() {
 
