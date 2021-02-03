@@ -4,6 +4,8 @@ use BaconQrCode\Renderer\Color\Rgb;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use Admin\UserController;
+use App\Http\Controllers\LoginController;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +18,23 @@ use Admin\UserController;
 |
 */
 
+// Google login
+Route::get('login/google', [App\Http\Controllers\LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [App\Http\Controllers\LoginController::class, 'handleGoogleCallback']);
+//-----------------------------------------------------------
 
 Route::view('/', 'welcome')->middleware(['auth','verified']);
+
 
 Route::view('add', 'profile.add');
 Route::view('index', 'profile.index');
 
 Route::resource('edit', UserController::class);
+Route::get('data', 'Admin\UserController@create');
+//Route::resource('edit.update/{id}', 'UserController@update');
 
 Route::group(['prefix' => 'admin'], function () {
 
 
 });
+

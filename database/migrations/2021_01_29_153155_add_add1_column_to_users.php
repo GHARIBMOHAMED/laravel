@@ -18,6 +18,9 @@ class AddAdd1ColumnToUsers extends Migration
             $table->string('add-2')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
+            $table->string('provider_id')->nullable();
+            $table->text('avatar')->nullable();
+            $table->string('img')->nullable();
         });
     }
 

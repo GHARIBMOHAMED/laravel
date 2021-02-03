@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
  @include('layouts.head')
  @yield('head')
  <!--begin::Content-->
@@ -45,5 +46,8 @@
 
 <!--end::Content-->
 
+
 @include('layouts.footer')
 @yield('footer')
+
+
