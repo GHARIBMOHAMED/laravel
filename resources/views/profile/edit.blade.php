@@ -140,6 +140,117 @@
 	</div>
 </div>
 <!--end::Card-->
+
+
+
+
+
+<!--begin::Modal-->
+<div id="kt_datatable_modal" class="modal fade" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-xl modal-dialog-centered">
+		<div class="modal-content" style="min-height: 590px;">
+			<div class="modal-header py-5">
+				<h5 class="modal-title">
+					Edit the user here
+				</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<i aria-hidden="true" class="ki ki-close"></i>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!--begin: Search Form-->
+                <!--begin::Search Form-->
+                <form class="form">
+                    <div class="card-body">
+                        <div class="form-group row mt-3">
+                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
+                            <div class="col-lg-3">
+                                <input type="email" class="form-control" placeholder="Full name"/>
+                                <span class="form-text text-muted">Please enter your full name</span>
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Email:</label>
+                            <div class="col-lg-3">
+                                <input type="email" class="form-control" placeholder="Email"/>
+                                <span class="form-text text-muted">Please enter your email</span>
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Username:</label>
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text"><i class="la la-user"></i></span></div>
+                                    <input type="text" class="form-control" placeholder=""/>
+                                </div>
+                                <span class="form-text text-muted">Please enter your username</span>
+                            </div>
+                        </div>
+
+                        <div class="separator separator-dashed my-10"></div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-1 col-form-label text-right">Contact:</label>
+                            <div class="col-lg-3">
+                                <input type="email" class="form-control" placeholder="Enter contact number"/>
+                                <span class="form-text text-muted">Please enter your contact</span>
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Fax:</label>
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Fax number"/>
+                                    <div class="input-group-append"><span class="input-group-text"><i class="la la-info-circle"></i></span></div>
+                                </div>
+                                <span class="form-text text-muted">Please enter fax</span>
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Address:</label>
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter your address"/>
+                                    <div class="input-group-append"><span class="input-group-text"><i class="la la-map-marker"></i></span></div>
+                                </div>
+                                <span class="form-text text-muted">Please enter your address</span>
+                            </div>
+                        </div>
+
+                        <div class="separator separator-dashed my-10"></div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-1 col-form-label text-right">Postcode:</label>
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter your postcode"/>
+                                    <div class="input-group-append"><span class="input-group-text"><i class="la la-bookmark-o"></i></span></div>
+                                </div>
+                                <span class="form-text text-muted">Please enter your postcode</span>
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">User Group:</label>
+                            <div class="col-lg-3">
+                                <div class="radio-inline">
+                                    <label class="radio radio-solid">
+                                        <input type="radio" name="example_2" checked="checked" value="2"/> Sales Person
+                                        <span></span>
+                                    </label>
+                                    <label class="radio radio-solid">
+                                        <input type="radio" name="example_2" value="2"/> Customer
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <span class="form-text text-muted">Please select user group</span>
+                            </div>
+                        </div>
+                    </div>
+
+				<!--begin: Datatable-->
+				<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_sub"></div>
+				<!--end: Datatable-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end::Modal-->
+
+
 <script>
    "use strict";
 // Class definition
@@ -205,20 +316,30 @@ var KTDatatableRemoteAjaxDemo = function() {
                 textAlign: 'center',
             },
             {
-					field: 'OrderID',
+					field: 'avatar',
 					title: 'avatar',
 					width: 50,
 					template: function(data) {
-						var number = KTUtil.getRandomInt(1, 14);
-						var user_img = 'background-image:url(\'' + data.avatar + '\')';
-
-						var output = '';
+                        var output = '';
+						if(data.avatar){
+                            var user_img = 'background-image:url(\'' + data.avatar + '\')';
 
 							output = '<div class="d-flex align-items-center">\
 								<div class="symbol symbol-40 flex-shrink-0">\
 									<div class="symbol-label" style="' + user_img + '"></div>\
 								</div>\
 							</div>';
+
+                        }else
+                        {
+                            var user_img = 'background-image:url(\'assets/media/users/default.jpg\')';
+
+							output = '<div class="d-flex align-items-center">\
+								<div class="symbol symbol-40 flex-shrink-0">\
+									<div class="symbol-label" style="' + user_img + '"></div>\
+								</div>\
+							</div>';
+                        }
 
 
 						return output;
@@ -241,24 +362,16 @@ var KTDatatableRemoteAjaxDemo = function() {
                 title: 'country Name',
             }, {
                 field: 'Actions',
-                title: 'Actions',
+                title: 'action',
                 sortable: false,
                 width: 125,
                 overflow: 'visible',
                 autoHide: false,
                 template: function() {
                     return '\
-                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
-                            <span class="svg-icon svg-icon-md">\
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
-                                        <rect x="0" y="0" width="24" height="24"/>\
-                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero"\ transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>\
-                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>\
-                                    </g>\
-                                </svg>\
-                            </span>\
-                        </a>\
+                    <button data-record-id="" class="btn btn-sm btn-clean" title="View records">\
+		                      <i class="flaticon2-document"></i> Details\
+		                  </button>\
                         <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">\
                             <span class="svg-icon svg-icon-md">\
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
@@ -285,6 +398,11 @@ var KTDatatableRemoteAjaxDemo = function() {
         });
 
         $('#kt_datatable_search_status, #kt_datatable_search_type').selectpicker();
+
+        datatable.on('click', '[data-record-id]', function() {
+
+            $('#kt_datatable_modal').modal('show');
+        });
     };
 
     return {
