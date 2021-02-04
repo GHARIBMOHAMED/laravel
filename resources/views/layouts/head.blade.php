@@ -56,9 +56,12 @@
 
         <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
 
-                <div class="pl-3">
-                    <img alt="Logo" src="{{ auth()->user()->avatar }}" height="35"  />
+            <div class="d-flex align-items-center">
+                <div class="symbol symbol-40 flex-shrink-0">\
+                    <div class="symbol-label" style="background-image:url('{{ auth()->user()->avatar }}')"></div>
                 </div>
+            </div>
+
 
         </a>
 
@@ -317,10 +320,20 @@
                             <div class="btn btn-icon btn-sm btn-clean btn-text-dark-75" id="kt_quick_user_toggle">
 
                                 <a href="{{ route('logout') }}" id="loll" onclick="event.preventDefault(); ">
-
-                                        <div class="">
-                                            <img alt="Logo" src="{{ auth()->user()->avatar }}" height="45"  />
+                                    @if (auth()->user()->avatar)
+                                        <div class="d-flex align-items-center">
+                                        <div class="symbol symbol-40 flex-shrink-0">
+                                            <div class="symbol-label" style="background-image:url('{{ auth()->user()->avatar }}')"></div>
                                         </div>
+                                    </div>
+                                    @else
+                                    <div class="d-flex align-items-center">
+                                        <div class="symbol symbol-40 flex-shrink-0">
+                                            <div class="symbol-label" style="background-image:url('assets/media/users/default.jpg')"></div>
+                                        </div>
+                                    </div>
+                                    @endif
+
 
                                 </a>
 

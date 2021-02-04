@@ -90,7 +90,7 @@ class UserController extends Controller
     {
 
          User::destroy($id);
-         return view('profile.edit')->with('message','Congrats you are looged in');
+         return view('profile.edit')->with('warning','Congrats you are looged in');
 
     }
 }

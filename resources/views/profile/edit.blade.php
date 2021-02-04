@@ -2,6 +2,17 @@
 
 @section('main')
 
+	<link rel="stylesheet" type="text/css"
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+
+
+
+
+
 
 <!--begin::Card-->
 <div class="card card-custom">
@@ -117,7 +128,7 @@
 
 
 <!--begin::Modal-->
-<div id="kt_datatable_modal" class="modal fade" role="dialog" aria-hidden="true">
+<div id="ktmodal" class="modal fade" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-xl modal-dialog-centered">
 		<div class="modal-content" style="min-height: 590px;">
 			<div class="modal-header py-5">
@@ -324,19 +335,23 @@ var KTDatatableRemoteAjaxDemo = function() {
              {
                 field: 'name',
                 title: 'Name',
+                width: 80,
             }, {
                 field: 'email',
                 title: 'Email',
-
+                width: 250,
             }, {
-                field: 'email_verified_at',
-                title: 'Created at',
-                type: 'date',
-                format: 'MM/DD/YYYY',
+                field: 'state',
+                title: 'state',
             }, {
                 field: 'country',
                 title: 'country Name',
-            }, {
+                width: 70,
+            },
+            {
+                field: 'add-1',
+                title: 'Address',
+            },{
                 field: 'Actions',
                 title: 'action',
                 sortable: false,
@@ -345,7 +360,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                 autoHide: false,
                 template: function(data) {
                     return '\
-                    <button data-record-id="" class="btn btn-sm btn-clean" title="View records">\
+                    <button data-record-id="'+data.id+'" class="btn btn-sm btn-clean" title="View records">\
 		                      <i class="flaticon2-document"></i>\
 		                  </button>\
                         <button  class="btn btn-sm btn-clean btn-icon" id="dataa" data-id="' + data.id + '" title="Delete">\
@@ -373,12 +388,11 @@ var KTDatatableRemoteAjaxDemo = function() {
             datatable.search($(this).val().toLowerCase(), 'name');
         });
 
-
         jQuery(document).ready(function($){
 
         datatable.on('click', '[data-id]', function() {
-            const article = document.querySelector('#dataa');
-            var id = article.dataset.id;
+            var id = this.dataset.id;
+
             console.log(id);
 
             Swal.fire({
@@ -401,20 +415,29 @@ var KTDatatableRemoteAjaxDemo = function() {
                         },
                         success: function(response) {
                             if(response) {
-                                console.log("it Works");
+                                toastr.options =
+                            {
+                                "closeButton" : true,
+                                "progressBar" : true
                             }
+                                    toastr.error("The user is deleted");
+                            }
+                            datatable.reload();
                         }
                         });
-
-                Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-                        )}
+}
 
                     })
             });
+
         });
+
+            datatable.on('click', '[data-record-id]', function() {
+                var id = this.dataset.id;
+                $('#ktmodal').modal('show');
+            });
+
+
     };
 
     return {
@@ -423,6 +446,7 @@ var KTDatatableRemoteAjaxDemo = function() {
             demo();
         },
     };
+
 }();
 
 jQuery(document).ready(function() {
