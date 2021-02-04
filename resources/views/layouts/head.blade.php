@@ -331,13 +331,12 @@
                         <script>
                             $('#loll').click(function(){
                                 Swal.fire({icon: 'error',title: 'DO you really want to log out',showCloseButton: 'true',
-                                }).then(
-                                    function(isConfirmed){
-                                        if(isDismissed){
-                                    Swal.close()
-                                }else{
-                                    event.preventDefault();
+                                }).then((result)=>{
+                                        if(result.isConfirmed){
+                                            event.preventDefault();
                                     document.getElementById('logout_form').submit();
+                                }else{
+                                    Swal.close()
                                 }
 
 

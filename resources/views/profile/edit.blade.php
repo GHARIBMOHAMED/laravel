@@ -70,7 +70,7 @@
 <!--end::Dropdown-->
 
 <!--begin::Button-->
-<a href="#" class="btn btn-primary font-weight-bolder">
+<a  class="btn btn-primary font-weight-bolder">
 	<span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect x="0" y="0" width="24" height="24"/>
@@ -228,7 +228,7 @@
 
 
 <script>
-   "use strict";
+
 // Class definition
 
 var KTDatatableRemoteAjaxDemo = function() {
@@ -343,13 +343,13 @@ var KTDatatableRemoteAjaxDemo = function() {
                 width: 125,
                 overflow: 'visible',
                 autoHide: false,
-                template: function() {
+                template: function(data) {
                     return '\
                     <button data-record-id="" class="btn btn-sm btn-clean" title="View records">\
 		                      <i class="flaticon2-document"></i>\
 		                  </button>\
-                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">\
-                            <span class="svg-icon svg-icon-md">\
+                        <button  class="btn btn-sm btn-clean btn-icon" id="dataa" data-id="' + data.id + '" title="Delete">\
+                            <span class="svg-icon svg-icon-md" >\
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
                                         <rect x="0" y="0" width="24" height="24"/>\
@@ -358,7 +358,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                                     </g>\
                                 </svg>\
                             </span>\
-                        </a>\
+                        </button>\
                     ';
                 },
             }],
@@ -373,9 +373,47 @@ var KTDatatableRemoteAjaxDemo = function() {
             datatable.search($(this).val().toLowerCase(), 'name');
         });
 
-        datatable.on('click', '[data-record-id]', function() {
 
-            $('#kt_datatable_modal').modal('show');
+        jQuery(document).ready(function($){
+
+        datatable.on('click', '[data-id]', function() {
+            const article = document.querySelector('#dataa');
+            var id = article.dataset.id;
+            console.log(id);
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: 'http://127.0.0.1:8000/destroy/'+id ,
+                        method:'DELETE',
+                        contentType: 'application/json',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                        data: {
+                            "id": id,
+                        },
+                        success: function(response) {
+                            if(response) {
+                                console.log("it Works");
+                            }
+                        }
+                        });
+
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                        )}
+
+                    })
+            });
         });
     };
 
@@ -392,5 +430,7 @@ jQuery(document).ready(function() {
 });
 
 </script>
+
+
 
 @endsection

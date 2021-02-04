@@ -88,6 +88,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+         User::destroy($id);
+         return view('profile.edit')->with('message','Congrats you are looged in');
+
     }
 }
