@@ -33,6 +33,7 @@ Route::resource('edit', UserController::class)->middleware(['auth','verified']);
 Route::get('data', 'Admin\UserController@create')->middleware(['auth','verified']);
 Route::delete('destroy/{id}', 'Admin\UserController@destroy')->middleware(['auth','verified']);
 Route::get('update/{id}', 'Admin\UserController@data')->middleware(['auth','verified']);
+Route::post('new/{id}', 'Admin\UserController@update')->middleware(['auth','verified']);
 
 
 Route::group(['prefix' => 'admin'], function () {

@@ -86,7 +86,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = User::find($id);
+        $data->name = $request->name;
+        $data->country = $request->country;
+        $data->email = $request->email;
+        $data->state = $request->state;
+        $data->{"add-1"} = $request->address;
+        $data->save();
 
+        return redirect('edit')->with('info','user is info is updated');
     }
 
     /**

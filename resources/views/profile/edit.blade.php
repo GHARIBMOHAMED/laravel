@@ -5,13 +5,6 @@
 	<link rel="stylesheet" type="text/css"
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-
-
-
-
-
 
 
 <!--begin::Card-->
@@ -25,63 +18,11 @@
 		</div>
 		<div class="card-toolbar">
 			<!--begin::Dropdown-->
-<div class="dropdown dropdown-inline mr-2">
-	<button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		<span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect x="0" y="0" width="24" height="24"/>
-        <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"/>
-        <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"/>
-    </g>
-</svg><!--end::Svg Icon--></span>		Export
-	</button>
 
-	<!--begin::Dropdown Menu-->
-	<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-		<!--begin::Navigation-->
-		<ul class="navi flex-column navi-hover py-2">
-			<li class="navi-header font-weight-bolder text-uppercase font-size-sm text-primary pb-2">
-		        Choose an option:
-		    </li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-print"></i></span>
-					<span class="navi-text">Print</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-copy"></i></span>
-					<span class="navi-text">Copy</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-file-excel-o"></i></span>
-					<span class="navi-text">Excel</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-file-text-o"></i></span>
-					<span class="navi-text">CSV</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-file-pdf-o"></i></span>
-					<span class="navi-text">PDF</span>
-				</a>
-			</li>
-		</ul>
-		<!--end::Navigation-->
-	</div>
-	<!--end::Dropdown Menu-->
-</div>
 <!--end::Dropdown-->
 
 <!--begin::Button-->
-<a  class="btn btn-primary font-weight-bolder">
+<a  class="btn btn-primary font-weight-bolder" type="button" data-toggle="modal" data-target="#exampleModalCenter">
 	<span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect x="0" y="0" width="24" height="24"/>
@@ -131,6 +72,8 @@
 <div id="ktmodal" class="modal fade" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-xl modal-dialog-centered">
         <form class="form" id="deleteForm" action="" method="POST">
+            @csrf
+
 		<div class="modal-content" style="min-height: 590px;">
 			<div class="modal-header py-5">
 				<h5 class="modal-title">
@@ -176,26 +119,34 @@
                             </div>
                             <label id="email" class="col-lg-1 col-form-label text-right">Email:</label>
                             <div class="col-lg-3">
-                                <input type="text" id="mail" class="form-control" placeholder="Email"/>
+                                <input type="text" id="mail" name="email" class="form-control" placeholder="Email"/>
 
                             </div>
                             <label class="col-lg-1 col-form-label text-right">Country</label>
                             <div class="col-lg-3">
                                 <div class="input-group">
-                                    <input type="text" id="addr" class="form-control" placeholder="Country"/>
+                                    <input type="text" id="addr" name="country" class="form-control" placeholder="Country"/>
 
                                 </div>
 
                             </div>
                         </div>
 
-
+<br><br>
                         <div class="form-group row">
-                            <div class="col-lg-4"></div>
+
                             <label class="col-lg-1 col-form-label text-right">State</label>
                             <div class="col-lg-4">
                                 <div class="input-group">
-                                    <input type="text" id="state" class="form-control" placeholder="Enter your state"/>
+                                    <input type="text" id="state" name="state" class="form-control" placeholder="Enter your state"/>
+
+                                </div>
+
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Address</label>
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter your Address"/>
 
                                 </div>
 
@@ -206,7 +157,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold text-uppercase spinner spinner-white spinner-right">Submit</button>
                     </div>
 
                 </div>
@@ -216,6 +167,73 @@
 <!--end::Modal-->
 
 
+
+
+<!-- Modal-->
+<div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"  role="document">
+        <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+
+                            <h3 class="font-size-lg text-dark font-weight-bold mb-6">1. Customer Info:</h3>
+                            <div class="mb-15">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Full Name:</label>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control" placeholder="Enter full name"/>
+                                        <span class="form-text text-muted">Please enter your full name</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Email address:</label>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control" placeholder="Enter email"/>
+                                        <span class="form-text text-muted">We'll never share your email with anyone else</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
+                                        <span class="form-text text-muted">Please enter your account holder</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
+                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+                </div>
+
+        </div>
+    </div>
+</div>
 <script>
 
 // Class definition
@@ -398,13 +416,11 @@ var KTDatatableRemoteAjaxDemo = function() {
                         },
                         success: function(response) {
                             if(response) {
-                                toastr.options =
                             {
 
-                                "closeButton" : true,
-                                "progressBar" : true
+                            toastr.error("The user is deleted");
                             }
-                                    toastr.error("The user is deleted");
+
                             }
                             datatable.reload();
                         }
@@ -430,13 +446,13 @@ var KTDatatableRemoteAjaxDemo = function() {
                             if(response) {
 
 
-                            $('#deleteForm').attr("action", '/edit/'+response.id);
+                            $('#deleteForm').attr("action", '/new/'+response.id);
                             $("#name").val(response.name);
                             $("#mail").val(response.email);
                             $("#addr").val(response.country);
                             $("#state").val(response.state);
+                            $("#address").val(response["add-1"]);
                             $("#avatar").css('background-image: url(assets/media/users/100_5.jpg)');
-                            toastr.success("editing user "+response.name);
                             }
 
                         }
@@ -466,6 +482,46 @@ jQuery(document).ready(function() {
 });
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <script>
+        @if(Session::has('message'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.success("{{ session('message') }}");
+        @endif
+
+        @if(Session::has('error'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.error("{{ session('error') }}");
+        @endif
+
+        @if(Session::has('info'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.info("{{ session('info') }}");
+        @endif
+
+        @if(Session::has('warning'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.warning("{{ session('warning') }}");
+        @endif
+      </script>
 
 
 
