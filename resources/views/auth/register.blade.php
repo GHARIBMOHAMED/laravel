@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!--begin::Head-->
     <head><base href="../../../../">
         <meta charset="utf-8"/>
-        <title>Sign Up</title>
+        <title>Metronic | Sign Up</title>
         <meta name="description" content="Singin page example"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
@@ -25,7 +25,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                     <!--begin::Page Custom Styles(used by this page)-->
-                             <link href="assets/css/pages/login/login-4.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+                             <link href="assets/css/pages/login/login-3.css?v=7.0.6" rel="stylesheet" type="text/css"/>
                         <!--end::Page Custom Styles-->
 
         <!--begin::Global Theme Styles(used by all pages)-->
@@ -48,106 +48,86 @@ License: You must have a valid license purchased only from themeforest(the above
     	<!--begin::Main-->
 	<div class="d-flex flex-column flex-root">
 		<!--begin::Login-->
-<div class="login login-4 wizard d-flex flex-column flex-lg-row flex-column-fluid wizard" id="kt_login">
-    <!--begin::Content-->
-    <div class="login-container d-flex flex-center flex-row flex-row-fluid order-2 order-lg-1 flex-row-fluid bg-white py-lg-0 pb-lg-0 pt-15 pb-12">
-        <!--begin::Container-->
-        <div class="login-content login-content-signup d-flex flex-column">
-            <!--begin::Aside Top-->
-            <div class="d-flex flex-column-auto flex-column px-10">
-                <!--begin::Aside header-->
-                <a href="#" class="login-logo pb-lg-4 pb-10">
-                    <img src="assets/media/logos/logo-4.png" class="max-h-70px" alt=""/>
-                </a>
-                <!--end::Aside header-->
+<div class="login login-3 wizard d-flex flex-column flex-lg-row flex-column-fluid wizard" id="kt_login">
+    <!--begin::Aside-->
+    <div class="login-aside d-flex flex-column flex-row-auto">
+        <!--begin::Aside Top-->
+        <div class="d-flex flex-column-auto flex-column pt-15 px-30">
+            <!--begin::Aside header-->
+            <a href="#" class="login-logo py-6">
+				<img src="assets/media/logos/logo-1.png" class="max-h-70px" alt=""/>
+			</a>
+            <!--end::Aside header-->
 
-                <!--begin: Wizard Nav-->
-                <div class="wizard-nav pt-5 pt-lg-15 pb-10">
-                    <!--begin::Wizard Steps-->
-                    <div class="wizard-steps d-flex flex-column flex-sm-row">
-                        <!--begin::Wizard Step 1 Nav-->
-                        <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step" data-wizard-state="current">
-                            <div class="wizard-wrapper pr-7">
-                                <div class="wizard-icon">
-                                    <i class="wizard-check ki ki-check"></i>
-                                    <span class="wizard-number">1</span>
-                                </div>
-                                <div class="wizard-label">
-                                    <h3 class="wizard-title">
-                                        Account
-                                    </h3>
-                                    <div class="wizard-desc">
-                                         Account details
-                                    </div>
-                                </div>
-                                <span class="svg-icon pl-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <polygon points="0 0 24 0 24 24 0 24"/>
-                                            <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1"/>
-                                            <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) "/>
-                                        </g>
-                                    </svg>
-                                </span>
+            <!--begin: Wizard Nav-->
+            <div class="wizard-nav pt-5 pt-lg-30">
+                <!--begin::Wizard Steps-->
+                <div class="wizard-steps">
+                    <!--begin::Wizard Step 1 Nav-->
+                    <div class="wizard-step" data-wizard-type="step" data-wizard-state="current">
+                        <div class="wizard-wrapper">
+                            <div class="wizard-icon">
+                                <i class="wizard-check ki ki-check"></i>
+                                <span class="wizard-number">1</span>
                             </div>
-                        </div>
-                        <!--end::Wizard Step 1 Nav-->
-
-                        <!--begin::Wizard Step 2 Nav-->
-                        <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step">
-                            <div class="wizard-wrapper pr-7">
-                                <div class="wizard-icon">
-                                    <i class="wizard-check ki ki-check"></i>
-                                    <span class="wizard-number">2</span>
-                                </div>
-                                <div class="wizard-label">
-                                    <h3 class="wizard-title">
-                                        Address
-                                    </h3>
-                                    <div class="wizard-desc">
-                                        Residential address
-                                    </div>
-                                </div>
-                                <span class="svg-icon pl-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <polygon points="0 0 24 0 24 24 0 24"/>
-                                            <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1"/>
-                                            <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) "/>
-                                        </g>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                        <!--end::Wizard Step 2 Nav-->
-
-                        <!--begin::Wizard Step 3 Nav-->
-                        <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step">
-                            <div class="wizard-wrapper">
-                                <div class="wizard-icon">
-                                    <i class="wizard-check ki ki-check"></i>
-                                    <span class="wizard-number">3</span>
-                                </div>
-                                <div class="wizard-label">
-                                    <h3 class="wizard-title">
-                                        Complete
-                                    </h3>
-                                    <div class="wizard-desc">
-                                        Submit form
-                                    </div>
+                            <div class="wizard-label">
+                                <h3 class="wizard-title">
+                                    Account Settings
+                                </h3>
+                                <div class="wizard-desc">
+                                    Setup Your Account Details
                                 </div>
                             </div>
                         </div>
-                        <!--end::Wizard Step 3 Nav-->
                     </div>
-                    <!--end::Wizard Steps-->
-                </div>
-                <!--end: Wizard Nav-->
-            </div>
-            <!--end::Aside Top-->
+                    <!--end::Wizard Step 1 Nav-->
 
+                    <!--begin::Wizard Step 2 Nav-->
+                    <div class="wizard-step" data-wizard-type="step">
+                        <div class="wizard-wrapper">
+                            <div class="wizard-icon">
+                                <i class="wizard-check ki ki-check"></i>
+                                <span class="wizard-number">2</span>
+                            </div>
+                            <div class="wizard-label">
+                                <h3 class="wizard-title">
+                                    Address Details
+                                </h3>
+                                <div class="wizard-desc">
+                                    Setup Residence Address
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Wizard Step 2 Nav-->
+
+
+                </div>
+                <!--end::Wizard Steps-->
+            </div>
+            <!--end: Wizard Nav-->
+        </div>
+        <!--end::Aside Top-->
+
+        <!--begin::Aside Bottom-->
+        <div class="aside-img-wizard d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center pt-2 pt-lg-5"
+            style="background-position-y: calc(100% + 3rem); background-image: url(assets/media/svg/illustrations/features.svg)">
+        </div>
+        <!--end::Aside Bottom-->
+    </div>
+    <!--begin::Aside-->
+
+    <!--begin::Content-->
+    <div class="login-content flex-column-fluid d-flex flex-column p-10">
+        <!--begin::Top-->
+
+        <!--end::Top-->
+
+        <!--begin::Wrapper-->
+        <div class="d-flex flex-row-fluid flex-center">
             <!--begin::Signin-->
-            <div class="login-form">
+            <div class="login-form login-form-signup">
+                <!--begin::Form-->
                 <!--begin::Form-->
                 <form class="form px-10"  id="kt_login_signup_form" method="POST" action="{{ route('register') }}">
                     @csrf
@@ -166,7 +146,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!--begin::Form Group-->
                         <div class="form-group">
                             <label class="font-size-h6 font-weight-bolder text-dark">Full Name</label>
-                            <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('name') is-invalid @enderror" required name="name" placeholder="First Name" value="" />
+                            <input type="text" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('name') is-invalid @enderror" required name="name" placeholder="First Name" value="" />
 
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -179,7 +159,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <div class="form-group">
                             <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-                            <input type="email" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('email') is-invalid @enderror" name="email" placeholder="Email" autofill="off" />
+                            <input type="email" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('email') is-invalid @enderror" name="email" placeholder="Email" autofill="off" />
                              @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -189,7 +169,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <div class="form-group">
                             <label class="font-size-h6 font-weight-bolder text-dark">Password</label>
-                            <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('password') is-invalid @enderror" name="password" placeholder="Password" value="" />
+                            <input type="password" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('password') is-invalid @enderror" name="password" placeholder="Password" value="" />
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -199,7 +179,7 @@ License: You must have a valid license purchased only from themeforest(the above
                           <!--begin::Form Group-->
                      <div class="form-group">
                         <label class="font-size-h6 font-weight-bolder text-dark">Confirm Password</label>
-                        <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required placeholder="Confirm Password" value="" />
+                        <input type="password" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required placeholder="Confirm Password" value="" />
                         @error('password_confirmation')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -230,7 +210,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!--begin::Input-->
                                 <div class="form-group">
                                     <label class="font-size-h6 font-weight-bolder text-dark">Address Line 1</label>
-                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="add-1" placeholder="Address Line 1" value="" />
+                                    <input type="text" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="add-1" placeholder="Address Line 1" value="" />
                                     <span class="form-text text-muted">Please enter your Address.</span>
                                 </div>
                                 <!--end::Input-->
@@ -239,7 +219,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!--begin::Input-->
                                 <div class="form-group">
                                     <label class="font-size-h6 font-weight-bolder text-dark">Address Line 2</label>
-                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="add-2" placeholder="Address Line 2" value="" />
+                                    <input type="text" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="add-2" placeholder="Address Line 2" value="" />
                                     <span class="form-text text-muted">Please enter your Address.</span>
                                 </div>
                                 <!--end::Input-->
@@ -253,7 +233,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!--begin::Input-->
                                 <div class="form-group">
                                     <label class="font-size-h6 font-weight-bolder text-dark">State</label>
-                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="state" placeholder="State" value="" />
+                                    <input type="text" class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="state" placeholder="State" value="" />
                                     <span class="form-text text-muted">Please enter your State.</span>
                                 </div>
                                 <!--end::Input-->
@@ -570,30 +550,16 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
             <!--end::Signin-->
         </div>
-        <!--end::Container-->
+        <!--end::Wrapper-->
     </div>
-    <!--begin::Content-->
-
-    <!--begin::Aside-->
-    <div class="login-aside order-1 order-lg-2 bgi-no-repeat bgi-position-x-right">
-        <div class="login-conteiner bgi-no-repeat bgi-position-x-right bgi-position-y-bottom" style="background-image: url(assets/media/svg/illustrations/login-visual-4.svg);">
-            <!--begin::Aside title-->
-            <h3 class="pt-lg-40 pl-lg-20 pb-lg-0 pl-10 py-20 m-0 d-flex justify-content-lg-start font-weight-boldest display5 display1-lg text-white">
-                We Got<br/>
-                A Surprise<br/>
-                For You
-            </h3>
-            <!--end::Aside title-->
-        </div>
-    </div>
-    <!--end::Aside-->
+    <!--end::Content-->
 </div>
 <!--end::Login-->
 	</div>
 <!--end::Main-->
 
 
-
+        <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
         <!--begin::Global Config(global config for global JS scripts)-->
         <script>
             var KTAppSettings = {
@@ -654,8 +620,6 @@ License: You must have a valid license purchased only from themeforest(the above
     },
     "font-family": "Poppins"
 };
-
-
         </script>
         <!--end::Global Config-->
 
@@ -667,7 +631,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                     <!--begin::Page Scripts(used by this page)-->
-                            <script src="assets/js/pages/custom/login/login-4.js?v=7.0.6"></script>
+                            <script src="assets/js/pages/custom/login/login-3.js?v=7.0.6"></script>
                         <!--end::Page Scripts-->
             </body>
     <!--end::Body-->

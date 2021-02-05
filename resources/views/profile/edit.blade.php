@@ -157,7 +157,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary font-weight-bold text-uppercase spinner spinner-white spinner-right">Submit</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
                     </div>
 
                 </div>
@@ -286,9 +286,10 @@ var KTDatatableRemoteAjaxDemo = function() {
 
             pagination: true,
 
+
             search: {
                 input: $('#kt_datatable_search_query'),
-                key: 'Search'
+                key: 'generalSearch'
             },
 
             // columns definition
@@ -300,6 +301,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                 type: 'number',
                 selector: false,
                 textAlign: 'center',
+
             },
             {
 					field: 'avatar',
