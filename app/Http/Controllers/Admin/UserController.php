@@ -23,6 +23,15 @@ class UserController extends Controller
 
     }
 
+    public function data($id)
+    {
+
+
+      $user = User::find($id);
+        return response()->json($user);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -77,7 +86,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = User::find($id);
+        $data->name = $request->name;
+        $data->country = $request->country;
+        $data->email = $request->email;
+        $data->state = $request->state;
+        $data->{"add-1"} = $request->address;
+        $data->save();
 
+        return redirect('edit')->with('info','user is info is updated');
     }
 
     /**
@@ -88,6 +105,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+         User::destroy($id);
+         return view('profile.edit')->with('warning','Congrats you are looged in');
+
     }
 }

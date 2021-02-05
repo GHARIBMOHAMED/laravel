@@ -26,12 +26,15 @@ Route::get('login/google/callback', [App\Http\Controllers\LoginController::class
 Route::view('/', 'welcome')->middleware(['auth','verified']);
 
 
-Route::view('add', 'profile.add');
-Route::view('index', 'profile.index');
+Route::view('add', 'profile.add')->middleware(['auth','verified']);
+Route::view('index', 'profile.index')->middleware(['auth','verified']);
 
-Route::resource('edit', UserController::class);
-Route::get('data', 'Admin\UserController@create');
-//Route::resource('edit.update/{id}', 'UserController@update');
+Route::resource('edit', UserController::class)->middleware(['auth','verified']);
+Route::get('data', 'Admin\UserController@create')->middleware(['auth','verified']);
+Route::delete('destroy/{id}', 'Admin\UserController@destroy')->middleware(['auth','verified']);
+Route::get('update/{id}', 'Admin\UserController@data')->middleware(['auth','verified']);
+Route::post('new/{id}', 'Admin\UserController@update')->middleware(['auth','verified']);
+
 
 Route::group(['prefix' => 'admin'], function () {
 

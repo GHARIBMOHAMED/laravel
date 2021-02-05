@@ -105,7 +105,7 @@
 
                     <!--begin::Page Vendors(used by this page)-->
                             <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>
-                            <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM?v=7.0.6"></script>
+
                             <script src="assets/plugins/custom/gmaps/gmaps.js?v=7.0.6"></script>
                         <!--end::Page Vendors-->
 

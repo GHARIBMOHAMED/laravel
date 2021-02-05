@@ -2,6 +2,9 @@
 
 @section('main')
 
+	<link rel="stylesheet" type="text/css"
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
 
 <!--begin::Card-->
@@ -9,69 +12,17 @@
 	<div class="card-header flex-wrap border-0 pt-6 pb-0">
 		<div class="card-title">
 			<h3 class="card-label">
-				Remote Datasource
-				<span class="d-block text-muted pt-2 font-size-sm">Sorting & pagination remote datasource</span>
+				All Users
+				<span class="d-block text-muted pt-2 font-size-sm">Sorting & pagination users datasource</span>
 			</h3>
 		</div>
 		<div class="card-toolbar">
 			<!--begin::Dropdown-->
-<div class="dropdown dropdown-inline mr-2">
-	<button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		<span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect x="0" y="0" width="24" height="24"/>
-        <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"/>
-        <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"/>
-    </g>
-</svg><!--end::Svg Icon--></span>		Export
-	</button>
 
-	<!--begin::Dropdown Menu-->
-	<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-		<!--begin::Navigation-->
-		<ul class="navi flex-column navi-hover py-2">
-			<li class="navi-header font-weight-bolder text-uppercase font-size-sm text-primary pb-2">
-		        Choose an option:
-		    </li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-print"></i></span>
-					<span class="navi-text">Print</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-copy"></i></span>
-					<span class="navi-text">Copy</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-file-excel-o"></i></span>
-					<span class="navi-text">Excel</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-file-text-o"></i></span>
-					<span class="navi-text">CSV</span>
-				</a>
-			</li>
-			<li class="navi-item">
-				<a href="#" class="navi-link">
-					<span class="navi-icon"><i class="la la-file-pdf-o"></i></span>
-					<span class="navi-text">PDF</span>
-				</a>
-			</li>
-		</ul>
-		<!--end::Navigation-->
-	</div>
-	<!--end::Dropdown Menu-->
-</div>
 <!--end::Dropdown-->
 
 <!--begin::Button-->
-<a href="#" class="btn btn-primary font-weight-bolder">
+<a  class="btn btn-primary font-weight-bolder" type="button" data-toggle="modal" data-target="#exampleModalCenter">
 	<span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect x="0" y="0" width="24" height="24"/>
@@ -97,38 +48,10 @@
 					</div>
 				</div>
 
-                				<div class="col-md-4 my-2 my-md-0">
-					<div class="d-flex align-items-center">
-						<label class="mr-3 mb-0 d-none d-md-block">Status:</label>
-						<select class="form-control" id="kt_datatable_search_status">
-							<option value="">All</option>
-							<option value="1">Pending</option>
-							<option value="2">Delivered</option>
-							<option value="3">Canceled</option>
-							<option value="4">Success</option>
-							<option value="5">Info</option>
-							<option value="6">Danger</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-md-4 my-2 my-md-0">
-					<div class="d-flex align-items-center">
-						<label class="mr-3 mb-0 d-none d-md-block">Type:</label>
-						<select class="form-control" id="kt_datatable_search_type">
-							<option value="">All</option>
-							<option value="1">Online</option>
-							<option value="2">Retail</option>
-							<option value="3">Direct</option>
-						</select>
-					</div>
-				</div>
+
                 			</div>
 		</div>
-		<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
-			<a href="#" class="btn btn-light-primary px-6 font-weight-bold">
-				Search
-			</a>
-		</div>
+
 	</div>
 </div>
 <!--end::Search Form-->
@@ -140,8 +63,179 @@
 	</div>
 </div>
 <!--end::Card-->
+
+
+
+
+
+<!--begin::Modal-->
+<div id="ktmodal" class="modal fade" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-xl modal-dialog-centered">
+        <form class="form" id="deleteForm" action="" method="POST">
+            @csrf
+
+		<div class="modal-content" style="min-height: 590px;">
+			<div class="modal-header py-5">
+				<h5 class="modal-title">
+					Edit the user here
+				</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<i aria-hidden="true" class="ki ki-close"></i>
+				</button>
+            </div>
+
+			<div class="modal-body col-ld-12">
+				<!--begin: Search Form-->
+                <!--begin::Search Form-->
+
+
+
+                <div class="form-group row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-7">
+
+                        <div class="image-input image-input-outline image-input-circle " style="margin-left: 30%" id="kt_image_3">
+                            <div id="avatar" class="image-input-wrapper" style=""></div>
+
+                            <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+                                <i class="fa fa-pen icon-sm text-muted"></i>
+                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg"/>
+                                <input type="hidden" name="avatar"/>
+                            </label>
+
+                            <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+                                <i class="ki ki-bold-close icon-xs text-muted"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="separator separator-dashed my-10"></div>
+                        <div class="form-group row mt-3 ">
+
+                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
+                            <div class="col-lg-3">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
+
+                            </div>
+                            <label id="email" class="col-lg-1 col-form-label text-right">Email:</label>
+                            <div class="col-lg-3">
+                                <input type="text" id="mail" name="email" class="form-control" placeholder="Email"/>
+
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Country</label>
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <input type="text" id="addr" name="country" class="form-control" placeholder="Country"/>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+<br><br>
+                        <div class="form-group row">
+
+                            <label class="col-lg-1 col-form-label text-right">State</label>
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" id="state" name="state" class="form-control" placeholder="Enter your state"/>
+
+                                </div>
+
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Address</label>
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter your Address"/>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold text-uppercase spinner spinner-white spinner-right">Submit</button>
+                    </div>
+
+                </div>
+             </form>
+            </div>
+        </div>
+<!--end::Modal-->
+
+
+
+
+<!-- Modal-->
+<div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"  role="document">
+        <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+
+                            <h3 class="font-size-lg text-dark font-weight-bold mb-6">1. Customer Info:</h3>
+                            <div class="mb-15">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Full Name:</label>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control" placeholder="Enter full name"/>
+                                        <span class="form-text text-muted">Please enter your full name</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Email address:</label>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control" placeholder="Enter email"/>
+                                        <span class="form-text text-muted">We'll never share your email with anyone else</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
+                                        <span class="form-text text-muted">Please enter your account holder</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
+                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+                </div>
+
+        </div>
+    </div>
+</div>
 <script>
-   "use strict";
+
 // Class definition
 
 var KTDatatableRemoteAjaxDemo = function() {
@@ -149,6 +243,7 @@ var KTDatatableRemoteAjaxDemo = function() {
 
     // basic demo
     var demo = function() {
+        var ajaxResult = null;
 
         var datatable = $('#kt_datatable').KTDatatable({
             // datasource definition
@@ -162,11 +257,13 @@ var KTDatatableRemoteAjaxDemo = function() {
                         url:'http://127.0.0.1:8000/data',
                         // sample custom headers
                         method: 'GET',
+                        async: false,
                         map: function(raw) {
                             // sample data mapping
                             var dataSet = raw;
                             if (typeof raw.data !== 'undefined') {
                                 dataSet = raw.data;
+
                             }
                             return dataSet;
                         },
@@ -191,7 +288,7 @@ var KTDatatableRemoteAjaxDemo = function() {
 
             search: {
                 input: $('#kt_datatable_search_query'),
-                key: 'generalSearch'
+                key: 'Search'
             },
 
             // columns definition
@@ -205,20 +302,30 @@ var KTDatatableRemoteAjaxDemo = function() {
                 textAlign: 'center',
             },
             {
-					field: 'OrderID',
+					field: 'avatar',
 					title: 'avatar',
 					width: 50,
 					template: function(data) {
-						var number = KTUtil.getRandomInt(1, 14);
-						var user_img = 'background-image:url(\'' + data.avatar + '\')';
-
-						var output = '';
+                        var output = '';
+						if(data.avatar){
+                            var user_img = 'background-image:url(\'' + data.avatar + '\')';
 
 							output = '<div class="d-flex align-items-center">\
 								<div class="symbol symbol-40 flex-shrink-0">\
 									<div class="symbol-label" style="' + user_img + '"></div>\
 								</div>\
 							</div>';
+
+                        }else
+                        {
+                            var user_img = 'background-image:url(\'assets/media/users/default.jpg\')';
+
+							output = '<div class="d-flex align-items-center">\
+								<div class="symbol symbol-40 flex-shrink-0">\
+									<div class="symbol-label" style="' + user_img + '"></div>\
+								</div>\
+							</div>';
+                        }
 
 
 						return output;
@@ -227,40 +334,36 @@ var KTDatatableRemoteAjaxDemo = function() {
              {
                 field: 'name',
                 title: 'Name',
+                width: 80,
             }, {
                 field: 'email',
                 title: 'Email',
-
+                width: 250,
             }, {
-                field: 'email_verified_at',
-                title: 'Created at',
-                type: 'date',
-                format: 'MM/DD/YYYY',
+                field: 'state',
+                title: 'state',
             }, {
                 field: 'country',
                 title: 'country Name',
-            }, {
+                width: 70,
+            },
+            {
+                field: 'add-1',
+                title: 'Address',
+            },{
                 field: 'Actions',
-                title: 'Actions',
+                title: 'action',
                 sortable: false,
                 width: 125,
                 overflow: 'visible',
                 autoHide: false,
-                template: function() {
+                template: function(data) {
                     return '\
-                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
-                            <span class="svg-icon svg-icon-md">\
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
-                                        <rect x="0" y="0" width="24" height="24"/>\
-                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero"\ transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>\
-                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>\
-                                    </g>\
-                                </svg>\
-                            </span>\
-                        </a>\
-                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">\
-                            <span class="svg-icon svg-icon-md">\
+                    <button id="datas" data-record="'+data.id+'" class="btn btn-sm btn-clean" title="View records">\
+		                      <i class="flaticon2-document"></i>\
+		                  </button>\
+                        <button  class="btn btn-sm btn-clean btn-icon" id="dataa" data-id="' + data.id + '" title="Delete">\
+                            <span class="svg-icon svg-icon-md" >\
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
                                         <rect x="0" y="0" width="24" height="24"/>\
@@ -269,7 +372,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                                     </g>\
                                 </svg>\
                             </span>\
-                        </a>\
+                        </button>\
                     ';
                 },
             }],
@@ -281,10 +384,88 @@ var KTDatatableRemoteAjaxDemo = function() {
         });
 
         $('#kt_datatable_search_type').on('change', function() {
-            datatable.search($(this).val().toLowerCase(), 'Type');
+            datatable.search($(this).val().toLowerCase(), 'name');
         });
 
-        $('#kt_datatable_search_status, #kt_datatable_search_type').selectpicker();
+
+
+        jQuery(document).ready(function($){
+
+
+        datatable.on('click', '[data-id]', function() {
+            var id = this.dataset.id;
+            console.log(id);
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: 'http://127.0.0.1:8000/destroy/'+id ,
+                        method:'DELETE',
+                        contentType: 'application/json',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                        data: {
+                            "id": id,
+                        },
+                        success: function(response) {
+                            if(response) {
+                            {
+
+                            toastr.error("The user is deleted");
+                            }
+
+                            }
+                            datatable.reload();
+                        }
+                        });
+                                        }
+
+                    })
+            });
+
+            datatable.on('click', '[data-record]', function(ajaxResult) {
+                var id =0;
+                var id = this.dataset.record-id;
+
+                console.log(id);
+                var modal = $(this);
+                $.ajax({
+                        url: 'http://127.0.0.1:8000/update/'+id ,
+                        method:'GET',
+                        contentType: 'application/json',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+
+                        success: function(response) {
+                            if(response) {
+
+
+                            $('#deleteForm').attr("action", '/new/'+response.id);
+                            $("#name").val(response.name);
+                            $("#mail").val(response.email);
+                            $("#addr").val(response.country);
+                            $("#state").val(response.state);
+                            $("#address").val(response["add-1"]);
+                            $("#avatar").css('background-image: url(assets/media/users/100_5.jpg)');
+                            }
+
+                        }
+                        });
+
+                $('#ktmodal').modal('show');
+            });
+
+        });
+
+
+
+
     };
 
     return {
@@ -293,6 +474,7 @@ var KTDatatableRemoteAjaxDemo = function() {
             demo();
         },
     };
+
 }();
 
 jQuery(document).ready(function() {
@@ -300,5 +482,47 @@ jQuery(document).ready(function() {
 });
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <script>
+        @if(Session::has('message'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.success("{{ session('message') }}");
+        @endif
+
+        @if(Session::has('error'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.error("{{ session('error') }}");
+        @endif
+
+        @if(Session::has('info'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.info("{{ session('info') }}");
+        @endif
+
+        @if(Session::has('warning'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.warning("{{ session('warning') }}");
+        @endif
+      </script>
+
+
 
 @endsection
