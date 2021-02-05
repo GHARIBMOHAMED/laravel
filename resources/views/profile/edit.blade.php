@@ -130,6 +130,7 @@
 <!--begin::Modal-->
 <div id="ktmodal" class="modal fade" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-xl modal-dialog-centered">
+        <form class="form" id="deleteForm" action="" method="POST">
 		<div class="modal-content" style="min-height: 590px;">
 			<div class="modal-header py-5">
 				<h5 class="modal-title">
@@ -138,101 +139,78 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<i aria-hidden="true" class="ki ki-close"></i>
 				</button>
-			</div>
-			<div class="modal-body">
+            </div>
+
+			<div class="modal-body col-ld-12">
 				<!--begin: Search Form-->
                 <!--begin::Search Form-->
-                <form class="form">
 
-                        <div class="form-group row mt-3">
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="email" class="form-control" placeholder="Full name"/>
 
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Email:</label>
-                            <div class="col-lg-3">
-                                <input type="email" class="form-control" placeholder="Email"/>
 
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Username:</label>
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text"><i class="la la-user"></i></span></div>
-                                    <input type="text" class="form-control" placeholder=""/>
-                                </div>
+                <div class="form-group row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-7">
 
-                            </div>
+                        <div class="image-input image-input-outline image-input-circle " style="margin-left: 30%" id="kt_image_3">
+                            <div id="avatar" class="image-input-wrapper" style=""></div>
+
+                            <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+                                <i class="fa fa-pen icon-sm text-muted"></i>
+                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg"/>
+                                <input type="hidden" name="avatar"/>
+                            </label>
+
+                            <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+                                <i class="ki ki-bold-close icon-xs text-muted"></i>
+                            </span>
                         </div>
-
-                        <div class="separator separator-dashed my-10"></div>
-
-                        <div class="form-group row">
-                            <label class="col-lg-1 col-form-label text-right">Contact:</label>
-                            <div class="col-lg-3">
-                                <input type="email" class="form-control" placeholder="Enter contact number"/>
-
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Fax:</label>
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Fax number"/>
-                                    <div class="input-group-append"><span class="input-group-text"><i class="la la-info-circle"></i></span></div>
-                                </div>
-
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Address:</label>
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Enter your address"/>
-                                    <div class="input-group-append"><span class="input-group-text"><i class="la la-map-marker"></i></span></div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="separator separator-dashed my-10"></div>
-
-                        <div class="form-group row">
-                            <label class="col-lg-1 col-form-label text-right">Postcode:</label>
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Enter your postcode"/>
-                                    <div class="input-group-append"><span class="input-group-text"><i class="la la-bookmark-o"></i></span></div>
-                                </div>
-
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="image-input image-input-outline image-input-circle " style="margin-left: 30%" id="kt_image_3">
-                                    <div class="image-input-wrapper" style="background-image: url(assets/media/users/100_3.jpg)"></div>
-
-                                    <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                        <i class="fa fa-pen icon-sm text-muted"></i>
-                                        <input type="file" name="avatar" accept=".png, .jpg, .jpeg"/>
-                                        <input type="hidden" name="avatar"/>
-                                    </label>
-
-                                    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-                        <!--begin: Datatable-->
-                        <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_sub"></div>
-                        <!--end: Datatable-->
-                    </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
                     </div>
                 </div>
+                <div class="separator separator-dashed my-10"></div>
+                        <div class="form-group row mt-3 ">
+
+                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
+                            <div class="col-lg-3">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
+
+                            </div>
+                            <label id="email" class="col-lg-1 col-form-label text-right">Email:</label>
+                            <div class="col-lg-3">
+                                <input type="text" id="mail" class="form-control" placeholder="Email"/>
+
+                            </div>
+                            <label class="col-lg-1 col-form-label text-right">Country</label>
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <input type="text" id="addr" class="form-control" placeholder="Country"/>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-lg-4"></div>
+                            <label class="col-lg-1 col-form-label text-right">State</label>
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" id="state" class="form-control" placeholder="Enter your state"/>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
+                    </div>
+
+                </div>
+             </form>
             </div>
         </div>
 <!--end::Modal-->
@@ -247,6 +225,7 @@ var KTDatatableRemoteAjaxDemo = function() {
 
     // basic demo
     var demo = function() {
+        var ajaxResult = null;
 
         var datatable = $('#kt_datatable').KTDatatable({
             // datasource definition
@@ -260,11 +239,13 @@ var KTDatatableRemoteAjaxDemo = function() {
                         url:'http://127.0.0.1:8000/data',
                         // sample custom headers
                         method: 'GET',
+                        async: false,
                         map: function(raw) {
                             // sample data mapping
                             var dataSet = raw;
                             if (typeof raw.data !== 'undefined') {
                                 dataSet = raw.data;
+
                             }
                             return dataSet;
                         },
@@ -360,7 +341,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                 autoHide: false,
                 template: function(data) {
                     return '\
-                    <button data-record-id="'+data.id+'" class="btn btn-sm btn-clean" title="View records">\
+                    <button id="datas" data-record="'+data.id+'" class="btn btn-sm btn-clean" title="View records">\
 		                      <i class="flaticon2-document"></i>\
 		                  </button>\
                         <button  class="btn btn-sm btn-clean btn-icon" id="dataa" data-id="' + data.id + '" title="Delete">\
@@ -388,11 +369,13 @@ var KTDatatableRemoteAjaxDemo = function() {
             datatable.search($(this).val().toLowerCase(), 'name');
         });
 
+
+
         jQuery(document).ready(function($){
+
 
         datatable.on('click', '[data-id]', function() {
             var id = this.dataset.id;
-
             console.log(id);
 
             Swal.fire({
@@ -417,6 +400,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                             if(response) {
                                 toastr.options =
                             {
+
                                 "closeButton" : true,
                                 "progressBar" : true
                             }
@@ -425,17 +409,45 @@ var KTDatatableRemoteAjaxDemo = function() {
                             datatable.reload();
                         }
                         });
-}
+                                        }
 
                     })
             });
 
-        });
+            datatable.on('click', '[data-record]', function(ajaxResult) {
+                var id =0;
+                var id = this.dataset.record-id;
 
-            datatable.on('click', '[data-record-id]', function() {
-                var id = this.dataset.id;
+                console.log(id);
+                var modal = $(this);
+                $.ajax({
+                        url: 'http://127.0.0.1:8000/update/'+id ,
+                        method:'GET',
+                        contentType: 'application/json',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+
+                        success: function(response) {
+                            if(response) {
+
+
+                            $('#deleteForm').attr("action", '/edit/'+response.id);
+                            $("#name").val(response.name);
+                            $("#mail").val(response.email);
+                            $("#addr").val(response.country);
+                            $("#state").val(response.state);
+                            $("#avatar").css('background-image: url(assets/media/users/100_5.jpg)');
+                            toastr.success("editing user "+response.name);
+                            }
+
+                        }
+                        });
+
                 $('#ktmodal').modal('show');
             });
+
+        });
+
+
 
 
     };

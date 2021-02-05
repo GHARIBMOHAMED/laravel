@@ -23,6 +23,15 @@ class UserController extends Controller
 
     }
 
+    public function data($id)
+    {
+
+
+      $user = User::find($id);
+        return response()->json($user);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
