@@ -10,9 +10,6 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
-                <a href="#0">Pages</a>
-            </li>
-            <li>
                 <span>About Us</span>
             </li>
         </ul>

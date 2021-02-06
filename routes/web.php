@@ -27,7 +27,9 @@ Route::view('/dashbord', 'welcome')->middleware(['auth','verified']);
 Route::view('/', 'client/home');
 Route::view('/about', 'client/about');
 Route::view('/contact', 'client/contact');
-
+Route::view('/signin', 'auth/login');
+Route::view('/signup', 'auth/register');
+Route::view('/product', 'client/product');
 
 Route::view('add', 'profile.add')->middleware(['auth','verified']);
 Route::view('index', 'profile.index')->middleware(['auth','verified']);

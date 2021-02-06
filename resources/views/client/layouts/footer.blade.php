@@ -168,7 +168,7 @@
                 <div class="copyright-area">
                     <div class="footer-bottom-wrapper">
                         <div class="logo">
-                            <a href="index.html"><img src=" images/logo/footer-logo.png" alt="logo"></a>
+                            <a href="index.html"><img src=" images/logo/footer-logo.png" style="max-height: 180px; max-width:200px; " alt="logo"></a>
                         </div>
                         <ul class="gateway-area">
                             <li>

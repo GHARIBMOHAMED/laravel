@@ -48,7 +48,7 @@
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img src=" images/logo/logo.png" style="max-height: 180px; max-width:200px; " alt="logo">
                     </a>
                 </div>
@@ -57,7 +57,7 @@
                         <a href="/">home</a>
                     </li>
                     <li>
-                        <a href="/">Auction</a>
+                        <a href="/product">Auction</a>
                     </li>
                     <li>
                         <li>

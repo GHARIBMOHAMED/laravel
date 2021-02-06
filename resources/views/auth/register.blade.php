@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="d-flex flex-column-auto flex-column pt-15 px-30">
             <!--begin::Aside header-->
             <a href="#" class="login-logo py-6">
-				<img src="assets/media/logos/logo-1.png" class="max-h-70px" alt=""/>
+				<img src="images/logo/logo-b.png" class="max-h-70px" alt=""/>
 			</a>
             <!--end::Aside header-->
 
@@ -111,7 +111,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
         <!--begin::Aside Bottom-->
         <div class="aside-img-wizard d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center pt-2 pt-lg-5"
-            style="background-position-y: calc(100% + 3rem); background-image: url(assets/media/svg/illustrations/features.svg)">
+            style="background-position-y: calc(100% + 3rem); background-image: url(assets/media/svg/illustrations/login-visual-5.svg)">
         </div>
         <!--end::Aside Bottom-->
     </div>
@@ -138,7 +138,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Create Account</h3>
                             <div class="text-muted font-weight-bold font-size-h4">
                                 Already have an Account ?
-                                <a href="{{ route('login') }}" class="text-primary font-weight-bolder">Sign In</a>
+                                <a href="{{ url('signin') }}" class="text-primary font-weight-bolder">Sign In</a>
                             </div>
                         </div>
                         <!--begin::Title-->
