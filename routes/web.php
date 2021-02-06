@@ -23,8 +23,8 @@ Route::get('login/google', [App\Http\Controllers\LoginController::class, 'redire
 Route::get('login/google/callback', [App\Http\Controllers\LoginController::class, 'handleGoogleCallback']);
 //-----------------------------------------------------------
 
-Route::view('/dashbord', 'welcome')->middleware(['auth','verified']);
-Route::view('/', 'client/home');
+Route::view('/', 'welcome')->middleware(['auth','verified']);
+Route::view('/home', 'client/home');
 Route::view('/about', 'client/about');
 Route::view('/contact', 'client/contact');
 Route::view('/signin', 'auth/login');
