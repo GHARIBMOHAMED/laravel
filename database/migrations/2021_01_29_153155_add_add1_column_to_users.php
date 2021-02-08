@@ -21,6 +21,7 @@ class AddAdd1ColumnToUsers extends Migration
             $table->string('provider_id')->nullable();
             $table->text('avatar')->nullable();
             $table->string('img')->nullable();
+            $table->string('type')->default('USER');
         });
     }
 

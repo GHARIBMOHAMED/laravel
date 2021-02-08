@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
             <!--begin::Aside header-->
             <a href="#" class="login-logo text-center pt-lg-25 pb-10">
-				<img src="images/logo/logo-b.png" class="max-h-70px" alt=""/>
+                <img src="images/logo/LOGOS.png" class="max-h-70px" alt=""/>
 			</a>
             <!--end::Aside header-->
 

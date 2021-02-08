@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="d-flex flex-column-auto flex-column pt-15 px-30">
             <!--begin::Aside header-->
             <a href="#" class="login-logo py-6">
-				<img src="images/logo/logo-b.png" class="max-h-70px" alt=""/>
+				<img src="images/logo/LOGOS.png" class="max-h-70px" alt=""/>
 			</a>
             <!--end::Aside header-->
 

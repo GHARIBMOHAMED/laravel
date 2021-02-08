@@ -31,7 +31,7 @@
         <!--begin::Layout Themes(used by all pages)-->
         <!--end::Layout Themes-->
 
-        <link rel="shortcut icon" href="assets/media/logos/logo.png" />
+        <link rel="shortcut icon" href="images/logo/LOGOS.png" />
     </head>
     <!--end::Head-->
 
@@ -42,7 +42,7 @@
         <div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
             <!--begin::Logo-->
             <a href="">
-                <img alt="Logo" src="assets/media/logos/logo.png" class="logo-default max-h-30px"/>
+                <img alt="Logo" src="images/logo/LOGOS.png" class="logo-default max-h-30px"/>
             </a>
             <!--end::Logo-->
 
@@ -173,7 +173,7 @@
 
                         <!--begin::Logo-->
                         <a href="">
-                            <img alt="Logo" src="assets/media/logos/logo.png" class="logo-sticky max-h-35px" />
+                            <img alt="Logo" src="images/logo/LOGOS.png" class="logo-sticky max-h-35px" />
                         </a>
                         <!--end::Logo-->
 

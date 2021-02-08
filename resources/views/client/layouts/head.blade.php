@@ -25,11 +25,7 @@
                         <i class="fas fa-globe"></i>
                         <select name="language" class="select-bar">
                             <option value="en">En</option>
-                            <option value="Bn">Bn</option>
-                            <option value="Rs">Rs</option>
-                            <option value="Us">Us</option>
-                            <option value="Pk">Pk</option>
-                            <option value="Arg">Arg</option>
+                            <option value="Bn">FR</option>
                         </select>
                     </li>
                 </ul>
@@ -38,7 +34,28 @@
                         <a href="#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">08</span></a>
                     </li>
                     <li>
-                        <a href="sign-in.html" class="user-button"><i class="flaticon-user"></i></a>
+                        <a href="{{ route('logout') }} " class="user-button" onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
+<form action="{{ route('logout') }}" method="POST" hidden id="logout_form">
+@csrf
+</form>
+                            @if (auth()->user())
+                                        <div class="d-flex align-items-center">
+                                        <div class="symbol symbol-40 flex-shrink-0">
+                                            <div class="symbol-label" style="background-image:url('{{ auth()->user()->avatar }}')"></div>
+                                        </div>
+                                    </div>
+                                    @else
+                                    <div class="d-flex align-items-center">
+                                        <div class="symbol symbol-40 flex-shrink-0">
+                                            <div class="symbol-label" style="background-image:url('assets/media/users/default.jpg')"></div>
+                                        </div>
+                                    </div>
+                                    @endif
+
+                                </i></a>
+
+
+
                     </li>
                 </ul>
             </div>
@@ -154,4 +171,5 @@
     </div>
 </div>
 <!--============= Cart Section Ends Here =============-->
+
 @endsection

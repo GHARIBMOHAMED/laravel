@@ -12,7 +12,8 @@ Renew Support: https://1.envato.market/EA4JP
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
 <html lang="en" >
-    <!--begin::Head-->    <head><base href="../../../../">
+    <!--begin::Head-->
+    <head><base href="../../../../">
         <meta charset="utf-8"/>
         <title>Metronic | Sign In</title>
         <meta name="description" content="Singin page example"/>
@@ -23,7 +24,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                     <!--begin::Page Custom Styles(used by this page)-->
-                             <link href="assets/css/pages/login/login-4.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+                             <link href="assets/css/pages/login/login-3.css?v=7.0.6" rel="stylesheet" type="text/css"/>
                         <!--end::Page Custom Styles-->
 
         <!--begin::Global Theme Styles(used by all pages)-->
@@ -46,67 +47,81 @@ License: You must have a valid license purchased only from themeforest(the above
     	<!--begin::Main-->
 	<div class="d-flex flex-column flex-root">
 		<!--begin::Login-->
-<div class="login login-4 wizard d-flex flex-column flex-lg-row flex-column-fluid">
-    <!--begin::Content-->
-    <div class="login-container order-2 order-lg-1 d-flex flex-center flex-row-fluid px-7 pt-lg-0 pb-lg-0 pt-4 pb-6 bg-white">
-        <!--begin::Wrapper-->
-        <div class="login-content d-flex flex-column pt-lg-0 pt-12">
-            <!--begin::Logo-->
-            <a href="#" class="login-logo pb-xl-20 pb-15">
-                <img src="assets/media/logos/logo-4.png" class="max-h-70px" alt=""/>
-            </a>
-            <!--end::Logo-->
+<div class="login login-3 wizard d-flex flex-column flex-lg-row flex-column-fluid">
+    <!--begin::Aside-->
+    <div class="login-aside d-flex flex-column flex-row-auto">
+        <!--begin::Aside Top-->
+        <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
+            <!--begin::Aside header-->
+            <a href="#" class="login-logo text-center pt-lg-25 pb-10">
+                <img src="images/logo/LOGOS.png" class="max-h-70px" alt=""/>
+			</a>
+            <!--end::Aside header-->
 
+            <!--begin::Aside Title-->
+            <h3 class="font-weight-bolder text-center font-size-h4 text-dark-50 line-height-xl">
+                Sign Up, Bid, Win <br>
+                No Credit Card Required
+            </h3>
+            <!--end::Aside Title-->
+        </div>
+        <!--end::Aside Top-->
+
+        <!--begin::Aside Bottom-->
+        <div class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-x-center"
+            style="background-position-y: calc(100% + 5rem); background-image: url(assets/media/svg/illustrations/login-visual-5.svg)">
+        </div>
+        <!--end::Aside Bottom-->
+    </div>
+    <!--begin::Aside-->
+
+    <!--begin::Content-->
+    <div class="login-content flex-row-fluid d-flex flex-column p-10">
+
+
+        <!--begin::Wrapper-->
+        <div class="d-flex flex-row-fluid flex-center">
             <!--begin::Signin-->
             <div class="login-form">
-                <!--begin::Form-->
-                <form class="form"  method="POST" action="{{ route('password.email') }}" >
-                   @csrf
-                    <!--begin::Title-->
+                             <!--begin::Form-->
+                             <form class="form"  method="POST" action="{{ route('password.email') }}" >
+                                @csrf
+                                 <!--begin::Title-->
+                                <h2>
+                                    Enter email to reset your password
+                                </h2>
+                                <br>
+                                 <!--begin::Title-->
 
-                    <!--begin::Title-->
+                                 <!--begin::Form group-->
+                                 <div class="form-group">
+                                     <label class="font-size-h6 font-weight-bolder text-dark">Your Email</label>
+                                     <input class="form-control h-auto py-7 px-6 border-0 rounded-lg font-size-h6 @error('email') is-invalid @enderror" type="email" id="email" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
 
-                    <!--begin::Form group-->
-                    <div class="form-group">
-                        <label class="font-size-h6 font-weight-bolder text-dark">Your Email</label>
-                        <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0 @error('email') is-invalid @enderror" type="email" id="email" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
-
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-					    @enderror
-                    </div>
-                    <!--end::Form group-->
+                                     @error('email')
+                                         <span class="invalid-feedback" role="alert">
+                                             <strong>{{ $message }}</strong>
+                                         </span>
+                                     @enderror
+                                 </div>
+                                 <!--end::Form group-->
 
 
-                    <div class="pb-lg-0 pb-5">
-                        <button type="submit"  class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Resete the password</button>
+                                 <div class="pb-lg-0 pb-5">
+                                     <button type="submit"  class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Resete the password</button>
 
-                    </div>
-                    <!--end::Action-->
-                </form>
+                                 </div>
+                                 <!--end::Action-->
+                             </form>
+                             <!--end::Form-->
+                 <!--end::Form-->
                 <!--end::Form-->
             </div>
             <!--end::Signin-->
         </div>
         <!--end::Wrapper-->
     </div>
-    <!--begin::Content-->
-
-    <!--begin::Aside-->
-    <div class="login-aside order-1 order-lg-2 bgi-no-repeat bgi-position-x-right">
-        <div class="login-conteiner bgi-no-repeat bgi-position-x-right bgi-position-y-bottom" style="background-image: url(assets/media/svg/illustrations/login-visual-4.svg);">
-            <!--begin::Aside title-->
-            <h3 class="pt-lg-40 pl-lg-20 pb-lg-0 pl-10 py-20 m-0 d-flex justify-content-lg-start font-weight-boldest display5 display1-lg text-white">
-                We Got<br/>
-                A Surprise<br/>
-                For You
-            </h3>
-            <!--end::Aside title-->
-        </div>
-    </div>
-    <!--end::Aside-->
+    <!--end::Content-->
 </div>
 <!--end::Login-->
 	</div>
@@ -185,7 +200,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                     <!--begin::Page Scripts(used by this page)-->
-                            <script src="assets/js/pages/custom/login/login-4.js?v=7.0.6"></script>
+                            <script src="assets/js/pages/custom/login/login-3.js?v=7.0.6"></script>
                         <!--end::Page Scripts-->
             </body>
     <!--end::Body-->

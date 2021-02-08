@@ -23,26 +23,26 @@ Route::get('login/google', [App\Http\Controllers\LoginController::class, 'redire
 Route::get('login/google/callback', [App\Http\Controllers\LoginController::class, 'handleGoogleCallback']);
 //-----------------------------------------------------------
 
-Route::view('/', 'welcome')->middleware(['auth','verified']);
+
+//admin
+route::middleware(['auth','verified'])->group(function(){
+    Route::view('/', 'welcome');
+    Route::resource('edit', UserController::class);
+    Route::get('data', 'Admin\UserController@create');
+    Route::delete('destroy/{id}', 'Admin\UserController@destroy');
+    Route::get('update/{id}', 'Admin\UserController@data');
+    Route::post('new/{id}', 'Admin\UserController@update');
+    Route::view('add', 'profile.add');
+    Route::view('index', 'profile.index');
+});
+//user
+
+route::middleware(['auth'])->group(function(){
+
+    Route::view('/product', 'client/product')->name('client.product');
+});
 Route::view('/home', 'client/home');
 Route::view('/about', 'client/about');
 Route::view('/contact', 'client/contact');
 Route::view('/signin', 'auth/login');
 Route::view('/signup', 'auth/register');
-Route::view('/product', 'client/product');
-
-Route::view('add', 'profile.add')->middleware(['auth','verified']);
-Route::view('index', 'profile.index')->middleware(['auth','verified']);
-
-Route::resource('edit', UserController::class)->middleware(['auth','verified']);
-Route::get('data', 'Admin\UserController@create')->middleware(['auth','verified']);
-Route::delete('destroy/{id}', 'Admin\UserController@destroy')->middleware(['auth','verified']);
-Route::get('update/{id}', 'Admin\UserController@data')->middleware(['auth','verified']);
-Route::post('new/{id}', 'Admin\UserController@update')->middleware(['auth','verified']);
-
-
-Route::group(['prefix' => 'admin'], function () {
-
-
-});
-
