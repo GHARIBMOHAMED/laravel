@@ -103,8 +103,8 @@
 		    	   <script src="assets/js/scripts.bundle.js?v=7.0.6"></script>
 				<!--end::Global Theme Bundle-->
 
-                    <!--begin::Page Vendors(used by this page)-->
-                            <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>
+                    <!--begin::Page Vendors(used by this page)
+                            <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.6"></script>-->
 
                             <script src="assets/plugins/custom/gmaps/gmaps.js?v=7.0.6"></script>
                         <!--end::Page Vendors-->
@@ -112,6 +112,11 @@
                     <!--begin::Page Scripts(used by this page)-->
                             <script src="assets/js/pages/widgets.js?v=7.0.6"></script>
                         <!--end::Page Scripts-->
+                        <script src="assets/js/pages/crud/forms/validation/form-widgets.js"></script>
+                        <script src="assets/js/pages/crud/forms/widgets/input-mask.js"></script>
+                        <script src="https://releases.transloadit.com/uppy/v1.25.0/uppy.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 
 
 

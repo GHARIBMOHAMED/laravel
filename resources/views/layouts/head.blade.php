@@ -36,7 +36,7 @@
     <!--end::Head-->
 
     <!--begin::Body-->
-    <body id="kt_body" class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-static page-loading">
+    <body id="kt_body" class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-static page-loading " style="background-color: #eef0f8">
         <!--begin::Main-->
         <!--begin::Header Mobile-->
         <div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
@@ -117,6 +117,11 @@
                     <li class="menu-item" aria-haspopup="true">
                         <a href="{{ url('add') }}" class="menu-link">
                             <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Add User</span>
+                        </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                        <a href="{{ url('index') }}" class="menu-link">
+                            <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Add Cars</span>
                         </a>
                     </li>
                 </li>

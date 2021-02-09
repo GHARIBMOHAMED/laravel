@@ -4,6 +4,7 @@ use BaconQrCode\Renderer\Color\Rgb;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use Admin\UserController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\LoginController;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -34,6 +35,12 @@ route::middleware(['auth','verified'])->group(function(){
     Route::post('new/{id}', 'Admin\UserController@update');
     Route::view('add', 'profile.add');
     Route::view('index', 'profile.index');
+    Route::post('addcar', 'CarController@store')->name('addcar');
+
+    Route::get('carData', 'CarController@create');
+    Route::delete('carDestroy/{id}', 'CarController@destroy');
+    Route::get('carUpdate/{id}', 'CarController@show');
+    Route::post('newCar/{id}', 'CarController@update');
 });
 //user
 

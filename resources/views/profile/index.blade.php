@@ -2,9 +2,10 @@
 
 @section('main')
 
+
 	<link rel="stylesheet" type="text/css"
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+     <link href="https://releases.transloadit.com/uppy/v1.25.0/uppy.min.css" rel="stylesheet">
 
 
 <!--begin::Card-->
@@ -66,157 +67,318 @@
 
 
 
-
-<!--begin::Modal-->
+<!-- Modal-->
 <div id="ktmodal" class="modal fade" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-xl">
-        <form class="form" id="deleteForm" action="" method="POST">
-            @csrf
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
 
-		<div class="modal-content" >
-			<div class="modal-header py-5">
-				<h5 class="modal-title">
-					Edit the user here
-				</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<i aria-hidden="true" class="ki ki-close"></i>
-				</button>
-            </div>
-
-			<div class="modal-body col-ld-12">
-				<!--begin: Search Form-->
-                <!--begin::Search Form-->
-
-
-                        <div class="form-group row mt-3 ">
-
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-                            <label id="email" class="col-lg-1 col-form-label text-right">Email:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="mail" name="email" class="form-control" placeholder="Email"/>
-
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Country</label>
-                            <div class="col-lg-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Cars</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form" id="deleteForm1" action="" method="POST">
+                        @csrf
+                        <br><br>
+                        <div class="form-group row">
+                            <label class="col-form-label col-lg-1  text-right">Available Until :</label>
+                            <div class="col-lg-5  ">
                                 <div class="input-group">
-                                    <input type="text" id="addr" name="country" class="form-control" placeholder="Country"/>
-
+                                    <input type="text" class="form-control" id="Available_date1"  name="Available_date1" placeholder="Select date" id="kt_datepicker"/>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="la la-calendar-check-o"></i>
+                                        </span>
+                                    </div>
                                 </div>
-
+                                <span class="form-text text-muted">Select a date</span>
                             </div>
 
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row mt-3 ">
-
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-                            <label id="email" class="col-lg-1 col-form-label text-right">Email:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="mail" name="email" class="form-control" placeholder="Email"/>
-
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Country</label>
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <input type="text" id="addr" name="country" class="form-control" placeholder="Country"/>
-
-                                </div>
-
+                            <label class="col-form-label col-lg-1  text-right">Production year :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control " id="Production_year1" name="Production_year1" placeholder="Production year"/>
+                                <span class="form-text text-muted">Select a date</span>
                             </div>
                         </div>
 
-                        <div class="form-group row mt-3 ">
 
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
+                        <div class="separator separator-dashed my-10"></div>
+                        <div class="form-group row">
+                            <label class="col-form-label text-right col-lg-1 ">State :</label>
+                            <div class="col-lg-5 ">
+                                <select class="form-control selectpicker" name="state1" id="state1">
+                                    <option>Marrakech-Safi Region</option>
+                                    <option>Souss-Massa Region</option>
+                                    <option>Fès-Meknès Region</option>
+                                    <option>Rabat-Salé-Kénitra Region</option>
+                                    <option>Béni Mellal-Khénifra Region</option>
+                                    <option>Casablanca-Settat Region</option>
+                                    <option>Drâa-Tafilalet Region</option>
+                                    <option>Guelmim-Oued Noun Region</option>
+                                    <option>Laâyoune-Sakia El Hamra Region</option>
+                                    <option>Dakhla-Oued Ed-Dahab Region</option>
+                                </select>
                             </div>
-                            <label id="email" class="col-lg-1 col-form-label text-right">Email:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="mail" name="email" class="form-control" placeholder="Email"/>
 
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Country</label>
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <input type="text" id="addr" name="country" class="form-control" placeholder="Country"/>
-
-                                </div>
-
+                            <label class="col-form-label text-right col-lg-1 ">Estimated Value :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control" name="Estimated_Value1" id="Estimated_Value1" placeholder="Enter Price"/>
+                                <span class="form-text text-muted">Estimated Value</span>
                             </div>
                         </div>
+
+                            <div class="separator separator-dashed my-10"></div>
 
                         <div class="form-group row">
-
-                            <label class="col-lg-1 col-form-label text-right">State</label>
-                            <div class="col-lg-4">
-                                <div class="input-group">
-                                    <input type="text" id="state" name="state" class="form-control" placeholder="Enter your state"/>
-
-                                </div>
-
+                            <label class="col-form-label text-right col-lg-1 ">Seller Name :</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control " id="Seller1" name="Seller1" placeholder="Full name"/>
+                                <span class="form-text text-muted">Please enter your full name</span>
                             </div>
-                            <label class="col-lg-1 col-form-label text-right">Address</label>
-                            <div class="col-lg-4">
-                                <div class="input-group">
-                                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter your Address"/>
 
+                                <label class="col-form-label text-right col-lg-1 ">Plate Number :</label>
+                                <div class="col-lg-5">
+                                    <input type='text' class="form-control" name="Plate_Number1" id="kt_inputmask_4 Plate_Number1" type="text"/>
+                                    <span class="form-text text-muted">Plate number : <code>26-154896</code></span>
                                 </div>
+                        </div>
 
+                        <div class="separator separator-dashed my-10"></div>
+                        <div class="form-group row">
+                            <label class="col-lg-1  col-form-label text-right">Millage :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control"  id="Millage1" name="Millage1" placeholder="Enter Millage "/>
+                                <span class="form-text text-muted">Please enter your Millage</span>
+                            </div>
+
+                            <label class="col-lg-1  col-form-label text-right">Starting Price :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control" id="Price1" name="Price1" placeholder="Enter Price"/>
+                                <span class="form-text text-muted">Please enter your Price</span>
                             </div>
                         </div>
 
-                    </div>
+                        <div class="separator separator-dashed my-10"></div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
-                    </div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label text-right col-lg-1 ">Brand :</label>
+                            <div class="col-lg-5">
+                                <select class="form-control selectpicker" id="Brand1" name="Brand1">
+                                    <option value="images/cars/bmw">BMW</option>
+                                    <option value="images/cars/ford">Ford</option>
+                                    <option value="images/cars/honda">Honda</option>
+                                    <option value="images/cars/hyundai">Hyundai</option>
+                                    <option value="images/cars/isuzu">Isuzu</option>
+                                    <option value="images/cars/kia">Kia</option>
+                                    <option value="images/cars/lexus">Lexus</option>
+                                    <option value="images/cars/mazda">Mazda</option>
+                                    <option value="images/cars/mitsubishi">Mitsubishi</option>
+                                    <option value="images/cars/nissan">Nissan</option>
+                                    <option value="images/cars/peugeot">Peugeot</option>
+                                    <option value="images/cars/suzuki">Suzuki</option>
+                                    <option value="images/cars/toyota">Toyota</option>
+                                    <option value="images/cars/volkswagen">Volkswagen</option>
+                                    <option value="images/cars/audi">Audi</option>
+                                    <option value="images/cars/aston-martin">Aston Martin</option>
+                                    <option value="images/cars/alfa-romeo">Alfa Romeo</option>
+                                    <option value="images/cars/bently">Bently</option>
+                                    <option value="images/cars/bugatti">Bugatti</option>
+                                    <option value="images/cars/cadilac">Cadilac</option>
+                                    <option value="images/cars/chevrolet">Chevrolet</option>
+                                    <option value="images/cars/citroen">Citroen</option>
+                                    <option value="images/cars/corvet">Corvet</option>
+                                    <option value="images/cars/dacia">Dacia</option>
+                                    <option value="images/cars/dodge">Dodge</option>
+                                    <option value="images/cars/ferrari">Ferrari</option>
+                                    <option value="images/cars/fiat">Fiat</option>
+                                    <option value="images/cars/infinity">Infinity</option>
+                                    <option value="images/cars/jaguar">jaguar</option>
+                                    <option value="images/cars/jeep">Jeep</option>
+                                    <option value="images/cars/mercedes">Mercedes</option>
+                                    <option value="images/cars/mini">Mini</option>
+                                    <option value="images/cars/land-rover">Land rover</option>
+                                    <option value="images/cars/opel">Opel</option>
+                                    <option value="images/cars/porsche">porsche</option>
+                                    <option value="images/cars/skoda">skoda</option>
+                                    <option value="images/cars/tesla">tesla</option>
+                                    <option value="images/cars/volvo">Volvo</option>
+
+                                </select>
+                            </div>
+                            <label class="col-form-label text-right col-lg-1 ">Damage :</label>
+                            <div class="col-lg-5 ">
+                                <select class="form-control selectpicker" name="Damage1" id="Damage1">
+                                    <option>Paint Scratches</option>
+                                    <option>Dings & Dents</option>
+                                    <option>Weather Related Damage</option>
+                                    <option>Collision Damage</option>
+                                    <option>Cracks</option>
+                                    <option>Car Damage by Severity</option>
+                                    <option>Head-On Collision</option>
+                                    <option>Single-Vehicle Accidents</option>
+                                    <option>Side-Impact Collision</option>
+                                </select>
+                            </div>
+                            </div>
+                            <div class="separator separator-dashed my-10"></div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label text-right col-lg-1 ">Fule Type :</label>
+                                <div class="col-lg-5 ">
+                                    <select class="form-control selectpicker" name="Fule_Type1" id="Fule_Type1">
+                                        <option>Diesel</option>
+                                        <option>Gasoline</option>
+                                        <option>Kerosene</option>
+                                    </select>
+                                </div>
+                                <label class="col-form-label text-right col-lg-1 ">Vehicle Type :</label>
+                                <div class="col-lg-5 ">
+                                    <select class="form-control selectpicker" name="Vehicle_Type1" id="Vehicle_Type1">
+                                        <option>sedan </option>
+                                        <option>coupe </option>
+                                        <option>sports cars</option>
+                                        <option>Wagons </option>
+                                        <option>hatchback</option>
+                                        <option>convertible</option>
+                                        <option>SUV</option>
+                                        <option>Minivans </option>
+                                        <option>pickup truck</option>
+                                        <option>bike</option>
+                                        <option>jetsky</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="separator separator-dashed my-10"></div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label text-right col-lg-1 ">Model :</label>
+                                    <div class="col-lg-5 ">
+                                        <input type="number" class="form-control"  id="Model" name="Model" placeholder="Enter mode "/>
+                                        <span class="form-text text-muted">Please enter your Model</span>
+                                    </div>
+                                    <label class="col-form-label text-right col-lg-1 ">Transmittion Type :</label>
+                                    <div class="col-lg-5 ">
+                                        <select class="form-control selectpicker" name="Transmittion_Type" id="Transmittion_Type">
+                                            <option>Manual transmission </option>
+                                            <option>Automatic transmission </option>
+                                            <option>Continuously variable transmission</option>
+                                            <option>Semi-automatic and dual-clutch </option>
+
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="separator separator-dashed my-10"></div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-form-label text-right col-lg-1 ">Engin Type :</label>
+                                    <div class="col-lg-5 ">
+                                        <select class="form-control selectpicker" name="Engin_Type1" id="Engin_Type1">
+                                            <option>Straight</option>
+                                            <option>V engines</option>
+                                            <option>Single cylinder engines                                            </option>
+                                            <option>Flat engines</option>
+                                            <option>Opposed-piston engines</option>
+                                            <option>W engines</option>
+                                            <option>X engines</option>
+                                            <option>U engines</option>
+                                            <option>H engines</option>
+                                            <option>Valves</option>
+                                        </select>
+                                    </div>
+                                    <label class="col-form-label text-right col-lg-1 ">Featured</label>
+                                    <div class="col-lg-5 ">
+                                        <select class="form-control selectpicker" name="Featured1" id="Featured1">
+                                            <option>Runs & Drives</option>
+                                            <option>Not running</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="separator separator-dashed my-10"></div>
+                                 <div class="form-group row">
+                                        <label class="col-form-label text-right col-lg-1 ">Fule Type :</label>
+                                        <div class="col-lg-5 ">
+                                            <select class="form-control selectpicker" name="Fule_Type1" id="Fule_Type1">
+                                                <option>Diesel</option>
+                                                <option>Gasoline</option>
+                                                <option>Kerosene</option>
+                                            </select>
+                                        </div>
+                                        <label class="col-form-label text-right col-lg-1 ">Vehicle Type :</label>
+                                        <div class="col-lg-5 ">
+                                            <select class="form-control selectpicker" name="Vehicle_Type1" id="Vehicle_Type1">
+                                                <option>sedan </option>
+                                                <option>coupe </option>
+                                                <option>sports cars</option>
+                                                <option>Wagons </option>
+                                                <option>hatchback</option>
+                                                <option>convertible</option>
+                                                <option>SUV</option>
+                                                <option>Minivans </option>
+                                                <option>pickup truck</option>
+                                                <option>bike</option>
+                                                <option>jetsky</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                <div class="separator separator-dashed my-10"></div>
+
+                                <div class="form-group row">
+                                        <label class="col-form-label text-right col-lg-1 ">Model :</label>
+                                        <div class="col-lg-5 ">
+                                            <input type="number" class="form-control"  id="Model1" name="Model1" placeholder="Enter model "/>
+                                            <span class="form-text text-muted">Please enter your Model</span>
+                                        </div>
+                                        <label class="col-form-label text-right col-lg-1 ">Transmittion Type :</label>
+                                        <div class="col-lg-5 ">
+                                            <select class="form-control selectpicker" name="Transmittion_Type1" id="Transmittion_Type1">
+                                                <option>Manual transmission </option>
+                                                <option>Automatic transmission </option>
+                                                <option>Continuously variable transmission</option>
+                                                <option>Semi-automatic and dual-clutch </option>
+
+                                            </select>
+                                        </div>
+                                </div>
+                                    <div class="separator separator-dashed my-10"></div>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-2"></div>
+                                    <div class="col-lg-8">
+
+                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="background-color: darkgrey">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img   style="height:530px;" >
+                                                  </div>
+                                                <div id="dvProdList"> </div>
+
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                              <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                              <span class="sr-only">Next</span>
+                                            </a>
+                                          </div>
+                                    </div>
+                                </div>
 
                 </div>
-             </form>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary font-weight-bold">Save changes</button>
+                </div>
+
+            </form>
         </div>
-<!--end::Modal-->
+    </div>
+</div>
 
 
 
@@ -233,139 +395,292 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form">
+                    <form class="form" action="{{ route('addcar') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <br><br>
+                        <div class="form-group row">
+                            <label class="col-form-label col-lg-1  text-right">Available Until :</label>
+                            <div class="col-lg-5  ">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="Available_date" placeholder="Select date" id="kt_datepicker_1"/>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="la la-calendar-check-o"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <span class="form-text text-muted">Select a date</span>
+                            </div>
 
-                            <h3 class="font-size-lg text-dark font-weight-bold mb-6">1. Customer Info:</h3>
-                            <div class="mb-15">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Full Name:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" placeholder="Enter full name"/>
-                                        <span class="form-text text-muted">Please enter your full name</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Email address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" placeholder="Enter email"/>
-                                        <span class="form-text text-muted">We'll never share your email with anyone else</span>
-                                    </div>
-                                </div>
+                            <label class="col-form-label col-lg-1  text-right">Production year :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control " name="Production_year" placeholder="Production year"/>
+                                <span class="form-text text-muted">Select a date</span>
                             </div>
 
 
-                            <div class="mb-3">
+                        </div>
+                        <div class="separator separator-dashed my-10"></div>
+                        <div class="form-group row">
+                            <label class="col-form-label text-right col-lg-1 ">State :</label>
+                            <div class="col-lg-5 ">
+                                <select class="form-control selectpicker" name="state">
+                                    <option>Marrakech-Safi Region</option>
+                                    <option>Souss-Massa Region</option>
+                                    <option>Fès-Meknès Region</option>
+                                    <option>Rabat-Salé-Kénitra Region</option>
+                                    <option>Béni Mellal-Khénifra Region</option>
+                                    <option>Casablanca-Settat Region</option>
+                                    <option>Drâa-Tafilalet Region</option>
+                                    <option>Guelmim-Oued Noun Region</option>
+                                    <option>Laâyoune-Sakia El Hamra Region</option>
+                                    <option>Dakhla-Oued Ed-Dahab Region</option>
+                                </select>
+                            </div>
+                            <label class="col-form-label text-right col-lg-1 ">Estimated Value :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control" name="Estimated_Value" placeholder="Enter Price"/>
+                                <span class="form-text text-muted">Estimated Value</span>
+                            </div>
+                            </div>
+                            <div class="separator separator-dashed my-10"></div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label text-right col-lg-1 ">Seller Name :</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control " name="Seller" placeholder="Full name"/>
+                                <span class="form-text text-muted">Please enter your full name</span>
+                            </div>
+
+                                <label class="col-form-label text-right col-lg-1 ">Plate Number :</label>
+                                <div class="col-lg-5">
+                                    <input type='text' class="form-control" name="Plate_Number" id="kt_inputmask_4" type="text"/>
+                                    <span class="form-text text-muted">Plate number : <code>26-154896</code></span>
+                                </div>
+                        </div>
+
+                        <div class="separator separator-dashed my-10"></div>
+                        <div class="form-group row">
+                            <label class="col-lg-1  col-form-label text-right">Millage :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control" name="Millage" placeholder="Enter Millage "/>
+                                <span class="form-text text-muted">Please enter your Millage</span>
+                            </div>
+
+                            <label class="col-lg-1  col-form-label text-right">Starting Price :</label>
+                            <div class="col-lg-5">
+                                <input type="number" class="form-control" name="Price" placeholder="Enter Price"/>
+                                <span class="form-text text-muted">Please enter your Price</span>
+                            </div>
+                        </div>
+
+                        <div class="separator separator-dashed my-10"></div>
+
+
+                        <div class="form-group row">
+                            <label class="col-form-label text-right col-lg-1 ">Brand :</label>
+                            <div class="col-lg-5">
+                                <select class="form-control selectpicker" name="Brand">
+                                    <option value="images/cars/bmw">BMW</option>
+                                    <option value="images/cars/ford">Ford</option>
+                                    <option value="images/cars/honda">Honda</option>
+                                    <option value="images/cars/hyundai">Hyundai</option>
+                                    <option value="images/cars/isuzu">Isuzu</option>
+                                    <option value="images/cars/kia">Kia</option>
+                                    <option value="images/cars/lexus">Lexus</option>
+                                    <option value="images/cars/mazda">Mazda</option>
+                                    <option value="images/cars/mitsubishi">Mitsubishi</option>
+                                    <option value="images/cars/nissan">Nissan</option>
+                                    <option value="images/cars/peugeot">Peugeot</option>
+                                    <option value="images/cars/suzuki">Suzuki</option>
+                                    <option value="images/cars/toyota">Toyota</option>
+                                    <option value="images/cars/volkswagen">Volkswagen</option>
+                                    <option value="images/cars/audi">Audi</option>
+                                    <option value="images/cars/aston-martin">Aston Martin</option>
+                                    <option value="images/cars/alfa-romeo">Alfa Romeo</option>
+                                    <option value="images/cars/bently">Bently</option>
+                                    <option value="images/cars/bugatti">Bugatti</option>
+                                    <option value="images/cars/cadilac">Cadilac</option>
+                                    <option value="images/cars/chevrolet">Chevrolet</option>
+                                    <option value="images/cars/citroen">Citroen</option>
+                                    <option value="images/cars/corvet">Corvet</option>
+                                    <option value="images/cars/dacia">Dacia</option>
+                                    <option value="images/cars/dodge">Dodge</option>
+                                    <option value="images/cars/ferrari">Ferrari</option>
+                                    <option value="images/cars/fiat">Fiat</option>
+                                    <option value="images/cars/infinity">Infinity</option>
+                                    <option value="images/cars/jaguar">jaguar</option>
+                                    <option value="images/cars/jeep">Jeep</option>
+                                    <option value="images/cars/mercedes">Mercedes</option>
+                                    <option value="images/cars/mini">Mini</option>
+                                    <option value="images/cars/land-rover">Land rover</option>
+                                    <option value="images/cars/opel">Opel</option>
+                                    <option value="images/cars/porsche">porsche</option>
+                                    <option value="images/cars/skoda">skoda</option>
+                                    <option value="images/cars/tesla">tesla</option>
+                                    <option value="images/cars/volvo">Volvo</option>
+
+                                </select>
+                            </div>
+                            <label class="col-form-label text-right col-lg-1 ">Damage :</label>
+                            <div class="col-lg-5 ">
+                                <select class="form-control selectpicker" name="Damage">
+                                    <option>Paint Scratches</option>
+                                    <option>Dings & Dents</option>
+                                    <option>Weather Related Damage</option>
+                                    <option>Collision Damage</option>
+                                    <option>Cracks</option>
+                                    <option>Car Damage by Severity</option>
+                                    <option>Head-On Collision</option>
+                                    <option>Single-Vehicle Accidents</option>
+                                    <option>Side-Impact Collision</option>
+                                </select>
+                            </div>
+                            </div>
+                            <div class="separator separator-dashed my-10"></div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label text-right col-lg-1 ">Fule Type :</label>
+                                <div class="col-lg-5 ">
+                                    <select class="form-control selectpicker" name="Fule_Type">
+                                        <option>Diesel</option>
+                                        <option>Gasoline</option>
+                                        <option>electric</option>
+                                    </select>
+                                </div>
+                                <label class="col-form-label text-right col-lg-1 ">Vehicle Type :</label>
+                                <div class="col-lg-5 ">
+                                    <select class="form-control selectpicker" name="Vehicle_Type">
+                                        <option>Bike </option>
+                                        <option>coupe </option>
+                                        <option>sports cars</option>
+                                        <option>Wagons </option>
+                                        <option>hatchback</option>
+                                        <option>convertible</option>
+                                        <option>SUV</option>
+                                        <option>Minivans </option>
+                                        <option>pickup truck</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="separator separator-dashed my-10"></div>
+
+
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
-                                        <span class="form-text text-muted">Please enter your account holder</span>
+                                    <label class="col-form-label text-right col-lg-1 ">Engin Type :</label>
+                                    <div class="col-lg-5 ">
+                                        <select class="form-control selectpicker" name="Engin_Type">
+                                            <option>Straight</option>
+                                            <option>V engines</option>
+                                            <option>Single cylinder engines </option>
+                                            <option>Flat engines</option>
+                                            <option>Opposed-piston engines</option>
+                                            <option>W engines</option>
+                                            <option>X engines</option>
+                                            <option>U engines</option>
+                                            <option>H engines</option>
+                                            <option>Valves</option>
+                                        </select>
+                                    </div>
+                                    <label class="col-form-label text-right col-lg-1 ">Featured</label>
+                                    <div class="col-lg-5 ">
+                                        <select class="form-control selectpicker" name="Featured">
+                                            <option>Runs & Drives</option>
+                                            <option>Not running</option>
+
+                                        </select>
                                     </div>
                                 </div>
+                                <div class="separator separator-dashed my-10"></div>
+
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
-                                    <div class="col-lg-6">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
-                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
+                                        <label class="col-form-label text-right col-lg-1 ">Model :</label>
+                                        <div class="col-lg-5 ">
+                                            <input type="text" class="form-control"  id="Model" name="Model" placeholder="Enter model "/>
+                                            <span class="form-text text-muted">Please enter your Model</span>
                                         </div>
-                                    </div>
-                                </div>
+                                        <label class="col-form-label text-right col-lg-1 ">Transmittion Type :</label>
+                                        <div class="col-lg-5 ">
+                                            <select class="form-control selectpicker" name="Transmittion_Type" id="Transmittion_Type">
+                                                <option>Manual transmission </option>
+                                                <option>Automatic transmission </option>
+                                                <option>Continuously variable transmission</option>
+                                                <option>Semi-automatic and dual-clutch </option>
 
-                            </div>
-                            <div class="mb-3">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
-                                        <span class="form-text text-muted">Please enter your account holder</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
-                                    <div class="col-lg-6">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
-                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
+                                            </select>
                                         </div>
+                                </div>
+                                    <div class="separator separator-dashed my-10"></div>
+
+
+
+                                <div  class="form-group " >
+                                     <div  class="col-lg-12">
+                                            <div  class="col-lg-12 row">
+                                                       <label class="col-form-label text-right col-lg-2 ">Upload photos :</label>
+                                                    <div  class="col-lg-8">
+                                                        <div  class="custom-file">
+                                                            <input type="file" name="image[]" class="custom-file-input" id="customFile" multiple="multiple"/>
+                                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                                        </div>
+                                                    </div>
+
+                                            </div>
                                     </div>
+
+
                                 </div>
 
-                            </div>
-
-                            <div class="mb-3">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
-                                        <span class="form-text text-muted">Please enter your account holder</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
-                                    <div class="col-lg-6">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
-                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="mb-3">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
-                                        <span class="form-text text-muted">Please enter your account holder</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
-                                    <div class="col-lg-6">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
-                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="mb-3">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
-                                        <span class="form-text text-muted">Please enter your account holder</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
-                                    <div class="col-lg-6">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
-                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
 
 
 
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+                    <button type="submit" class="btn btn-primary font-weight-bold">Save changes</button>
                 </div>
-
+            </form>
         </div>
     </div>
 </div>
+
+
+
 <script>
+
+// Class definition
+var KTFormRepeater = function() {
+
+    // Private functions
+    var demo1 = function() {
+        $('#kt_repeater_1').repeater({
+            initEmpty: false,
+
+            defaultValues: {
+                'text-input': 'foo'
+            },
+
+            show: function () {
+                $(this).slideDown();
+            },
+
+            hide: function (deleteElement) {
+                $(this).slideUp(deleteElement);
+            }
+        });
+    }
+
+    return {
+        // public functions
+        init: function() {
+            demo1();
+        }
+    };
+}();
+
+jQuery(document).ready(function() {
+    KTFormRepeater.init();
+});
 
 // Class definition
 
@@ -385,7 +700,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                 contentType: 'application/json',
                 source: {
                     read: {
-                        url:'http://127.0.0.1:8000/data',
+                        url:'http://127.0.0.1:8000/carData',
                         // sample custom headers
                         method: 'GET',
                         async: false,
@@ -401,9 +716,10 @@ var KTDatatableRemoteAjaxDemo = function() {
                     },
                 },
                 pageSize: 10,
-                serverPaging: true,
-                serverFiltering: true,
-                serverSorting: true,
+                sortable: true,
+
+
+
             },
 
             // layout definition
@@ -425,27 +741,26 @@ var KTDatatableRemoteAjaxDemo = function() {
 
             // columns definition
             columns: [{
-                field: 'id',
-                title: '#',
+                field: 'plate',
+                title: 'Plate number',
                 sortable: 'asc',
-                width: 30,
                 type: 'number',
                 selector: false,
                 textAlign: 'center',
 
             },
             {
-					field: 'avatar',
-					title: 'avatar',
-					width: 50,
+					field: 'brand',
+					title: 'Brand',
+                    sortable: 'asc',
 					template: function(data) {
                         var output = '';
-						if(data.avatar){
-                            var user_img = 'background-image:url(\'' + data.avatar + '\')';
+						if(data.brand){
+                            var user_img = 'background-image:url(\'' + data.brand + '-logo.png\')';
 
 							output = '<div class="d-flex align-items-center">\
-								<div class="symbol symbol-40 flex-shrink-0">\
-									<div class="symbol-label" style="' + user_img + '"></div>\
+								<div class="symbol symbol-50 flex-shrink-0">\
+									<div class="symbol-label" style="' + user_img + ' ;height:40px !important;"></div>\
 								</div>\
 							</div>';
 
@@ -465,29 +780,53 @@ var KTDatatableRemoteAjaxDemo = function() {
 					},
 				},
              {
-                field: 'name',
-                title: 'Name',
-                width: 80,
-            }, {
-                field: 'email',
-                title: 'Email',
-                width: 250,
-            }, {
-                field: 'state',
-                title: 'state',
-            }, {
-                field: 'country',
-                title: 'country Name',
-                width: 70,
+                sortable: 'asc',
+                field: 'vehicleType',
+                title: 'vehicle Type',
+                textAlign: 'center',
+
+            }, {sortable: 'asc',
+                field: 'estValue',
+                title: 'Est Value',
+                textAlign: 'center',
+
+            }
+            , {
+                sortable: 'asc',
+                field: 'price',
+                title: 'Starting price',
+                textAlign: 'center',
+
             },
             {
-                field: 'add-1',
-                title: 'Address',
+                field: 'location',
+                title: 'Location',
+                textAlign: 'center',
+
+            },
+            {
+                field: 'fuleType',
+                title: 'Fule Type',
+                textAlign: 'center',
+
+            },{
+                field: 'km',
+                title: 'Millage',
+                textAlign: 'center',
+            }, {
+                field: 'year',
+                title: 'Production year',
+                textAlign: 'center',
+
+            },
+            {
+                field: 'damage',
+                title: 'Damage',
+                textAlign: 'center',
             },{
                 field: 'Actions',
                 title: 'action',
                 sortable: false,
-                width: 125,
                 overflow: 'visible',
                 autoHide: false,
                 template: function(data) {
@@ -520,6 +859,42 @@ var KTDatatableRemoteAjaxDemo = function() {
             datatable.search($(this).val().toLowerCase(), 'name');
         });
 
+        @if(Session::has('message'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.success("{{ session('message') }}");
+    @endif
+
+    @if(Session::has('error'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.error("{{ session('error') }}");
+    @endif
+
+    @if(Session::has('info'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.info("{{ session('info') }}");
+    @endif
+
+    @if(Session::has('warning'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.warning("{{ session('warning') }}");
+    @endif
+
 
 
         jQuery(document).ready(function($){
@@ -540,7 +915,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                 }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: 'http://127.0.0.1:8000/destroy/'+id ,
+                        url: 'http://127.0.0.1:8000/carDestroy/'+id ,
                         method:'DELETE',
                         contentType: 'application/json',
                         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -548,12 +923,10 @@ var KTDatatableRemoteAjaxDemo = function() {
                             "id": id,
                         },
                         success: function(response) {
+                            toastr.error("The Car is deleted");
                             if(response) {
                             {
-
-                            toastr.error("The user is deleted");
                             }
-
                             }
                             datatable.reload();
                         }
@@ -568,9 +941,10 @@ var KTDatatableRemoteAjaxDemo = function() {
                 var id = this.dataset.record-id;
 
                 console.log(id);
+
                 var modal = $(this);
                 $.ajax({
-                        url: 'http://127.0.0.1:8000/update/'+id ,
+                        url: 'http://127.0.0.1:8000/carUpdate/'+id ,
                         method:'GET',
                         contentType: 'application/json',
                         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -578,16 +952,43 @@ var KTDatatableRemoteAjaxDemo = function() {
                         success: function(response) {
                             if(response) {
 
+                                images = JSON.parse(response.images);
 
-                            $('#deleteForm').attr("action", '/new/'+response.id);
-                            $("#name").val(response.name);
-                            $("#mail").val(response.email);
-                            $("#addr").val(response.country);
-                            $("#state").val(response.state);
-                            $("#address").val(response["add-1"]);
-                            $("#avatar").css('background-image: url(assets/media/users/100_5.jpg)');
+                                if (i>=images) return;
+                                var i=0 , images , url;
+                                images.forEach(element => {
+
+                                    url = '<div class="carousel-item ">\
+                                        <img  src="/media/'+ images[i++] +'" style="height:530px; background-color:gray;" alt="second slide">\
+                                              </div>';
+                                    $('#dvProdList').append(url);
+
+                                });
+
+
+
+
+
+                            $('#deleteForm1').attr("action", '/newCar/'+response.id);
+                            $("#Available_date1").val(response.saleDate);
+                            $("#Production_year1").val(response.year);
+                            $("#state1").val(response.location);
+                            $("#Estimated_Value1").val(response.estValue);
+                            $("#Seller1").val(response.saleName);
+                            $("#Plate_Number1").val(response.plate);
+                            $("#Millage1").val(response.km);
+                            $("#Price1").val(response.price);
+                            $("#Brand1").val(response.brand);
+                            $("#Damage1").val(response.damage);
+                            $("#Fule_Type1").val(response.fuleType);
+                            $("#Vehicle_Type1").val(response.vehicleType);
+                            $("#Engin_Type1").val(response.engineType);
+                            $("#Featured1").val(response.featured);
+                            $("#Model1").val(response.model);
+                            $("#Transmittion_Type1").val(response.transmittion);
+
+
                             }
-
                         }
                         });
 
@@ -595,9 +996,6 @@ var KTDatatableRemoteAjaxDemo = function() {
             });
 
         });
-
-
-
 
     };
 
@@ -614,49 +1012,9 @@ jQuery(document).ready(function() {
     KTDatatableRemoteAjaxDemo.init();
 });
 
+
+
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-
-    <script>
-        @if(Session::has('message'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.success("{{ session('message') }}");
-        @endif
-
-        @if(Session::has('error'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.error("{{ session('error') }}");
-        @endif
-
-        @if(Session::has('info'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.info("{{ session('info') }}");
-        @endif
-
-        @if(Session::has('warning'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.warning("{{ session('warning') }}");
-        @endif
-      </script>
-
-
 
 
 @endsection

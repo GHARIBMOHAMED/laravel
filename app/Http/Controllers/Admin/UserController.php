@@ -94,7 +94,7 @@ class UserController extends Controller
         $data->{"add-1"} = $request->address;
         $data->save();
 
-        return redirect('edit')->with('info','user is info is updated');
+        return redirect('edit')->with('info','user info is updated');
     }
 
     /**
@@ -107,7 +107,7 @@ class UserController extends Controller
     {
 
          User::destroy($id);
-         return view('profile.edit')->with('warning','Congrats you are looged in');
+         return view('profile.edit')->with('warning','The user is deleted');
 
     }
 }
