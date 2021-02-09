@@ -48,7 +48,7 @@ route::middleware(['auth'])->group(function(){
 
     Route::view('/product', 'client/product')->name('client.product');
 });
-Route::view('/home', 'client/home');
+Route::get('/home', 'HomeController@index');
 Route::view('/about', 'client/about');
 Route::view('/contact', 'client/contact');
 Route::view('/signin', 'auth/login');

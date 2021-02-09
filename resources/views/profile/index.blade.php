@@ -952,7 +952,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                         success: function(response) {
                             if(response) {
 
-                                images = JSON.parse(response.images);
+                                images = response.images;
 
                                 if (i>=images) return;
                                 var i=0 , images , url;

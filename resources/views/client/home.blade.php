@@ -77,7 +77,8 @@
 <!--============= How Section Starts Here =============-->
 
 
-<!--============= Car Auction Section Starts Here =============-->
+
+<!--============= Car Auction Section Starts Here
 <section class="car-auction-section padding-bottom pos-rel oh">
     <div class="car-bg"><img src=" /images/auction/car/car-bg.png" alt="car"></div>
     <div class="container">
@@ -89,16 +90,19 @@
             <a href="/productw" class="normal-button">View All</a>
         </div>
         <div class="row justify-content-center mb-30-none">
+
+
+
             <div class="col-sm-10 col-md-6 col-lg-4">
                 <div class="auction-item-2">
                     <div class="auction-thumb">
-                        <a href="product-details.html"><img src=" /images/auction/car/auction-1.jpg" alt="car"></a>
+                        <a href="product-details.html"><img src=" /media/" alt="car"></a>
                         <a href="#0" class="rating"><i class="far fa-star"></i></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
                         <h6 class="title">
-                            <a href="product-details.html">2018 Hyundai Sonata</a>
+                            <a href="#"></a>
                         </h6>
                         <div class="bid-area">
                             <div class="bid-amount">
@@ -106,8 +110,8 @@
                                     <i class="flaticon-auction"></i>
                                 </div>
                                 <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
+                                    <div class="current">Estimated value</div>
+                                    <div class="amount">$</div>
                                 </div>
                             </div>
                             <div class="bid-amount">
@@ -116,7 +120,7 @@
                                 </div>
                                 <div class="amount-content">
                                     <div class="current">Buy Now</div>
-                                    <div class="amount">$5,00.00</div>
+                                    <div class="amount"></div>
                                 </div>
                             </div>
                         </div>
@@ -132,96 +136,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-10 col-md-6 col-lg-4">
-                <div class="auction-item-2">
-                    <div class="auction-thumb">
-                        <a href="product-details.html"><img src=" /images/auction/car/auction-2.jpg" alt="car"></a>
-                        <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                        <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                    </div>
-                    <div class="auction-content">
-                        <h6 class="title">
-                            <a href="product-details.html">2018 Nissan Versa, S</a>
-                        </h6>
-                        <div class="bid-area">
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-money"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Buy Now</div>
-                                    <div class="amount">$5,00.00</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="countdown-area">
-                            <div class="countdown">
-                                <div id="bid_counter27"></div>
-                            </div>
-                            <span class="total-bids">30 Bids</span>
-                        </div>
-                        <div class="text-center">
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-10 col-md-6 col-lg-4">
-                <div class="auction-item-2">
-                    <div class="auction-thumb">
-                        <a href="product-details.html"><img src=" /images/auction/car/auction-3.jpg" alt="car"></a>
-                        <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                        <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                    </div>
-                    <div class="auction-content">
-                        <h6 class="title">
-                            <a href="product-details.html">2018 Honda Accord, Sport</a>
-                        </h6>
-                        <div class="bid-area">
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-money"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Buy Now</div>
-                                    <div class="amount">$5,00.00</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="countdown-area">
-                            <div class="countdown">
-                                <div id="bid_counter28"></div>
-                            </div>
-                            <span class="total-bids">30 Bids</span>
-                        </div>
-                        <div class="text-center">
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
         </div>
     </div>
 </section>
-<!--============= Car Auction Section Ends Here =============-->
+ Car Auction Section Ends Here =============-->
 
 
 <!--============= Trending Section Starts Here =============-->
@@ -235,27 +156,30 @@
             <a href="#0" class="normal-button">View All</a>
         </div>
         <div class="row justify-content-center mb-30-none">
+            @if(count($cars) > 0)
+            @foreach($cars as $car)
+
             <div class="col-md-6 col-lg-12">
                 <div class="auction-item-6">
                     <div class="auction-inner">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/trending/auction-1.png" alt="trending"></a>
+                            <a href="product-details.html"><img src="/media/{{ $car->images[8] }}" alt="trending"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
                         <div class="auction-content">
-                            <h5 class="title"><a href="product-details.html">2016 KIA Optima, EX</a></h5>
+                            <h5 class="title"><a href="product-details.html">{{ $car->year }}  {{ $car->direction }}</a></h5>
                             <div class="item-information">
                                 <ul>
-                                    <li><span>Number</span>1-38005900</li>
+                                    <li><span>Number</span>{{ $car->plate }}</li>
                                     <li><span>VIN</span>2G1WG5EK3B1312245</li>
-                                    <li><span>Milage</span> 153k miles (246k km)</li>
-                                    <li><span>Location</span>Sandston (VA)</li>
+                                    <li><span>Milage</span> ({{ $car->km }}) km)</li>
+                                    <li><span>Location</span>{{ $car->location }}</li>
                                 </ul>
                                 <ul>
-                                    <li><span>Engine</span>2.0 Diesel</li>
-                                    <li><span>Transmission</span>Automated</li>
-                                    <li><span>Body</span>Offroad car</li>
+                                    <li><span>Engine</span>{{ $car->fuleType }}</li>
+                                    <li><span>Transmission</span>{{ $car->transmittion }}</li>
+                                    <li><span>Body</span>{{ $car->vehicleType }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -269,7 +193,7 @@
                                 </div>
                                 <div class="amount-content">
                                     <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
+                                    <div class="amount">${{ $car->price }}</div>
                                 </div>
                             </div>
                             <div class="bids-area">
@@ -280,141 +204,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-12">
-                <div class="auction-item-6">
-                    <div class="auction-inner">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/trending/auction-2.png" alt="trending"></a>
-                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h5 class="title"><a href="product-details.html">2019 Polaris General, 1000 Eps</a></h5>
-                            <div class="item-information">
-                                <ul>
-                                    <li><span>Number</span>1-38005900</li>
-                                    <li><span>VIN</span>2G1WG5EK3B1312245</li>
-                                    <li><span>Milage</span> 153k miles (246k km)</li>
-                                    <li><span>Location</span>Sandston (VA)</li>
-                                </ul>
-                                <ul>
-                                    <li><span>Engine</span>2.0 Diesel</li>
-                                    <li><span>Transmission</span>Automated</li>
-                                    <li><span>Body</span>Offroad car</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="auction-bidding">
-                            <div class="countdown">
-                                <div id="bid_counter4"></div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-12">
-                <div class="auction-item-6">
-                    <div class="auction-inner">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/trending/auction-3.png" alt="trending"></a>
-                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h5 class="title"><a href="product-details.html">2018 Hyundai Elantra, Sel/Value/Limited</a></h5>
-                            <div class="item-information">
-                                <ul>
-                                    <li><span>Number</span>1-38005900</li>
-                                    <li><span>VIN</span>2G1WG5EK3B1312245</li>
-                                    <li><span>Milage</span> 153k miles (246k km)</li>
-                                    <li><span>Location</span>Sandston (VA)</li>
-                                </ul>
-                                <ul>
-                                    <li><span>Engine</span>2.0 Diesel</li>
-                                    <li><span>Transmission</span>Automated</li>
-                                    <li><span>Body</span>Offroad car</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="auction-bidding">
-                            <div class="countdown">
-                                <div id="bid_counter5"></div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-12">
-                <div class="auction-item-6">
-                    <div class="auction-inner">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/trending/auction-4.png" alt="trending"></a>
-                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h5 class="title"><a href="product-details.html">2018 Toyota Camry, L/Le/Xle/Se/Xse</a></h5>
-                            <div class="item-information">
-                                <ul>
-                                    <li><span>Number</span>1-38005900</li>
-                                    <li><span>VIN</span>2G1WG5EK3B1312245</li>
-                                    <li><span>Milage</span> 153k miles (246k km)</li>
-                                    <li><span>Location</span>Sandston (VA)</li>
-                                </ul>
-                                <ul>
-                                    <li><span>Engine</span>2.0 Diesel</li>
-                                    <li><span>Transmission</span>Automated</li>
-                                    <li><span>Body</span>Offroad car</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="auction-bidding">
-                            <div class="countdown">
-                                <div id="bid_counter6"></div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
+            @endif
         </div>
     </div>
 </section>
