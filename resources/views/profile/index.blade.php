@@ -965,27 +965,23 @@ var KTDatatableRemoteAjaxDemo = function() {
 
                                 });
 
-
-
-
-
-                            $('#deleteForm1').attr("action", '/newCar/'+response.id);
-                            $("#Available_date1").val(response.saleDate);
-                            $("#Production_year1").val(response.year);
-                            $("#state1").val(response.location);
-                            $("#Estimated_Value1").val(response.estValue);
-                            $("#Seller1").val(response.saleName);
-                            $("#Plate_Number1").val(response.plate);
-                            $("#Millage1").val(response.km);
-                            $("#Price1").val(response.price);
-                            $("#Brand1").val(response.brand);
-                            $("#Damage1").val(response.damage);
-                            $("#Fule_Type1").val(response.fuleType);
-                            $("#Vehicle_Type1").val(response.vehicleType);
-                            $("#Engin_Type1").val(response.engineType);
-                            $("#Featured1").val(response.featured);
-                            $("#Model1").val(response.model);
-                            $("#Transmittion_Type1").val(response.transmittion);
+                                $('#deleteForm1').attr("action", '/newCar/'+response.id);
+                                $("#Available_date1").val(response.saleDate);
+                                $("#Production_year1").val(response.year);
+                                $("#state1").val(response.location);
+                                $("#Estimated_Value1").val(response.estValue);
+                                $("#Seller1").val(response.saleName);
+                                $("#Plate_Number1").val(response.plate);
+                                $("#Millage1").val(response.km);
+                                $("#Price1").val(response.price);
+                                $("#Brand1").val(response.brand);
+                                $("#Damage1").val(response.damage);
+                                $("#Fule_Type1").val(response.fuleType);
+                                $("#Vehicle_Type1").val(response.vehicleType);
+                                $("#Engin_Type1").val(response.engineType);
+                                $("#Featured1").val(response.featured);
+                                $("#Model1").val(response.model);
+                                $("#Transmittion_Type1").val(response.transmittion);
 
 
                             }
