@@ -10,15 +10,15 @@
 
     <title>Sbidu - Bid And Auction HTML Template</title>
 
-    <link rel="stylesheet" href=" css/bootstrap.min.css">
-    <link rel="stylesheet" href=" css/all.min.css">
-    <link rel="stylesheet" href=" css/animate.css">
-    <link rel="stylesheet" href=" css/nice-select.css">
-    <link rel="stylesheet" href=" css/owl.min.css">
-    <link rel="stylesheet" href=" css/magnific-popup.css">
-    <link rel="stylesheet" href=" css/flaticon.css">
-    <link rel="stylesheet" href=" css/jquery-ui.min.css">
-    <link rel="stylesheet" href=" css/main.css">
+    <link rel="stylesheet" href=" {{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/nice-select.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/owl.min.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/main.css') }}">
 
     <link rel="shortcut icon" href=" images/favicon.png" type="image/x-icon">
 </head>

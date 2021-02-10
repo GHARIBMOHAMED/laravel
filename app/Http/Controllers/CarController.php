@@ -51,7 +51,7 @@ class CarController extends Controller
         }
 
         $post = new Car();
-        $post->images=json_encode($images_data);
+        $post->images=$images_data;
         $post->saleDate = $request->Available_date;
         $post->year = $request->Production_year;
         $post->location = $request->state;

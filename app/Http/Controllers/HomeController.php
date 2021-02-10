@@ -47,7 +47,8 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        $details = Car::find($id);
+        return view('client/car-detail')->with('details', $details);
     }
 
     /**
@@ -73,6 +74,11 @@ class HomeController extends Controller
         //
     }
 
+    public function onecar()
+    {
+
+
+    }
     /**
      * Remove the specified resource from storage.
      *

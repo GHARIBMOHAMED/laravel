@@ -923,7 +923,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                             "id": id,
                         },
                         success: function(response) {
-                            toastr.error("The Car is deleted");
+                            toastr.error("error","The Car is deleted");
                             if(response) {
                             {
                             }

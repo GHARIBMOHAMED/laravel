@@ -1,34 +1,34 @@
 @section('footer')
     <!--============= Footer Section Starts Here =============-->
-    <footer class="bg_img padding-top oh" data-background=" images/footer/footer-bg.jpg">
+    <footer class="bg_img padding-top oh" data-background="{{ asset('images/footer/footer-bg.jpg') }}">
         <div class="footer-top-shape">
-            <img src=" css/img/footer-top-shape.png" alt="css">
+            <img src=" {{ asset('css/img/footer-top-shape.png') }}" alt="css">
         </div>
         <div class="anime-wrapper">
             <div class="anime-1 plus-anime">
-                <img src=" images/footer/p1.png" alt="footer">
+                <img src=" {{ asset('images/footer/p1.png ') }}" alt="footer">
             </div>
             <div class="anime-2 plus-anime">
-                <img src=" images/footer/p2.png" alt="footer">
+                <img src=" {{ asset('images/footer/p2.png ') }}" alt="footer">
             </div>
             <div class="anime-3 plus-anime">
-                <img src=" images/footer/p3.png" alt="footer">
+                <img src=" {{ asset('images/footer/p3.png ') }}" alt="footer">
             </div>
             <div class="anime-5 zigzag">
-                <img src=" images/footer/c2.png" alt="footer">
+                <img src=" {{ asset('images/footer/c2.png ') }}" alt="footer">
             </div>
             <div class="anime-6 zigzag">
-                <img src=" images/footer/c3.png" alt="footer">
+                <img src=" {{ asset('images/footer/c3.png ') }}" alt="footer">
             </div>
             <div class="anime-7 zigzag">
-                <img src=" images/footer/c4.png" alt="footer">
+                <img src=" {{ asset('images/footer/c4.png ') }}" alt="footer">
             </div>
         </div>
         <div class="newslater-wrapper">
             <div class="container">
                 <div class="newslater-area">
                     <div class="newslater-thumb">
-                        <img src=" images/footer/newslater.png" alt="footer">
+                        <img src="  {{ asset('images/footer/newslater.png') }}" alt="footer">
                     </div>
                     <div class="newslater-content">
                         <div class="section-header left-style mb-low">
@@ -168,20 +168,20 @@
                 <div class="copyright-area">
                     <div class="footer-bottom-wrapper">
                         <div class="logo">
-                            <a href="index.html"><img src=" images/logo/footer-logo.png" style="max-height: 180px; max-width:200px; " alt="logo"></a>
+                            <a href="index.html"><img src="{{ asset('images/logo/footer-logo.png ') }}" style="max-height: 180px; max-width:200px; " alt="logo"></a>
                         </div>
                         <ul class="gateway-area">
                             <li>
-                                <a href="#0"><img src="images/footer/paypal.png" alt="footer"></a>
+                                <a href="#0"><img src="{{ asset('images/footer/paypal.png ') }}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src=" images/footer/visa.png" alt="footer"></a>
+                                <a href="#0"><img src="{{ asset('images/footer/visa.png ') }}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src=" images/footer/discover.png" alt="footer"></a>
+                                <a href="#0"><img src="{{ asset('images/footer/discover.png ') }}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src=" images/footer/mastercard.png" alt="footer"></a>
+                               <a href="#0"><img src="{{ asset('images/footer/mastercard.png ') }}" alt="footer"></a>
                             </li>
                         </ul>
                         <div class="copyright"><p>&copy; Copyright 2021 | <a href="#0">Sbidu</a> By <a href="#0">Uiaxis</a></p></div>
@@ -194,18 +194,18 @@
 
 
 
-    <script src=" js/jquery-3.3.1.min.js"></script>
-    <script src=" js/modernizr-3.6.0.min.js"></script>
-    <script src=" js/plugins.js"></script>
-    <script src=" js/bootstrap.min.js"></script>
-    <script src=" js/isotope.pkgd.min.js"></script>
-    <script src=" js/wow.min.js"></script>
-    <script src=" js/waypoints.js"></script>
-    <script src=" js/nice-select.js"></script>
-    <script src=" js/counterup.min.js"></script>
-    <script src=" js/owl.min.js"></script>
-    <script src=" js/magnific-popup.min.js"></script>
-    <script src=" js/yscountdown.min.js"></script>
-    <script src=" js/jquery-ui.min.js"></script>
-    <script src=" js/main.js"></script>
+    <script src=" {{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src=" {{ asset('js/modernizr-3.6.0.min.js') }}"></script>
+    <script src=" {{ asset('js/plugins.js') }}"></script>
+    <script src=" {{ asset('js/bootstrap.min.js') }}"></script>
+    <script src=" {{ asset('js/isotope.pkgd.min.js') }}"></script>
+    <script src=" {{ asset('js/wow.min.js') }}"></script>
+    <script src=" {{ asset('js/waypoints.js') }}"></script>
+    <script src=" {{ asset('js/nice-select.js') }}"></script>
+    <script src=" {{ asset('js/counterup.min.js') }}"></script>
+    <script src=" {{ asset('js/owl.min.js') }}"></script>
+    <script src=" {{ asset('js/magnific-popup.min.js') }}"></script>
+    <script src=" {{ asset('js/yscountdown.min.js') }}"></script>
+    <script src=" {{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src=" {{ asset('js/main.js') }}"></script>
 @endsection

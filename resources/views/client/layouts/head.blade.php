@@ -66,12 +66,12 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="/">
-                        <img src=" images/logo/logo.png" style="max-height: 180px; max-width:200px; " alt="logo">
+                        <img src=" {{ asset('images/logo/logo.png')}}" style="max-height: 180px; max-width:200px; " alt="logo">
                     </a>
                 </div>
                 <ul class="menu ml-auto">
                     <li>
-                        <a href="/">home</a>
+                        <a href="/home">home</a>
                     </li>
                     <li>
                         <a href="/product">Auction</a>
@@ -107,7 +107,7 @@
 <div class="cart-sidebar-area">
     <div class="top-content">
         <a href="index.html" class="logo">
-            <img src=" images/logo/logo2.png" alt="logo">
+            <img src=" {{ asset('images/logo/logo.png') }}" alt="logo">
         </a>
         <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
     </div>
@@ -116,7 +116,7 @@
             <h4 class="title">Shopping cart</h4>
             <div class="single-product-item">
                 <div class="thumb">
-                    <a href="#0"><img src=" images/shop/shop01.jpg" alt="shop"></a>
+                    <a href="#0"><img src=" {{ asset('images/shop/shop01.jpg') }}" alt="shop"></a>
                 </div>
                 <div class="content">
                     <h4 class="title"><a href="#0">Color Pencil</a></h4>
@@ -126,7 +126,7 @@
             </div>
             <div class="single-product-item">
                 <div class="thumb">
-                    <a href="#0"><img src=" images/shop/shop02.jpg" alt="shop"></a>
+                    <a href="#0"><img src=" {{ asset('images/shop/shop02.jpg') }}" alt="shop"></a>
                 </div>
                 <div class="content">
                     <h4 class="title"><a href="#0">Water Pot</a></h4>
@@ -136,7 +136,7 @@
             </div>
             <div class="single-product-item">
                 <div class="thumb">
-                    <a href="#0"><img src=" images/shop/shop03.jpg" alt="shop"></a>
+                    <a href="#0"><img src=" {{ asset('images/shop/shop03.jpg') }}" alt="shop"></a>
                 </div>
                 <div class="content">
                     <h4 class="title"><a href="#0">Art Paper</a></h4>
@@ -146,7 +146,7 @@
             </div>
             <div class="single-product-item">
                 <div class="thumb">
-                    <a href="#0"><img src=" images/shop/shop04.jpg" alt="shop"></a>
+                    <a href="#0"><img src=" {{ asset('images/shop/shop04.jpg') }}" alt="shop"></a>
                 </div>
                 <div class="content">
                     <h4 class="title"><a href="#0">Stop Watch</a></h4>
@@ -156,7 +156,7 @@
             </div>
             <div class="single-product-item">
                 <div class="thumb">
-                    <a href="#0"><img src=" images/shop/shop05.jpg" alt="shop"></a>
+                    <a href="#0"><img src=" {{ asset('images/shop/shop05.jpg') }}" alt="shop"></a>
                 </div>
                 <div class="content">
                     <h4 class="title"><a href="#0">Comics Book</a></h4>

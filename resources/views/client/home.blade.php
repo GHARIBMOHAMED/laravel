@@ -163,7 +163,7 @@
                 <div class="auction-item-6">
                     <div class="auction-inner">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="/media/{{ $car->images[8] }}" alt="trending"></a>
+                            <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[8] }}" alt="trending"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -173,7 +173,7 @@
                                 <ul>
                                     <li><span>Number</span>{{ $car->plate }}</li>
                                     <li><span>VIN</span>2G1WG5EK3B1312245</li>
-                                    <li><span>Milage</span> ({{ $car->km }}) km)</li>
+                                    <li><span>Milage</span> ({{ $car->km }} km)</li>
                                     <li><span>Location</span>{{ $car->location }}</li>
                                 </ul>
                                 <ul>
@@ -185,7 +185,7 @@
                         </div>
                         <div class="auction-bidding">
                             <div class="countdown">
-                                <div id="bid_counter3"></div>
+                                <span> {{ $car->saleDate }}</span>
                             </div>
                             <div class="bid-amount">
                                 <div class="icon">
