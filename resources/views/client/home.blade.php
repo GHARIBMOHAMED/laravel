@@ -163,7 +163,7 @@
                 <div class="auction-item-6">
                     <div class="auction-inner">
                         <div class="auction-thumb">
-                            <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[8] }}" alt="trending"></a>
+                            <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[3] }}" alt="trending"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>

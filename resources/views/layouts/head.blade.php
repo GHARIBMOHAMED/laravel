@@ -46,32 +46,17 @@
             </a>
             <!--end::Logo-->
 
-            <!--begin::Toolbar-->
-            <div class="d-flex align-items-center">
-                <button class="btn p-0 burger-icon rounded-0 burger-icon-left" id="kt_aside_tablet_and_mobile_toggle">
-                    <span></span>
-                </button>
 
+        <!--begin::Toolbar-->
 
-
-        <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
-
-            <div class="d-flex align-items-center">
-                <div class="symbol symbol-40 flex-shrink-0">\
-                    <div class="symbol-label" style="background-image:url('{{ auth()->user()->avatar }}')"></div>
-                </div>
-            </div>
-
-
-        </a>
-
-            </div>
+        <div class="d-flex align-items-center">
+            <button class="btn  burger-icon rounded-0 burger-icon-left" id="kt_aside_tablet_and_mobile_toggle">
+                <span></span>
+            </button>
+        </div>
             <!--end::Toolbar-->
         </div>
         <!--end::Header Mobile-->
-
-
-
 
 <!--begin::Aside-->
 <div class="aside aside-left d-flex flex-column flex-row-auto" id="kt_aside">
@@ -105,7 +90,25 @@
                         <span class="menu-text">Dashboard</span>
                     </a>
                 </li>
+                <li >
+                    <div class="form-group row" style="background-color: azure">
+                        <div class="col-sm-4 col-lg-4">
+                            <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
+                                <div class="d-flex align-items-center">
+                                    <div class="symbol symbol-40  flex-shrink-0 ml-5 mt-2 mb-2">
 
+                                        <div class="symbol-label " style="background-image:url('{{ auth()->user()->avatar }}')"></div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-5 col-lg-6 mt-3 mb-3">
+                            {{ auth()->user()->name }}
+                        </div>
+                    </div>
+
+                </li>
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 
@@ -122,6 +125,11 @@
                     <li class="menu-item" aria-haspopup="true">
                         <a href="{{ url('index') }}" class="menu-link">
                             <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Add Cars</span>
+                        </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                        <a href="{{ url('home') }}" class="menu-link">
+                            <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Client side</span>
                         </a>
                     </li>
                 </li>

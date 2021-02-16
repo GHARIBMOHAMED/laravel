@@ -41,6 +41,8 @@ route::middleware(['auth','verified'])->group(function(){
     Route::delete('carDestroy/{id}', 'CarController@destroy');
     Route::get('carUpdate/{id}', 'CarController@show');
     Route::post('newCar/{id}', 'CarController@update');
+
+    Route::get('cardetail/{id}','HomeController@show');
 });
 //user
 
@@ -50,7 +52,7 @@ route::middleware(['auth'])->group(function(){
 });
 Route::get('/home', 'HomeController@index');
 Route::view('/about', 'client/about');
-Route::get('cardetail/{id}','HomeController@show');
+
 Route::view('/contact', 'client/contact');
 Route::view('/signin', 'auth/login');
 Route::view('/signup', 'auth/register');
