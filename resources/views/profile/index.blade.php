@@ -68,7 +68,7 @@
 
 
 <!-- Modal-->
-<div id="ktmodal" class="modal fade" role="dialog" aria-hidden="true">
+<div id="ktmodal"  class="modal fade" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
 
@@ -79,6 +79,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div class="scroll scroll-pull" data-scroll="true" data-height="700">
                     <form class="form" id="deleteForm1" action="" method="POST">
                         @csrf
                         <br><br>
@@ -140,7 +141,7 @@
 
                                 <label class="col-form-label text-right col-lg-1 ">Plate Number :</label>
                                 <div class="col-lg-5">
-                                    <input type='text' class="form-control" name="Plate_Number1" id="kt_inputmask_4 Plate_Number1" type="text"/>
+                                    <input type='text' class="form-control" name="Plate_Number1" id="Plate_Number1" type="text"/>
                                     <span class="form-text text-muted">Plate number : <code>26-154896</code></span>
                                 </div>
                         </div>
@@ -256,7 +257,7 @@
                                 <div class="form-group row">
                                     <label class="col-form-label text-right col-lg-1 ">Model :</label>
                                     <div class="col-lg-5 ">
-                                        <input type="number" class="form-control"  id="Model" name="Model" placeholder="Enter mode "/>
+                                        <input type="text" class="form-control"  id="Model" name="Model" placeholder="Enter mode "/>
                                         <span class="form-text text-muted">Please enter your Model</span>
                                     </div>
                                     <label class="col-form-label text-right col-lg-1 ">Transmittion Type :</label>
@@ -310,7 +311,6 @@
                                         <label class="col-form-label text-right col-lg-1 ">Vehicle Type :</label>
                                         <div class="col-lg-5 ">
                                             <select class="form-control selectpicker" name="Vehicle_Type1" id="Vehicle_Type1">
-                                                <option>sedan </option>
                                                 <option>coupe </option>
                                                 <option>sports cars</option>
                                                 <option>Wagons </option>
@@ -319,8 +319,6 @@
                                                 <option>SUV</option>
                                                 <option>Minivans </option>
                                                 <option>pickup truck</option>
-                                                <option>bike</option>
-                                                <option>jetsky</option>
                                             </select>
                                         </div>
                                 </div>
@@ -329,7 +327,7 @@
                                 <div class="form-group row">
                                         <label class="col-form-label text-right col-lg-1 ">Model :</label>
                                         <div class="col-lg-5 ">
-                                            <input type="number" class="form-control"  id="Model1" name="Model1" placeholder="Enter model "/>
+                                            <input type="text" class="form-control"  id="Model1" name="Model1" placeholder="Enter model "/>
                                             <span class="form-text text-muted">Please enter your Model</span>
                                         </div>
                                         <label class="col-form-label text-right col-lg-1 ">Transmittion Type :</label>
@@ -343,6 +341,9 @@
                                             </select>
                                         </div>
                                 </div>
+
+
+
                                     <div class="separator separator-dashed my-10"></div>
 
                                 <div class="form-group row">
@@ -376,6 +377,7 @@
                 </div>
 
             </form>
+                </div>
         </div>
     </div>
 </div>
@@ -389,20 +391,21 @@
         <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add a car</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <i aria-hidden="true" class="ki ki-close"></i>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form class="form" action="{{ route('addcar') }}" method="POST" enctype="multipart/form-data">
+                        <div class="scroll scroll-pull" data-scroll="true" data-height="700">
                         @csrf
                         <br><br>
                         <div class="form-group row">
                             <label class="col-form-label col-lg-1  text-right">Available Until :</label>
                             <div class="col-lg-5  ">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="Available_date" placeholder="Select date" id="kt_datepicker_1"/>
+                                    <input type="text" class="form-control" autocomplete="fals" name="Available_date" placeholder="Select date" id="kt_datepicker"/>
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="la la-calendar-check-o"></i>
@@ -414,7 +417,7 @@
 
                             <label class="col-form-label col-lg-1  text-right">Production year :</label>
                             <div class="col-lg-5">
-                                <input type="number" class="form-control " name="Production_year" placeholder="Production year"/>
+                                <input  autocomplete="fals" type="number" class="form-control " name="Production_year" placeholder="Production year"/>
                                 <span class="form-text text-muted">Select a date</span>
                             </div>
 
@@ -448,13 +451,13 @@
                         <div class="form-group row">
                             <label class="col-form-label text-right col-lg-1 ">Seller Name :</label>
                             <div class="col-lg-5">
-                                <input type="text" class="form-control " name="Seller" placeholder="Full name"/>
+                                <input type="text" autocomplete="fals" class="form-control " name="Seller" placeholder="Full name"/>
                                 <span class="form-text text-muted">Please enter your full name</span>
                             </div>
 
                                 <label class="col-form-label text-right col-lg-1 ">Plate Number :</label>
                                 <div class="col-lg-5">
-                                    <input type='text' class="form-control" name="Plate_Number" id="kt_inputmask_4" type="text"/>
+                                    <input type='text'  autocomplete="fals" class="form-control" name="Plate_Number" id="kt_inputmask_4" type="text"/>
                                     <span class="form-text text-muted">Plate number : <code>26-154896</code></span>
                                 </div>
                         </div>
@@ -463,13 +466,13 @@
                         <div class="form-group row">
                             <label class="col-lg-1  col-form-label text-right">Millage :</label>
                             <div class="col-lg-5">
-                                <input type="number" class="form-control" name="Millage" placeholder="Enter Millage "/>
+                                <input type="number" autocomplete="fals" class="form-control" name="Millage" placeholder="Enter Millage "/>
                                 <span class="form-text text-muted">Please enter your Millage</span>
                             </div>
 
                             <label class="col-lg-1  col-form-label text-right">Starting Price :</label>
                             <div class="col-lg-5">
-                                <input type="number" class="form-control" name="Price" placeholder="Enter Price"/>
+                                <input type="number" autocomplete="fals" class="form-control" name="Price" placeholder="Enter Price"/>
                                 <span class="form-text text-muted">Please enter your Price</span>
                             </div>
                         </div>
@@ -551,7 +554,7 @@
                                 <label class="col-form-label text-right col-lg-1 ">Vehicle Type :</label>
                                 <div class="col-lg-5 ">
                                     <select class="form-control selectpicker" name="Vehicle_Type">
-                                        <option>Bike </option>
+
                                         <option>coupe </option>
                                         <option>sports cars</option>
                                         <option>Wagons </option>
@@ -570,16 +573,11 @@
                                     <label class="col-form-label text-right col-lg-1 ">Engin Type :</label>
                                     <div class="col-lg-5 ">
                                         <select class="form-control selectpicker" name="Engin_Type">
-                                            <option>Straight</option>
-                                            <option>V engines</option>
-                                            <option>Single cylinder engines </option>
-                                            <option>Flat engines</option>
-                                            <option>Opposed-piston engines</option>
-                                            <option>W engines</option>
-                                            <option>X engines</option>
-                                            <option>U engines</option>
-                                            <option>H engines</option>
-                                            <option>Valves</option>
+                                            <option>TDI</option>
+                                            <option>TI</option>
+                                            <option>V8</option>
+                                            <option>V4</option>
+                                            <option>V6</option>
                                         </select>
                                     </div>
                                     <label class="col-form-label text-right col-lg-1 ">Featured</label>
@@ -587,7 +585,7 @@
                                         <select class="form-control selectpicker" name="Featured">
                                             <option>Runs & Drives</option>
                                             <option>Not running</option>
-
+                                            <option>Missing keys</option>
                                         </select>
                                     </div>
                                 </div>
@@ -640,6 +638,7 @@
                     <button type="submit" class="btn btn-primary font-weight-bold">Save changes</button>
                 </div>
             </form>
+                </div>
         </div>
     </div>
 </div>
@@ -648,41 +647,7 @@
 
 <script>
 
-// Class definition
-var KTFormRepeater = function() {
 
-    // Private functions
-    var demo1 = function() {
-        $('#kt_repeater_1').repeater({
-            initEmpty: false,
-
-            defaultValues: {
-                'text-input': 'foo'
-            },
-
-            show: function () {
-                $(this).slideDown();
-            },
-
-            hide: function (deleteElement) {
-                $(this).slideUp(deleteElement);
-            }
-        });
-    }
-
-    return {
-        // public functions
-        init: function() {
-            demo1();
-        }
-    };
-}();
-
-jQuery(document).ready(function() {
-    KTFormRepeater.init();
-});
-
-// Class definition
 
 var KTDatatableRemoteAjaxDemo = function() {
     // Private functions
@@ -1008,7 +973,12 @@ jQuery(document).ready(function() {
     KTDatatableRemoteAjaxDemo.init();
 });
 
-
+// inline picker
+$('#kt_datepicker_6').datepicker({
+			rtl: KTUtil.isRTL(),
+			todayHighlight: true,
+			templates: arrows
+		});
 
 </script>
 
