@@ -22,10 +22,10 @@ class AddAdd1ColumnToUsers extends Migration
             $table->text('avatar')->nullable();
             $table->string('img')->nullable();
             $table->string('type')->default('USER');
-            $table->string('country_code');
-            $table->string('phone_number');
-            $table->string('authy_id');
-            $table->boolean('is_phone_verified')->default(false);
+            $table->string('country_code')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('authy_id')->nullable();
+            $table->boolean('is_phone_verified')->nullable();
         });
     }
 

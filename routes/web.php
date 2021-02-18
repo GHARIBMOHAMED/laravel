@@ -27,7 +27,7 @@ Route::get('login/google/callback', [App\Http\Controllers\LoginController::class
 
 //admin
 route::middleware(['auth','verified'])->group(function(){
-    Route::view('/', 'welcome');
+    Route::view('/home', 'welcome');
     Route::resource('edit', UserController::class);
     Route::get('data', 'Admin\UserController@create');
     Route::delete('destroy/{id}', 'Admin\UserController@destroy');
@@ -50,7 +50,7 @@ route::middleware(['auth'])->group(function(){
 
     Route::view('/product', 'client/product')->name('client.product');
 });
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::view('/about', 'client/about');
 
 Route::view('/contact', 'client/contact');
