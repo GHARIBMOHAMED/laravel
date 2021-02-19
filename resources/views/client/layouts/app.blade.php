@@ -20,7 +20,7 @@
     <link rel="stylesheet" href=" {{ asset('css/jquery-ui.min.css') }}">
     <link rel="stylesheet" href=" {{ asset('css/main.css') }}">
 
-    <link rel="shortcut icon" href=" images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href=" images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>

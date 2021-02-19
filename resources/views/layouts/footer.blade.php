@@ -114,8 +114,9 @@
                         <!--end::Page Scripts-->
                         <script src="assets/js/pages/crud/forms/validation/form-widgets.js"></script>
                         <script src="assets/js/pages/crud/forms/widgets/input-mask.js"></script>
-                        <script src="https://releases.transloadit.com/uppy/v1.25.0/uppy.min.js"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
 
 
 

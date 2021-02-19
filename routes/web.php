@@ -48,7 +48,7 @@ route::middleware(['auth','verified'])->group(function(){
 
 route::middleware(['auth'])->group(function(){
 
-    Route::view('/product', 'client/product')->name('client.product');
+    Route::get('/product', 'productController@index');
 });
 Route::get('/', 'HomeController@index');
 Route::view('/about', 'client/about');
@@ -57,6 +57,17 @@ Route::view('/contact', 'client/contact');
 Route::view('/signin', 'auth/login');
 Route::view('/signup', 'auth/register');
 
+
 Route::get('/bidin/{id}/{price}', 'HomeController@bidin');
+
+
+// dashboard
+Route::view('/dashboard', 'client/dashboard/index');
+Route::view('/mybid', 'client/dashboard/mybids');
+Route::view('/myfavorite', 'client/dashboard/myfavorite');
+Route::view('/notification', 'client/dashboard/notification');
+Route::view('/profile', 'client/dashboard/profile');
+Route::view('/referal', 'client/dashboard/referal');
+Route::view('/wining', 'client/dashboard/wining');
 
 

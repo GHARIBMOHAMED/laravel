@@ -226,68 +226,19 @@
                             </div>
                             <div class="separator separator-dashed my-10"></div>
 
-                            <div class="form-group row">
-                                <label class="col-form-label text-right col-lg-1 ">Fule Type :</label>
-                                <div class="col-lg-5 ">
-                                    <select class="form-control selectpicker" name="Fule_Type1" id="Fule_Type1">
-                                        <option>Diesel</option>
-                                        <option>Gasoline</option>
-                                        <option>Kerosene</option>
-                                    </select>
-                                </div>
-                                <label class="col-form-label text-right col-lg-1 ">Vehicle Type :</label>
-                                <div class="col-lg-5 ">
-                                    <select class="form-control selectpicker" name="Vehicle_Type1" id="Vehicle_Type1">
-                                        <option>sedan </option>
-                                        <option>coupe </option>
-                                        <option>sports cars</option>
-                                        <option>Wagons </option>
-                                        <option>hatchback</option>
-                                        <option>convertible</option>
-                                        <option>SUV</option>
-                                        <option>Minivans </option>
-                                        <option>pickup truck</option>
-                                        <option>bike</option>
-                                        <option>jetsky</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="separator separator-dashed my-10"></div>
 
-                                <div class="form-group row">
-                                    <label class="col-form-label text-right col-lg-1 ">Model :</label>
-                                    <div class="col-lg-5 ">
-                                        <input type="text" class="form-control"  id="Model" name="Model" placeholder="Enter mode "/>
-                                        <span class="form-text text-muted">Please enter your Model</span>
-                                    </div>
-                                    <label class="col-form-label text-right col-lg-1 ">Transmittion Type :</label>
-                                    <div class="col-lg-5 ">
-                                        <select class="form-control selectpicker" name="Transmittion_Type" id="Transmittion_Type">
-                                            <option>Manual transmission </option>
-                                            <option>Automatic transmission </option>
-                                            <option>Continuously variable transmission</option>
-                                            <option>Semi-automatic and dual-clutch </option>
 
-                                        </select>
-                                    </div>
-                                    </div>
-                                    <div class="separator separator-dashed my-10"></div>
 
 
                                 <div class="form-group row">
                                     <label class="col-form-label text-right col-lg-1 ">Engin Type :</label>
                                     <div class="col-lg-5 ">
                                         <select class="form-control selectpicker" name="Engin_Type1" id="Engin_Type1">
-                                            <option>Straight</option>
-                                            <option>V engines</option>
-                                            <option>Single cylinder engines                                            </option>
-                                            <option>Flat engines</option>
-                                            <option>Opposed-piston engines</option>
-                                            <option>W engines</option>
-                                            <option>X engines</option>
-                                            <option>U engines</option>
-                                            <option>H engines</option>
-                                            <option>Valves</option>
+                                            <option>TDI</option>
+                                            <option>TI</option>
+                                            <option>V4</option>
+                                            <option>V6</option>
+                                            <option>V8</option>
                                         </select>
                                     </div>
                                     <label class="col-form-label text-right col-lg-1 ">Featured</label>
@@ -575,9 +526,9 @@
                                         <select class="form-control selectpicker" name="Engin_Type">
                                             <option>TDI</option>
                                             <option>TI</option>
-                                            <option>V8</option>
                                             <option>V4</option>
                                             <option>V6</option>
+                                            <option>V8</option>
                                         </select>
                                     </div>
                                     <label class="col-form-label text-right col-lg-1 ">Featured</label>
@@ -973,12 +924,7 @@ jQuery(document).ready(function() {
     KTDatatableRemoteAjaxDemo.init();
 });
 
-// inline picker
-$('#kt_datepicker_6').datepicker({
-			rtl: KTUtil.isRTL(),
-			todayHighlight: true,
-			templates: arrows
-		});
+
 
 
 

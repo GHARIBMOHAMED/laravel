@@ -31,7 +31,7 @@
 
 
 <!--============= How Section Starts Here =============-->
-<section class="how-section padding-top padding-bottom pos-rel">
+<section class="how-section  pos-rel" style="padding-top: 5%">
     <div class="container">
         <div class="section-header text-lg-left">
             <h2 class="title">How it works</h2>
@@ -151,10 +151,9 @@
     <div class="container">
         <div class="section-header-3">
             <div class="left d-block">
-                <h2 class="title mb-3">Trending Items</h2>
-                <p>Bid on 1,000’s of vehicles from more than 25 countries</p>
+                <h3>The best </h3>
             </div>
-            <a href="#0" class="normal-button">View All</a>
+            <a href="{{ url('product') }}" class="normal-button">View All</a>
         </div>
         <div class="row justify-content-center mb-30-none">
             @if(count($cars) > 0)

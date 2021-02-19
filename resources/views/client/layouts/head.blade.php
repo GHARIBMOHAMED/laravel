@@ -29,35 +29,19 @@
                         </select>
                     </li>
                 </ul>
-                <ul class="cart-button-area">
+               @if(auth()->user()) <ul class="cart-button-area">
                     <li>
-                        <a href="#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">08</span></a>
+                        <a href="#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">01</span></a>
                     </li>
                     <li>
-                        <a href="{{ route('logout') }} " class="user-button" onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
-<form action="{{ route('logout') }}" method="POST" hidden id="logout_form">
-@csrf
-</form>
-                            @if (auth()->user())
-                                        <div class="d-flex align-items-center">
-                                        <div class="symbol symbol-40 flex-shrink-0">
-                                            <div class="symbol-label" style="background-image:url('{{ auth()->user()->avatar }}')"></div>
-                                        </div>
-                                    </div>
-                                    @else
-                                    <div class="d-flex align-items-center">
-                                        <div class="symbol symbol-40 flex-shrink-0">
-                                            <div class="symbol-label" style="background-image:url('assets/media/users/default.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    @endif
 
-                                </i></a>
+                            <a href="/"  onclick="event.preventDefault(); document.getElementById('logout_form').submit();" style="color: antiquewhite;">
+                            {{ auth()->user()->name }}</a>
 
 
-
+                             <form action="{{ route('logout') }}" method="POST" hidden id="logout_form">@csrf</form>
                     </li>
-                </ul>
+                </ul>@endif
             </div>
         </div>
     </div>
@@ -84,6 +68,11 @@
                     <li>
                         <a href="/contact">Contact</a>
                     </li>
+                    @if(auth()->user())
+                    <li>
+                        <a href="/dashboard">Dashboard</a>
+                    </li>
+                    @endif
                 </ul>
                 <form class="search-form">
                     <input type="text" placeholder="Search for brand, model....">
@@ -124,46 +113,7 @@
                     <a href="#" class="remove-cart">Remove</a>
                 </div>
             </div>
-            <div class="single-product-item">
-                <div class="thumb">
-                    <a href="#0"><img src=" {{ asset('images/shop/shop02.jpg') }}" alt="shop"></a>
-                </div>
-                <div class="content">
-                    <h4 class="title"><a href="#0">Water Pot</a></h4>
-                    <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                    <a href="#" class="remove-cart">Remove</a>
-                </div>
-            </div>
-            <div class="single-product-item">
-                <div class="thumb">
-                    <a href="#0"><img src=" {{ asset('images/shop/shop03.jpg') }}" alt="shop"></a>
-                </div>
-                <div class="content">
-                    <h4 class="title"><a href="#0">Art Paper</a></h4>
-                    <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                    <a href="#" class="remove-cart">Remove</a>
-                </div>
-            </div>
-            <div class="single-product-item">
-                <div class="thumb">
-                    <a href="#0"><img src=" {{ asset('images/shop/shop04.jpg') }}" alt="shop"></a>
-                </div>
-                <div class="content">
-                    <h4 class="title"><a href="#0">Stop Watch</a></h4>
-                    <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                    <a href="#" class="remove-cart">Remove</a>
-                </div>
-            </div>
-            <div class="single-product-item">
-                <div class="thumb">
-                    <a href="#0"><img src=" {{ asset('images/shop/shop05.jpg') }}" alt="shop"></a>
-                </div>
-                <div class="content">
-                    <h4 class="title"><a href="#0">Comics Book</a></h4>
-                    <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                    <a href="#" class="remove-cart">Remove</a>
-                </div>
-            </div>
+
             <div class="btn-wrapper text-center">
                 <a href="#0" class="custom-button"><span>Checkout</span></a>
             </div>
