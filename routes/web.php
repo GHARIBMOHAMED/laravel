@@ -56,3 +56,7 @@ Route::view('/about', 'client/about');
 Route::view('/contact', 'client/contact');
 Route::view('/signin', 'auth/login');
 Route::view('/signup', 'auth/register');
+
+Route::get('/bidin/{id}/{price}', 'HomeController@bidin');
+
+

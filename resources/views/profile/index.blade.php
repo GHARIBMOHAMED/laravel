@@ -980,6 +980,8 @@ $('#kt_datepicker_6').datepicker({
 			templates: arrows
 		});
 
+
+
 </script>
 
 

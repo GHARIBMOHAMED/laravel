@@ -1,5 +1,6 @@
 @extends('client.layouts.app')
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
  <!--============= Banner Section Starts Here =============-->
  <section class="banner-section-4 bg_img oh" data-background=" /images/banner/banner-bg-4.png">
     <div class="container">
@@ -159,16 +160,15 @@
             @if(count($cars) > 0)
             @foreach($cars as $car)
 
-            <div class="col-md-6 col-lg-12">
+            <div class="col-md-6 col-lg-12"  id="component{{ $car->id }}">
                 <div class="auction-item-6">
                     <div class="auction-inner">
                         <div class="auction-thumb">
-                            <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[3] }}" alt="trending"></a>
-                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                            <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[7] }}" alt="trending"></a>
+                            <a href="#0"  class="rating"><i class="far fa-star"></i></a>
                         </div>
                         <div class="auction-content">
-                            <h5 class="title"><a href="product-details.html">{{ $car->year }}  {{ $car->direction }}</a></h5>
+                            <h5 class="title"><a href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }}</a></h5>
                             <div class="item-information">
                                 <ul>
                                     <li><span>Number</span>{{ $car->plate }}</li>
@@ -197,9 +197,9 @@
                                 </div>
                             </div>
                             <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
+                                Total Bids : <span class="total-bids"> Bids {{ $car->bids }}</span>
                             </div>
-                            <a href="#0" class="custom-button">Submit a bid</a>
+                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Increace bid by 50$</a>
                         </div>
                     </div>
                 </div>
@@ -212,182 +212,6 @@
 </section>
 <!--============= Trending Section Ends Here =============-->
 
-
-<!--============= Ending Auction Section Starts Here =============-->
-<section class="ending-auction padding-top pos-rel">
-    <div class="popular-bg bg_img" data-background=" /images/auction/popular/popular-bg.png"></div>
-    <div class="container">
-        <div class="section-header cl-white">
-            <span class="cate">Closing Within 24 Hours</span>
-            <h2 class="title">Auctions Ending soon</h2>
-            <p>Bid and win great deals,Our auction process is simple, efficient, and transparent.</p>
-        </div>
-        <div class="popular-auction-wrapper">
-            <div class="row justify-content-center mb-40-none">
-                <div class="col-lg-6">
-                    <div class="auction-item-3">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/ending/auction01.png" alt="ending"></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h6 class="title">
-                                <a href="product-details.html">2021 Honda Insight,
-                                    Touring</a>
-                            </h6>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="auction-item-3">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/ending/auction02.png" alt="ending"></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h6 class="title">
-                                <a href="product-details.html">2011 Hyundai Sonata,
-                                    Se/Limited</a>
-                            </h6>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="auction-item-3">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/ending/auction03.png" alt="ending"></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h6 class="title">
-                                <a href="product-details.html">2016 Dodge Grand
-                                    Caravan, Sxt</a>
-                            </h6>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="auction-item-3">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/ending/auction04.png" alt="ending"></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h6 class="title">
-                                <a href="product-details.html">2009 Jeep Wrangler
-                                    Unlimite, Sahara</a>
-                            </h6>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="auction-item-3">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/ending/auction05.png" alt="ending"></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h6 class="title">
-                                <a href="product-details.html">2009 Toyota Prius
-                                    (Medford, NY 11763)</a>
-                            </h6>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="auction-item-3">
-                        <div class="auction-thumb">
-                            <a href="product-details.html"><img src=" /images/auction/ending/auction06.png" alt="ending"></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h6 class="title">
-                                <a href="product-details.html">2019 Indian Motorcycle
-                                    Co. Scout, Bobber</a>
-                            </h6>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids">130 Bids</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="load-wrapper">
-                <a href="#0" class="normal-button">See All Auction</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!--============= Ending Auction Section Ends Here =============-->
 
 
 <!--============= Call In Section Starts Here =============-->
@@ -484,6 +308,29 @@
         </div>
     </div>
 </section>
-<!--============= Client Section Ends Here =============-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+{{-- <script>
+jQuery(document).ready(function() {
+$("#target" ).on('click', '[data-record]', function() {
+    var id =0;
+    var id = this.dataset.record;
+    $.ajax({
+                        url: 'http://127.0.0.1:8000/bidin/1',//+id ,
+                        method:'POST',
+                        data: id,
+                        contentType: 'application/json',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 
+                        success: function(response) {
+                            if(response) {
+
+                                //$('#deleteForm1').attr("action", '/newCar/'+response.id);
+
+                            }
+                        }
+                        });
+});
+});
+
+</script> --}}
 @endsection

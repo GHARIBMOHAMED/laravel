@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
 use App\Models\Bid;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
+class BidController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cars= Car::leftjoin('bids','bids.car_id','=','cars.id')
-        ->groupBy('cars.id')
-        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
-        //return dd($cars);
-        return view('client/home')->with('cars', $cars);
-
-
-
-
+        //
     }
 
     /**
@@ -36,7 +24,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -53,35 +41,21 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bid  $bid
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bid $bid)
     {
-        $details = Car::find($id);
-        return view('client/car-detail')->with('details', $details);
-    }
-
-    public function bidin($id , $price)
-    {
-        $car = Car::find($id);
-        $car->price = $price+50;
-        $bids = new Bid();
-        $bids->user_id = auth()->user()->id;
-        $bids->car_id = $id;
-        $bids->save();
-        $car->save();
-
-        return redirect(url()->previous().'#component'.$id);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bid  $bid
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bid $bid)
     {
         //
     }
@@ -90,26 +64,21 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Bid  $bid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Bid $bid)
     {
         //
     }
 
-    public function onecar()
-    {
-
-
-    }
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bid  $bid
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bid $bid)
     {
         //
     }
