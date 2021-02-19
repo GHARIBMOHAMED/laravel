@@ -7,7 +7,6 @@
         <div class="row align-items-center">
             <div class="col-md-10 col-lg-7 col-xl-8">
                 <div class="banner-content cl-white">
-                    <h5 class="cate">Enjoy Exclusive</h5>
                     <h1 class="title">Buy Your Car In Real Time <span class="d-xl-block">Bidding</span></h1>
                     <p class="mw-500">
                         Thousands of Vehicles for Sale Every Day, We havejust the right one for you.
@@ -17,7 +16,7 @@
             </div>
             <div class="col-lg-5 col-xl-4">
                 <div class="banner-thumb-4">
-                    <a href="#0" class="bid-now"><i class="flaticon-auction"></i><span>Bid Now</span></a>
+                    <a href="/product" class="bid-now"><i class="flaticon-auction"></i><span>Bid Now</span></a>
                     <img src=" /images/banner/banner-4.png" alt="banner">
                 </div>
             </div>

@@ -7,13 +7,13 @@
     <div class="container">
         <ul class="breadcrumb">
             <li>
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
             </li>
             <li>
                 <a href="#0">Pages</a>
             </li>
             <li>
-                <span> Jewelry</span>
+                <span> Cars</span>
             </li>
         </ul>
     </div>
@@ -22,150 +22,8 @@
 <!--============= Hero Section Ends Here =============-->
 
 
-<!--============= Featured Auction Section Starts Here =============-->
-<section class="featured-auction-section padding-bottom mt--240 mt-lg--440 pos-rel">
-    <div class="container">
-        <div class="section-header cl-white mw-100 left-style">
-            <h3 class="title">Bid on These Featured Auctions!</h3>
-        </div>
-        <div class="row justify-content-center mb-30-none">
-            <div class="col-sm-10 col-md-6 col-lg-4">
-                <div class="auction-item-2">
-                    <div class="auction-thumb">
-                        <a href="product-details.html"><img src="assets/images/auction/jewelry/auction-1.jpg" alt="jewelry"></a>
-                        <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                        <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                    </div>
-                    <div class="auction-content">
-                        <h6 class="title">
-                            <a href="#0">Gold Ring With Clear Stones</a>
-                        </h6>
-                        <div class="bid-area">
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-money"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Buy Now</div>
-                                    <div class="amount">$5,00.00</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="countdown-area">
-                            <div class="countdown">
-                                <div id="bid_counter23"></div>
-                            </div>
-                            <span class="total-bids">30 Bids</span>
-                        </div>
-                        <div class="text-center">
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-10 col-md-6 col-lg-4">
-                <div class="auction-item-2">
-                    <div class="auction-thumb">
-                        <a href="product-details.html"><img src="assets/images/auction/jewelry/auction-2.jpg" alt="jewelry"></a>
-                        <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                        <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                    </div>
-                    <div class="auction-content">
-                        <h6 class="title">
-                            <a href="#0">Ring With Clear Stone Accents</a>
-                        </h6>
-                        <div class="bid-area">
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-money"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Buy Now</div>
-                                    <div class="amount">$5,00.00</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="countdown-area">
-                            <div class="countdown">
-                                <div id="bid_counter24"></div>
-                            </div>
-                            <span class="total-bids">30 Bids</span>
-                        </div>
-                        <div class="text-center">
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-10 col-md-6 col-lg-4">
-                <div class="auction-item-2">
-                    <div class="auction-thumb">
-                        <a href="product-details.html"><img src="assets/images/auction/jewelry/auction-3.jpg" alt="jewelry"></a>
-                        <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                        <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                    </div>
-                    <div class="auction-content">
-                        <h6 class="title">
-                            <a href="#0">Gold Ring With Clear Stones</a>
-                        </h6>
-                        <div class="bid-area">
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">$876.00</div>
-                                </div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-money"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Buy Now</div>
-                                    <div class="amount">$5,00.00</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="countdown-area">
-                            <div class="countdown">
-                                <div id="bid_counter25"></div>
-                            </div>
-                            <span class="total-bids">30 Bids</span>
-                        </div>
-                        <div class="text-center">
-                            <a href="#0" class="custom-button">Submit a bid</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--============= Featured Auction Section Ends Here =============-->
-
-
 <!--============= Product Auction Section Starts Here =============-->
-<div class="product-auction padding-bottom">
+<div class="product-auction padding-bottom featured-auction-section padding-bottom mt--240 mt-lg--440 pos-rel" >
     <div class="container">
         <div class="row mb--50">
             <div class="col-lg-4 mb-50">
@@ -222,7 +80,7 @@
                 </div>
             </div>
             <div class="col-lg-8 mb-50">
-                <div class="product-header mb-40 style-2">
+                <div class="product-header mb-40 style-3" style="background-color:white">
                     <div class="product-header-item">
                         <div class="item">Sort By : </div>
                         <select name="sort-by" class="select-bar">
@@ -251,7 +109,7 @@
                 <div class="row mb-30-none justify-content-center">
                             @if(count($cars) > 0)
                             @foreach($cars as $car)
-                            <div class="col-sm-10 col-md-6">
+                            <div class="col-sm-10 col-md-6" id="component{{ $car->id }}">
                                 <div class="auction-item-2">
                                     <div class="auction-thumb">
                                         <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[7] }}" alt="trending" alt="product"></a>
@@ -303,21 +161,8 @@
 
 
                 <ul class="pagination">
-                    <li>
-                        <a href="#0"><i class="flaticon-left-arrow"></i></a>
-                    </li>
-                    <li>
-                        <a href="#0">1</a>
-                    </li>
-                    <li>
-                        <a href="#0" class="active">2</a>
-                    </li>
-                    <li>
-                        <a href="#0">3</a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="flaticon-right-arrow"></i></a>
-                    </li>
+                    {{ $cars->links() }}
+
                 </ul>
             </div>
         </div>

@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Pagination\Paginator;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class productController extends Controller
 {
@@ -17,11 +19,33 @@ class productController extends Controller
     {
         $cars= Car::leftjoin('bids','bids.car_id','=','cars.id')
         ->groupBy('cars.id')
-        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
+        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])
+        ;
+        $cars = $this->paginate($cars);
+
         //return dd($cars);
         return view('client/product')->with('cars', $cars);
     }
 
+    public function paginate($cars, $perPage = 6, $page = null,
+    $baseUrl = 'product',
+         $options = [])
+        {
+            $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+
+            $cars = $cars instanceof Collection ?
+                           $cars : Collection::make($cars);
+
+            $lap = new LengthAwarePaginator($cars->forPage($page, $perPage),
+                               $cars->count(),
+                               $perPage, $page, $options);
+
+            if ($baseUrl) {
+                $lap->setPath($baseUrl);
+            }
+
+            return $lap;
+        }
     /**
      * Show the form for creating a new resource.
      *

@@ -66,8 +66,29 @@
         <div id="kt_aside_menu" class="aside-menu min-h-lg-800px" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
-                <li class="menu-item menu-item-active" aria-haspopup="true">
-                    <a href="" class="menu-link">
+                <li >
+                    <div class=" row" style="background-color: white">
+                        <div class="col-sm-4 col-lg-4">
+                            <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
+                                <div class="d-flex align-items-center">
+                                    <div class="symbol symbol-40  flex-shrink-0 ml-5 ">
+
+                                        <div class="symbol-label " style="background-image:url('{{ auth()->user()->avatar }}')"></div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-5 col-lg-6 mt-3 mb-3">
+                            {{ auth()->user()->name }}
+                        </div>
+                    </div>
+
+                </li>
+                <br>
+                <br>
+                <li class="menu-item " aria-haspopup="true">
+                    <a href="{{ url('home') }}" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -90,49 +111,37 @@
                         <span class="menu-text">Dashboard</span>
                     </a>
                 </li>
-                <li >
-                    <div class="form-group row" style="background-color: azure">
-                        <div class="col-sm-4 col-lg-4">
-                            <a href="{{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
-                                <div class="d-flex align-items-center">
-                                    <div class="symbol symbol-40  flex-shrink-0 ml-5 mt-2 mb-2">
 
-                                        <div class="symbol-label " style="background-image:url('{{ auth()->user()->avatar }}')"></div>
-
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-5 col-lg-6 mt-3 mb-3">
-                            {{ auth()->user()->name }}
-                        </div>
-                    </div>
-
+                <li class="menu-item " aria-haspopup="true">
+                    <a href="{{ url('edit') }}" class="menu-link">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo5\dist/../src/media/svg/icons\General\User.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <polygon points="0 0 24 0 24 24 0 24"/>
+                                <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
+                            </g>
+                        </svg><!--end::Svg Icon--></span>
+                        <span class="menu-text">Users</span>
+                    </a>
                 </li>
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 
-                    <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ url('edit') }}" class="menu-link">
-                            <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Edit User</span>
-                        </a>
-                    </li>
-                    <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ url('add') }}" class="menu-link">
-                            <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Add User</span>
-                        </a>
-                    </li>
-                    <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ url('index') }}" class="menu-link">
-                            <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Add Cars</span>
-                        </a>
-                    </li>
-                    <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ url('home') }}" class="menu-link">
-                            <i class="menu-bullet menu-bullet-dot"><span></span></i><span class="menu-text">Client side</span>
-                        </a>
-                    </li>
+                <li class="menu-item " aria-haspopup="true">
+                    <a href="{{ url('index')}}" class="menu-link">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo5\dist/../src/media/svg/icons\Tools\Road-Cone.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M14.8520384,9 L15.7780576,12 L8.22196243,12 L9.14797495,9 L14.8520384,9 Z M13.9260192,6 L10.0739875,6 L10.7050601,3.95551581 C10.8804029,3.38745846 11.4054966,3 12,3 C12.5945036,3 13.1195978,3.38745798 13.2949418,3.95551522 L13.9260192,6 Z M16.7040768,15 L17.9387691,19 L6.06126654,19 L7.2959499,15 L16.7040768,15 Z" fill="#000000"/>
+                                <rect fill="#000000" opacity="0.3" x="3" y="20" width="18" height="2" rx="1"/>
+                            </g>
+                        </svg><!--end::Svg Icon--></span>
+                        <span class="menu-text">Cars</span>
+                    </a>
                 </li>
+
+
+
 
                 </li>
             </ul>

@@ -5,7 +5,11 @@
 	<link rel="stylesheet" type="text/css"
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-
+<style>
+    #avatar{
+        ;
+    }
+</style>
 
 <!--begin::Card-->
 <div class="card card-custom">
@@ -71,13 +75,14 @@
 <!--begin::Modal-->
 <div id="ktmodal" class="modal fade" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-xl modal-dialog-centered">
-        <form class="form" id="deleteForm" action="" method="POST">
-            @csrf
 
-		<div class="modal-content" style="min-height: 590px;">
-			<div class="modal-header py-5">
+
+		<div class="modal-content" >
+             <form class="form" id="deleteForm" action="" method="POST">
+            @csrf
+			<div class="modal-header ">
 				<h5 class="modal-title">
-					Edit the user here
+					Edit user
 				</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<i aria-hidden="true" class="ki ki-close"></i>
@@ -85,73 +90,67 @@
             </div>
 
 			<div class="modal-body col-ld-12">
-				<!--begin: Search Form-->
-                <!--begin::Search Form-->
+                <br>
 
-
-
-                <div class="form-group row">
-                    <div class="col-lg-3"></div>
-                    <div class="col-lg-7">
-
-                        <div class="image-input image-input-outline image-input-circle " style="margin-left: 30%" id="kt_image_3">
-                            <div id="avatar" class="image-input-wrapper" style=""></div>
-
-                            <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                <i class="fa fa-pen icon-sm text-muted"></i>
-                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg"/>
-                                <input type="hidden" name="avatar"/>
-                            </label>
-
-                            <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                <i class="ki ki-bold-close icon-xs text-muted"></i>
-                            </span>
+	                <div class="form-group row">
+                    <label class="col-form-label col-lg-1  text-right">Name :</label>
+                    <div class="col-lg-5  ">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
                         </div>
+
+                    </div>
+
+                    <label class="col-form-label col-lg-1  text-right">Email :</label>
+                    <div class="col-lg-5">
+                        <input type="text" id="mail" name="email" class="form-control" placeholder="Email"/>
                     </div>
                 </div>
                 <div class="separator separator-dashed my-10"></div>
-                        <div class="form-group row mt-3 ">
 
-                            <label class="col-lg-1 col-form-label text-right">Full Name:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full name"/>
-
-                            </div>
-                            <label id="email" class="col-lg-1 col-form-label text-right">Email:</label>
-                            <div class="col-lg-3">
-                                <input type="text" id="mail" name="email" class="form-control" placeholder="Email"/>
-
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Country</label>
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <input type="text" id="addr" name="country" class="form-control" placeholder="Country"/>
-
-                                </div>
-
-                            </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-1  text-right">Country :</label>
+                    <div class="col-lg-5  ">
+                        <div class="input-group">
+                            <input type="text" id="addr" name="country" class="form-control" placeholder="Country"/>
                         </div>
 
-<br><br>
-                        <div class="form-group row">
+                    </div>
 
-                            <label class="col-lg-1 col-form-label text-right">State</label>
-                            <div class="col-lg-4">
-                                <div class="input-group">
-                                    <input type="text" id="state" name="state" class="form-control" placeholder="Enter your state"/>
+                    <label class="col-form-label col-lg-1  text-right">State :</label>
+                    <div class="col-lg-5">
+                        <input type="text" id="state" name="state" class="form-control" placeholder="Enter your state"/>
 
-                                </div>
+                    </div>
+                </div>
 
-                            </div>
-                            <label class="col-lg-1 col-form-label text-right">Address</label>
-                            <div class="col-lg-4">
-                                <div class="input-group">
-                                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter your Address"/>
 
-                                </div>
+                <div class="separator separator-dashed my-10"></div>
 
-                            </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-1  text-right">Address :</label>
+                    <div class="col-lg-5  ">
+                        <div class="input-group">
+
+                            <input type="text" id="address" name="address" class="form-control" placeholder="Enter your Address"/>
                         </div>
+
+                    </div>
+
+                    <label class="col-form-label col-lg-1  text-right">Avatar :</label>
+                    <div class="col-lg-5">
+                        <div class="symbol symbol-70 mr-3">
+                            <div class="symbol-label" id="avatar" ></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
 
                     </div>
 
@@ -172,66 +171,89 @@
 <!-- Modal-->
 <div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl"  role="document">
-        <div class="modal-content">
+        <div  class="modal-content" >
+            <form class="form" id="deleteForm" action="" method="POST">
+           @csrf
+           <div class="modal-header ">
+               <h5 class="modal-title">
+                   Add user
+               </h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <i aria-hidden="true" class="ki ki-close"></i>
+               </button>
+           </div>
 
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i aria-hidden="true" class="ki ki-close"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="form">
+           <div class="modal-body col-ld-12">
+               <br>
 
-                            <h3 class="font-size-lg text-dark font-weight-bold mb-6">1. Customer Info:</h3>
-                            <div class="mb-15">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Full Name:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" placeholder="Enter full name"/>
-                                        <span class="form-text text-muted">Please enter your full name</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Email address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" placeholder="Enter email"/>
-                                        <span class="form-text text-muted">We'll never share your email with anyone else</span>
-                                    </div>
-                                </div>
-                            </div>
+                   <div class="form-group row">
+                   <label class="col-form-label col-lg-1  text-right">Name :</label>
+                   <div class="col-lg-5  ">
+                       <div class="input-group">
+                           <input type="text" id="name1" name="name1" class="form-control" placeholder="Full name"/>
+                       </div>
 
+                   </div>
 
-                            <div class="mb-3">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Address:</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" name="address" placeholder="Enter full Address"/>
-                                        <span class="form-text text-muted">Please enter your account holder</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label text-right">Phone</label>
-                                    <div class="col-lg-6">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text"><i class="la la-chain"></i></span></div>
-                                            <input type="text" class="form-control" name="number" placeholder="Phone number"/>
-                                        </div>
-                                    </div>
-                                </div>
+                   <label class="col-form-label col-lg-1  text-right">Email :</label>
+                   <div class="col-lg-5">
+                       <input type="text" id="mail1" name="email1" class="form-control" placeholder="Email"/>
+                   </div>
+               </div>
+               <div class="separator separator-dashed my-10"></div>
 
-                            </div>
+               <div class="form-group row">
+                   <label class="col-form-label col-lg-1  text-right">Country :</label>
+                   <div class="col-lg-5  ">
+                       <div class="input-group">
+                           <input type="text" id="addr1" name="country1" class="form-control" placeholder="Country"/>
+                       </div>
+
+                   </div>
+
+                   <label class="col-form-label col-lg-1  text-right">State :</label>
+                   <div class="col-lg-5">
+                       <input type="text" id="state1" name="state1" class="form-control" placeholder="Enter your state"/>
+
+                   </div>
+               </div>
 
 
+               <div class="separator separator-dashed my-10"></div>
 
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
-                </div>
 
-        </div>
+               <div class="form-group row">
+                   <label class="col-form-label col-lg-1  text-right">Address :</label>
+                   <div class="col-lg-5  ">
+                       <div class="input-group">
+
+                           <input type="text" id="address1" name="address1" class="form-control" placeholder="Enter your Address"/>
+                       </div>
+
+                   </div>
+
+                   <label class="col-form-label col-lg-1  text-right">Avatar :</label>
+                   <div class="col-lg-5">
+                       <div class="symbol symbol-70 mr-3">
+                           <div class="symbol-label" id="avatar" ></div>
+                       </div>
+
+                   </div>
+               </div>
+
+
+
+
+
+
+                   </div>
+
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-light-primary font-weight-bold text-uppercase" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary font-weight-bold text-uppercase">Submit</button>
+                   </div>
+
+               </div>
     </div>
 </div>
 <script>
@@ -454,7 +476,9 @@ var KTDatatableRemoteAjaxDemo = function() {
                             $("#addr").val(response.country);
                             $("#state").val(response.state);
                             $("#address").val(response["add-1"]);
-                            $("#avatar").css('background-image: url(assets/media/users/100_5.jpg)');
+                            $("#avatar").css({
+                                "background-image": "url('"+ response.avatar +"')"
+                                })
                             }
 
                         }
