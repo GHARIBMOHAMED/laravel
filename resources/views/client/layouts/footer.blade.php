@@ -51,29 +51,15 @@
                             <h5 class="title">Auction Categories</h5>
                             <ul class="links-list">
                                 <li>
-                                    <a href="#0">Ending Now</a>
+                                    <a href="{{ url('myfavorite') }}">Favorite</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Vehicles</a>
+                                    <a href="{{ url('mybid') }}">My bids</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Watches</a>
+                                    <a href="{{ url('product ') }}">Products</a>
                                 </li>
-                                <li>
-                                    <a href="#0">Electronics</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Real Estate</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Jewelry</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Art</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Sports & Outdoor</a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -82,25 +68,13 @@
                             <h5 class="title">About Us</h5>
                             <ul class="links-list">
                                 <li>
-                                    <a href="#0">About Sbidu</a>
+                                    <a href="{{ url('about') }}">About Bid Maroc</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Help</a>
+                                    <a href="{{ url('contact') }}">Help</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Affiliates</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Jobs</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Press</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Our blog</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Collectors' portal</a>
+                                    <a href="{{ url('referal') }}">Affiliates</a>
                                 </li>
                             </ul>
                         </div>
@@ -110,19 +84,13 @@
                             <h5 class="title">We're Here to Help</h5>
                             <ul class="links-list">
                                 <li>
-                                    <a href="#0">Your Account</a>
+                                    <a href="{{ url('profile') }}">Your Account</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Safe and Secure</a>
+                                    <a href="{{ url('contact') }}">Contact Us</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Shipping Information</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Help & FAQ</a>
+                                    <a href="{{ url('faq') }}">Help & FAQ</a>
                                 </li>
                             </ul>
                         </div>
@@ -132,32 +100,19 @@
                             <h5 class="title">Follow Us</h5>
                             <ul class="links-list">
                                 <li>
-                                    <a href="#0"><i class="fas fa-phone-alt"></i>(646) 663-4575</a>
+                                    <a href="#0"><i class="fas fa-phone-alt"></i>+212625881150</a>
                                 </li>
                                 <li>
-                                    <a href="#0"><i class="fas fa-blender-phone"></i>(646) 968-0608</a>
+                                    <a href="#0"><i class="fas fa-blender-phone"></i>+212625881150</a>
                                 </li>
                                 <li>
-                                    <a href="#0"><i class="fas fa-envelope-open-text"></i>help@engotheme.com</a>
+                                    <a href="#0"><i class="fas fa-envelope-open-text"></i>help@bidmaroc.com</a>
                                 </li>
                                 <li>
-                                    <a href="#0"><i class="fas fa-location-arrow"></i>1201 Broadway Suite</a>
+                                    <a href="#0"><i class="fas fa-location-arrow"></i>mhamid saada 3</a>
                                 </li>
                             </ul>
-                            <ul class="social-icons">
-                                <li>
-                                    <a href="#0" class="active"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fab fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                            </ul>
+
                         </div>
                     </div>
                 </div>
@@ -184,7 +139,7 @@
                                <a href="#0"><img src="{{ asset('images/footer/mastercard.png ') }}" alt="footer"></a>
                             </li>
                         </ul>
-                        <div class="copyright"><p>&copy; Copyright 2021 | <a href="#0">Sbidu</a> By <a href="#0">Uiaxis</a></p></div>
+                        <div class="copyright"><p>&copy; Copyright 2021 | <a href="#0">Bid Maroc</a> By <a href="#0">Gharib</a></p></div>
                     </div>
                 </div>
             </div>

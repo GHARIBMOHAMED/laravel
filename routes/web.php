@@ -69,5 +69,6 @@ Route::view('/notification', 'client/dashboard/notification');
 Route::view('/profile', 'client/dashboard/profile');
 Route::view('/referal', 'client/dashboard/referal');
 Route::view('/wining', 'client/dashboard/wining');
+Route::view('/faq', 'client/dashboard/faq');
 
 
