@@ -1,6 +1,20 @@
  @section('head')
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <style>
+     @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap");
+     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
+h6, p, blockquote, pre, a, abbr, acronym, address, big,
+ small,
+strike, strong,ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
 
+  font-family: 'DM Sans', sans-serif!important;
 
+  font-weight: 700;
+     }
+ </style>
  <!--============= ScrollToTop Section Starts Here =============-->
  <div class="overlayer" id="overlayer">
     <div class="loader">
@@ -35,7 +49,7 @@
                     </li>
                     <li>
 
-                            <a href="/"  onclick="event.preventDefault(); document.getElementById('logout_form').submit();" style="color: antiquewhite;">
+                            <a href="/" id="log"  onclick="event.preventDefault();" style="color: antiquewhite;">
                             {{ auth()->user()->name }}</a>
 
 
@@ -55,7 +69,7 @@
                 </div>
                 <ul class="menu ml-auto">
                     <li>
-                        <a href="/home">home</a>
+                        <a href="/">home</a>
                     </li>
                     <li>
                         <a href="/product">Auction</a>
@@ -121,5 +135,78 @@
     </div>
 </div>
 <!--============= Cart Section Ends Here =============-->
+<style>
+    .swal2-title {
 
+  font-style: italic;
+  font-size: 30px
+}
+</style>
+<script>
+    $('#log').click(function(){
+        Swal.fire({icon: 'error',
+        title: 'Do you want to log out',
+        showCloseButton: 'true',
+        width:'25%',
+        confirmButtonClass: 'btn btn-warning w-25 mr-05',
+        buttonsStyling: false,
+        }).then((result)=>{
+                if(result.isConfirmed){
+                    event.preventDefault();
+            document.getElementById('logout_form').submit();
+        }else{
+            Swal.close()
+        }
+
+
+       });
+
+    });
+
+    @if(empty(auth()->user()->password) && auth()->user())
+
+
+    setTimeout(
+    function() {
+    (async () => {
+
+
+        const { value: password } = await Swal.fire({
+  title: 'Enter your password',
+  input: 'password',
+  inputLabel: 'Password',
+  inputPlaceholder: 'Enter your password',
+  width:'35%',
+  inputAttributes: {
+    maxlength: 10,
+    autocapitalize: 'off',
+    autocorrect: 'off'
+  }
+});
+
+if (password) {
+    $.ajax({
+             url: 'http://127.0.0.1:8000/fillpass/'+password ,
+             method:'POST',
+             data: password,
+             contentType: 'application/json',
+             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+
+                        success: function(response) {
+                            if(response) {
+
+                                //$('#deleteForm1').attr("action", '/newCar/'+response.id);
+
+                            }
+                        }
+                        });
+
+  Swal.fire(`Entered password: ${password}`)
+}
+
+
+})()}, 5000);
+
+@endif
+</script>
 @endsection

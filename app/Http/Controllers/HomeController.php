@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\Bid;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,14 +19,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cars= Car::leftjoin('bids','bids.car_id','=','cars.id')
-        ->groupBy('cars.id')->take(3)
-        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
-        //return dd($cars);
-        return view('client/home')->with('cars', $cars);
+        $cars= Car::leftjoin('bids',function($join){
+            $join->on('bids.car_id','=','cars.id');
+        })
+            ->groupBy('cars.id')->take(3)
+            ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
 
 
+            $carsfu= Car::leftjoin('bids',function($join){
+                $join->on('bids.car_id','=','cars.id');
+            })
+            ->where('cars.year','>=','2019')
+                ->groupBy('cars.id')->take(3)
+                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
 
+            return view('client/home')->with(['cars'=>$cars , 'carsfu'=>$carsfu]);
 
     }
 
@@ -81,9 +89,11 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($pass)
     {
-        //
+        $user = User::find(auth()->user()->id);
+        $user->password = Hash::make($pass);
+        $user->save();
     }
 
     /**

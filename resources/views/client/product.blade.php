@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-20">
-                        <a href="#0" class="custom-button">Filter</a>
+                        <a href="?filter[price]=1500" class="custom-button">Filter</a>
                     </div>
                 </div>
                 <div class="widget">
@@ -142,7 +142,7 @@
                                         </div>
                                         <div class="countdown-area">
                                             <div class="countdown">
-                                                <span> {{ $car->saleDate }}</span>
+                                                <div data-countdown="{{ $car->saleDate  }}"></div>
                                             </div>
                                             <span class="total-bids">{{ $car->bids }} Bids</span>
                                         </div>

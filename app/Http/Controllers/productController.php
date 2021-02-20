@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 use Illuminate\Pagination\Paginator;
 use App\Models\Car;
+use Spatie\QueryBuilder\Filter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 
 class productController extends Controller
 {
@@ -15,16 +18,27 @@ class productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $cars= Car::leftjoin('bids','bids.car_id','=','cars.id')
         ->groupBy('cars.id')
-        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])
-        ;
+        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
+        //$cars = QueryBuilder::for(Car::class)->AllowedFilter()->get();
         $cars = $this->paginate($cars);
 
         //return dd($cars);
         return view('client/product')->with('cars', $cars);
+    }
+
+    public function filter()
+    {
+
+
+        $cars = QueryBuilder::for(Car::class)
+        ->allowedFilters('model')
+        ->get();
+            return view('client/product')->with('cars', $cars);
     }
 
     public function paginate($cars, $perPage = 6, $page = null,

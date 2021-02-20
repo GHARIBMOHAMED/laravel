@@ -6,8 +6,9 @@ use Illuminate\Support\Facades\Route;
 use Admin\UserController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\LoginController;
+use App\Models\Car;
 use Laravel\Socialite\Facades\Socialite;
-
+use Spatie\QueryBuilder\QueryBuilder;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,8 +50,11 @@ route::middleware(['auth','verified'])->group(function(){
 route::middleware(['auth'])->group(function(){
 
     Route::get('/product', 'productController@index');
+    Route::get('/product1', 'productController@filter');
+
 });
 Route::get('/', 'HomeController@index');
+Route::post('/fillpass/{pass}', 'HomeController@edit');
 Route::view('/about', 'client/about');
 
 Route::view('/contact', 'client/contact');

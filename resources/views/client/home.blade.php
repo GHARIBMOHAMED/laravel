@@ -1,6 +1,7 @@
 @extends('client.layouts.app')
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
  <!--============= Banner Section Starts Here =============-->
  <section class="banner-section-4 bg_img oh" data-background=" /images/banner/banner-bg-4.png">
     <div class="container">
@@ -11,13 +12,18 @@
                     <p class="mw-500">
                         Thousands of Vehicles for Sale Every Day, We havejust the right one for you.
                     </p>
-                    <a href="/signup" class="custom-button yellow btn-large">Get Started</a>
+                    @if(auth()->user())
+                         <a href="/product" class="custom-button yellow btn-large">Explore</a>
+                        @else
+                         <a href="/signup" class="custom-button yellow btn-large">Get Started</a>
+                    @endif
+
                 </div>
             </div>
             <div class="col-lg-5 col-xl-4">
                 <div class="banner-thumb-4">
-                    <a href="/product" class="bid-now"><i class="flaticon-auction"></i><span>Bid Now</span></a>
-                    <img src=" /images/banner/banner-4.png" alt="banner">
+
+                    <img src=" /images/banner/banner-1.png" alt="banner">
                 </div>
             </div>
         </div>
@@ -30,7 +36,7 @@
 
 
 <!--============= How Section Starts Here =============-->
-<section class="how-section  pos-rel" style="padding-top: 5%">
+<section class="how-section padding-bottom pos-rel" style="padding-top: 5%">
     <div class="container">
         <div class="section-header text-lg-left">
             <h2 class="title">How it works</h2>
@@ -72,13 +78,13 @@
             </div>
         </div>
     </div>
-    <div class="car-2 d-none d-lg-block"><img src=" /images/how/car2.png" alt="how"></div>
+
 </section>
 <!--============= How Section Starts Here =============-->
 
 
 
-<!--============= Car Auction Section Starts Here
+
 <section class="car-auction-section padding-bottom pos-rel oh">
     <div class="car-bg"><img src=" /images/auction/car/car-bg.png" alt="car"></div>
     <div class="container">
@@ -91,18 +97,19 @@
         </div>
         <div class="row justify-content-center mb-30-none">
 
+            @if(count($carsfu) > 0)
+            @foreach($carsfu as $car)
 
-
-            <div class="col-sm-10 col-md-6 col-lg-4">
+            <div class="col-sm-10 col-md-6 col-lg-4" id="component{{ $car->id }}">
                 <div class="auction-item-2">
                     <div class="auction-thumb">
-                        <a href="product-details.html"><img src=" /media/" alt="car"></a>
+                        <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[7] }}" alt="trending"></a>
                         <a href="#0" class="rating"><i class="far fa-star"></i></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
                         <h6 class="title">
-                            <a href="#"></a>
+                            <a href="#">{{ $car->year }} - {{ $car->model }}</a>
                         </h6>
                         <div class="bid-area">
                             <div class="bid-amount">
@@ -110,8 +117,8 @@
                                     <i class="flaticon-auction"></i>
                                 </div>
                                 <div class="amount-content">
-                                    <div class="current">Estimated value</div>
-                                    <div class="amount">$</div>
+                                    <div class="current">Est value</div>
+                                    <div class="amount">$ {{ $car->estValue }}</div>
                                 </div>
                             </div>
                             <div class="bid-amount">
@@ -119,30 +126,32 @@
                                     <i class="flaticon-money"></i>
                                 </div>
                                 <div class="amount-content">
-                                    <div class="current">Buy Now</div>
-                                    <div class="amount"></div>
+                                    <div class="current">Bid Now</div>
+                                    <div class="amount">$ {{ $car->price }}</div>
                                 </div>
                             </div>
                         </div>
                         <div class="countdown-area">
                             <div class="countdown">
-                                <div id="bid_counter26"></div>
+                                <div data-countdown="{{ $car->saleDate  }}"></div>
                             </div>
-                            <span class="total-bids">30 Bids</span>
+                            <span class="total-bids">{{ $car->bids }} Bids</span>
                         </div>
                         <div class="text-center">
-                            <a href="#0" class="custom-button">Submit a bid</a>
+                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Submit a bid</a>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
 
+            @endif
 
 
         </div>
     </div>
 </section>
- Car Auction Section Ends Here =============-->
+
 
 
 <!--============= Trending Section Starts Here =============-->
@@ -183,7 +192,7 @@
                         </div>
                         <div class="auction-bidding">
                             <div class="countdown">
-                                <span> {{ $car->saleDate }}</span>
+                                <div data-countdown="{{ $car->saleDate  }}"></div>
                             </div>
                             <div class="bid-amount">
                                 <div class="icon">
@@ -306,29 +315,6 @@
         </div>
     </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-{{-- <script>
-jQuery(document).ready(function() {
-$("#target" ).on('click', '[data-record]', function() {
-    var id =0;
-    var id = this.dataset.record;
-    $.ajax({
-                        url: 'http://127.0.0.1:8000/bidin/1',//+id ,
-                        method:'POST',
-                        data: id,
-                        contentType: 'application/json',
-                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 
-                        success: function(response) {
-                            if(response) {
 
-                                //$('#deleteForm1').attr("action", '/newCar/'+response.id);
-
-                            }
-                        }
-                        });
-});
-});
-
-</script> --}}
 @endsection

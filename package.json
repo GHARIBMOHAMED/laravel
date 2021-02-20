@@ -16,6 +16,8 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "bootstrap": "^4.6.0"
+        "@sweetalert2/theme-bulma": "^4.0.3",
+        "bootstrap": "^4.6.0",
+        "sweetalert2": "^10.15.5"
     }
 }
