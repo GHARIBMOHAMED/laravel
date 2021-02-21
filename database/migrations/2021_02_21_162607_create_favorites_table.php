@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBidsTable extends Migration
+class CreateFavoritesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateBidsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bids', function (Blueprint $table) {
+        Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->string('favorite')->nullable();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('car_id')->constrained('cars');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateBidsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bids');
+        Schema::dropIfExists('favorites');
     }
 }

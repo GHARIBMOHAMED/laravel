@@ -51,6 +51,7 @@ route::middleware(['auth'])->group(function(){
 
     Route::get('/product', 'productController@index');
     Route::get('/product1', 'productController@filter');
+    Route::get('/favorite/{id}', 'productController@favorite');
 
 });
 Route::get('/', 'HomeController@index');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Pagination\Paginator;
 use App\Models\Car;
+use App\Models\Bid;
 use Spatie\QueryBuilder\Filter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +32,15 @@ class productController extends Controller
         return view('client/product')->with('cars', $cars);
     }
 
+    public function favorite($id)
+    {
+        $bids = new Bid();
+        $bids->user_id = auth()->user()->id;
+        $bids->car_id = $id;
+        $bids->favorite='true';
+        $bids->save();
+        return dd($bids);
+    }
 
 
     public function filter()

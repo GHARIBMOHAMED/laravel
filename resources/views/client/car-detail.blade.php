@@ -97,7 +97,7 @@
                         </div>
                         <div class="buy-now-area">
                             <a href="#0" class="custom-button">Buy Now: DH {{ $cars->estValue }}0</a>
-                            <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
+                            <a href="{{ url('favorite/'.$cars->id) }}" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
                             <div class="share-area">
                                 <span>Share to:</span>
                                 <ul>

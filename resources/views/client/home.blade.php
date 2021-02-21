@@ -109,11 +109,11 @@
                     </div>
                     <div class="auction-content">
                         <h5 class="title row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-2 col-md-12 d-flex justify-content-center">
                                 <img src="{{ $car->brand }}-logo.png" alt="" height="40px" width="50px">
                             </div>
-                            <div class="col-lg-8">
-                                <a  class="mt-1" href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }} </a>
+                            <div class="col-lg-10 col-md-12 ">
+                                <a  class="mt-1 d-flex justify-content-center" href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }} </a>
                             </div>
                         </h5>
                         <div class="bid-area">
@@ -122,8 +122,8 @@
                                     <i class="flaticon-auction"></i>
                                 </div>
                                 <div class="amount-content">
-                                    <div class="current">Est value</div>
-                                    <div class="amount">$ {{ $car->estValue }}</div>
+                                    <div class="current" >Buy Now</div>
+                                    <div class="amount" style="font-size: 15px;!important">DH {{ $car->estValue }}</div>
                                 </div>
                             </div>
                             <div class="bid-amount">
@@ -131,8 +131,8 @@
                                     <i class="flaticon-money"></i>
                                 </div>
                                 <div class="amount-content">
-                                    <div class="current">Bid Now</div>
-                                    <div class="amount">$ {{ $car->price }}</div>
+                                    <div class="current">Current Bid</div>
+                                    <div class="amount" style="font-size: 15px;">DH {{ $car->price }}</div>
                                 </div>
                             </div>
                         </div>
@@ -212,13 +212,13 @@
                                 </div>
                                 <div class="amount-content">
                                     <div class="current">Current Bid</div>
-                                    <div class="amount">${{ $car->price }}</div>
+                                    <div class="amount">DH {{ $car->price }}</div>
                                 </div>
                             </div>
                             <div class="bids-area">
                                 Total Bids : <span class="total-bids"> Bids {{ $car->bids }}</span>
                             </div>
-                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Increace bid by 50$</a>
+                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Bid 500 DH</a>
                         </div>
                     </div>
                 </div>
