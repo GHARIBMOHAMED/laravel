@@ -88,12 +88,12 @@ output, ruby, section, summary, time, mark, audio, video {
                     </li>
                     @endif
                 </ul>
-                <form class="search-form">
-                    <input type="text" placeholder="Search for brand, model....">
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                <form class="search-form" action="/product1" method="GET">
+                    <input type="text" name="filter[model]" placeholder="Search for brand, model...." >
+                    <button  type="submit"><i class="fas fa-search"></i></button>
                 </form>
                 <div class="search-bar d-md-none">
-                    <a href="#0"><i class="fas fa-search"></i></a>
+                    <a href=""><i class="fas fa-search"></i></a>
                 </div>
                 <div class="header-bar d-lg-none">
                     <span></span>

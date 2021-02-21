@@ -5,7 +5,7 @@ Template URI: http://pixner.net/sbidu/
 Author: uiaxis
 Author URI: https://themeforest.net/user/uiaxis
 Version: 1.0.0
-Text Domain: 
+Text Domain:
 */
 /*
 ///// CSS Index \\
@@ -3526,8 +3526,8 @@ div[class*="auction"] .custom-button {
 }
 
 .auction-item-2 .auction-thumb .bid {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     color: #ffffff;
     line-height: 40px;
     font-size: 18px;
@@ -3538,9 +3538,9 @@ div[class*="auction"] .custom-button {
     -moz-border-radius: 50%;
     border-radius: 50%;
     text-align: center;
-    background: -moz-linear-gradient(135deg, #b122e6 0%, #ff63de 100%);
-    background: -webkit-linear-gradient(135deg, #b122e6 0%, #ff63de 100%);
-    background: -ms-linear-gradient(135deg, #b122e6 0%, #ff63de 100%);
+    background: -moz-linear-gradient(135deg, #dfac5f 0%, #f08521 100%);
+    background: -webkit-linear-gradient(135deg,#dfac5f 0%, #f08521 100%);
+    background: -ms-linear-gradient(135deg, #dfac5f 0%, #f08521 100%);
     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.13);
 }
 

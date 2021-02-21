@@ -27,19 +27,40 @@
     <div class="container">
         <div class="row mb--50">
             <div class="col-lg-4 mb-50">
+                <form action="/product1" method="GET">
                 <div class="widget">
                     <h5 class="title">Filter by Price</h5>
                     <div class="widget-body">
                         <div id="slider-range"></div>
                         <div class="price-range">
-                            <label for="amount">Price :</label>
-                            <input type="text" id="amount" readonly>
+                            <div class="group-form row">
+
+                                        <div class="row">
+
+                                            <div class="col-mb-2 ml-5">
+                                                <label for="amount">Price :</label>
+                                            </div>
+                                        <div class="col-mb-8">
+                                            <input type="text" name="filter[price]" value="" id="amount" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-mb-2 ml-5">
+                                            <label for="amount">Price :</label>
+                                        </div>
+                                        <div class="col-mb-8">
+                                            <input type="text" value="" id="amount2" readonly>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
                     </div>
                     <div class="text-center mt-20">
-                        <a href="?filter[price]=1500" class="custom-button">Filter</a>
+                        <button type="submit"  class="custom-button">Filter</button>
                     </div>
                 </div>
+                </form>
+                <br>
                 <div class="widget">
                     <h5 class="title">Auction Type</h5>
                     <div class="widget-body">
@@ -102,23 +123,28 @@
                         </select>
                     </div>
                     <form class="product-search ml-auto">
-                        <input type="text" placeholder="Item Name">
+                        <input type="text" name="filter[model]" placeholder="Item Name" value="{{ app('request')->input('filter[model]') }}">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
                 <div class="row mb-30-none justify-content-center">
-                            @if(count($cars) > 0)
+
                             @foreach($cars as $car)
                             <div class="col-sm-10 col-md-6" id="component{{ $car->id }}">
                                 <div class="auction-item-2">
                                     <div class="auction-thumb">
                                         <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[7] }}" alt="trending" alt="product"></a>
                                         <a href="{{ url('cardetail/'.$car->id) }}" class="rating"><i class="far fa-star"></i></a>
-                                        <a href="{{ url('cardetail/'.$car->id) }}" class="bid"><i class="flaticon-auction"></i></a>
+                                        {{-- <a href="{{ url('cardetail/'.$car->id) }}" class="bid" style="padding-top:3px"><img src="{{ $car->brand }}-logo.png" alt=""></i></a> --}}
                                     </div>
                                     <div class="auction-content">
-                                        <h6 class="title">
-                                            <a href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }}</a>
+                                        <h6 class="title row">
+                                            <div class="col-lg-2">
+                                                <img src="{{ $car->brand }}-logo.png" alt="" height="40px" width="50px">
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <a  class="mt-1" href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }} </a>
+                                            </div>
                                         </h6>
                                         <div class="bid-area">
                                             <div class="bid-amount">
@@ -155,12 +181,13 @@
 
                             @endforeach
 
-                            @endif
+
                 </div>
 
 
 
                 <ul class="pagination">
+
                     {{ $cars->links() }}
 
                 </ul>

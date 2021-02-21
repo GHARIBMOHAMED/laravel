@@ -108,9 +108,14 @@
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
-                        <h6 class="title">
-                            <a href="#">{{ $car->year }} - {{ $car->model }}</a>
-                        </h6>
+                        <h5 class="title row">
+                            <div class="col-lg-2">
+                                <img src="{{ $car->brand }}-logo.png" alt="" height="40px" width="50px">
+                            </div>
+                            <div class="col-lg-8">
+                                <a  class="mt-1" href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }} </a>
+                            </div>
+                        </h5>
                         <div class="bid-area">
                             <div class="bid-amount">
                                 <div class="icon">
@@ -175,7 +180,14 @@
                             <a href="#0"  class="rating"><i class="far fa-star"></i></a>
                         </div>
                         <div class="auction-content">
-                            <h5 class="title"><a href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }}</a></h5>
+                            <h5 class="title row">
+                                <div class="col-lg-2">
+                                    <img src="{{ $car->brand }}-logo.png" alt="" height="40px" width="50px">
+                                </div>
+                                <div class="col-lg-8">
+                                    <a  class="mt-1" href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }} </a>
+                                </div>
+                            </h5>
                             <div class="item-information">
                                 <ul>
                                     <li><span>Number</span>{{ $car->plate }}</li>

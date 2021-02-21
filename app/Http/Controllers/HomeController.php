@@ -22,7 +22,7 @@ class HomeController extends Controller
         $cars= Car::leftjoin('bids',function($join){
             $join->on('bids.car_id','=','cars.id');
         })
-            ->groupBy('cars.id')->take(3)
+            ->groupBy('cars.id')->take(4)
             ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
 
 
@@ -66,8 +66,12 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        $details = Car::find($id);
-        return view('client/car-detail')->with('details', $details);
+        $cars= Car::where('cars.id',$id)->leftjoin('bids','bids.car_id','=','cars.id')
+        ->groupBy('cars.id')
+        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids'),DB::raw('count(DISTINCT bids.user_id) as uninque')])->first();
+        //$details = Car::find($id);
+        return view('client/car-detail')->with('cars', $cars);
+        //return dd($details);
     }
 
     public function bidin($id , $price)

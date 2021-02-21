@@ -123,10 +123,10 @@
                                 </select>
                             </div>
 
-                            <label class="col-form-label text-right col-lg-1 ">Estimated Value :</label>
+                            <label class="col-form-label text-right col-lg-1 ">Buy Now Price :</label>
                             <div class="col-lg-5">
                                 <input type="number" class="form-control" name="Estimated_Value1" id="Estimated_Value1" placeholder="Enter Price"/>
-                                <span class="form-text text-muted">Estimated Value</span>
+                                <span class="form-text text-muted">Buy Now Price</span>
                             </div>
                         </div>
 
@@ -193,6 +193,7 @@
                                     <option value="images/cars/corvet">Corvet</option>
                                     <option value="images/cars/dacia">Dacia</option>
                                     <option value="images/cars/dodge">Dodge</option>
+                                    <option value="images/cars/maserati">Maserati</option>
                                     <option value="images/cars/ferrari">Ferrari</option>
                                     <option value="images/cars/fiat">Fiat</option>
                                     <option value="images/cars/infinity">Infinity</option>
@@ -391,10 +392,10 @@
                                     <option>Dakhla-Oued Ed-Dahab Region</option>
                                 </select>
                             </div>
-                            <label class="col-form-label text-right col-lg-1 ">Estimated Value :</label>
+                            <label class="col-form-label text-right col-lg-1 ">Buy Now Price :</label>
                             <div class="col-lg-5">
                                 <input type="number" class="form-control" name="Estimated_Value" placeholder="Enter Price"/>
-                                <span class="form-text text-muted">Estimated Value</span>
+                                <span class="form-text text-muted">Buy Now Price</span>
                             </div>
                             </div>
                             <div class="separator separator-dashed my-10"></div>
@@ -455,6 +456,7 @@
                                     <option value="images/cars/bently">Bently</option>
                                     <option value="images/cars/bugatti">Bugatti</option>
                                     <option value="images/cars/cadilac">Cadilac</option>
+                                    <option value="images/cars/maserati">Maserati</option>
                                     <option value="images/cars/chevrolet">Chevrolet</option>
                                     <option value="images/cars/citroen">Citroen</option>
                                     <option value="images/cars/corvet">Corvet</option>

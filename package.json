@@ -18,6 +18,7 @@
     "dependencies": {
         "@sweetalert2/theme-bulma": "^4.0.3",
         "bootstrap": "^4.6.0",
+        "nouislider": "^14.6.3",
         "sweetalert2": "^10.15.5"
     }
 }

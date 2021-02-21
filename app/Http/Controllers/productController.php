@@ -31,15 +31,40 @@ class productController extends Controller
         return view('client/product')->with('cars', $cars);
     }
 
+
+
     public function filter()
     {
-
-
         $cars = QueryBuilder::for(Car::class)
-        ->allowedFilters('model')
-        ->get();
-            return view('client/product')->with('cars', $cars);
+
+        ->leftjoin('bids','bids.car_id','=','cars.id')
+        ->groupBy('cars.id')->allowedFilters([AllowedFilter::scope('price'),])
+        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids'),DB::raw('count(DISTINCT bids.user_id) as uninque')]);
+        $cars = $this->paginate2($cars);
+        return view('client/product')->with('cars', $cars);
+
+
     }
+
+    public function paginate2($cars, $perPage = 10, $page = null,
+    $baseUrl = 'product1',
+         $options = [])
+        {
+            $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+
+            $cars = $cars instanceof Collection ?
+                           $cars : Collection::make($cars);
+
+            $lap = new LengthAwarePaginator($cars->forPage($page, $perPage),
+                               $cars->count(),
+                               $perPage, $page, $options);
+
+            if ($baseUrl) {
+                $lap->setPath($baseUrl);
+            }
+
+            return $lap;
+        }
 
     public function paginate($cars, $perPage = 6, $page = null,
     $baseUrl = 'product',

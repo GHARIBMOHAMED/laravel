@@ -30,7 +30,7 @@
 
                     <div class="slide-top-item">
                         <div class="slide-inner">
-                            <img src="/media/{{ $details->images[$i] }}" alt="product" style="max-height: 100%;">
+                            <img src="/media/{{ $cars->images[$i] }}" alt="product" style="max-height: 100%;">
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@
 
                     <div class="slide-top-item">
                         <div class="slide-inner">
-                            <img src="/media/{{ $details->images[$i] }}" alt="product">
+                            <img src="/media/{{ $cars->images[$i] }}" alt="product">
                         </div>
                     </div>
 
@@ -66,24 +66,24 @@
                 <div class="col-lg-8">
                     <div class="product-details-content">
                         <div class="product-details-header">
-                            <h2 class="title">{{ $details->year }}  {{ $details->direction }}</h2>
+                            <h2 class="title">{{ $cars->year }} - {{ $cars->model }} ({{ $cars->location }})</h2>
                             <ul>
-                                <li>Listing ID: {{ $details->id }}</li>
-                                <li>Item #: {{ $details->plate }}</li>
+                                <li>Listing ID: {{ $cars->id }}</li>
+                                <li>Item #: {{ $cars->plate }}</li>
                             </ul>
                         </div>
                         <ul class="price-table mb-30">
                             <li class="header">
                                 <h5 class="current">Current Price</h5>
-                                <h3 class="price">US {{ $details->price }}</h3>
+                                <h3 class="price">DH {{ $cars->price }}0</h3>
                             </li>
                             <li>
                                 <span class="details">Buyer's Premium</span>
                                 <h5 class="info">10.00%</h5>
                             </li>
                             <li>
-                                <span class="details">Bid Increment (US)</span>
-                                <h5 class="info">$50.00</h5>
+                                <span class="details">Bid Increment (MAD)</span>
+                                <h5 class="info">DH 500.00</h5>
                             </li>
                         </ul>
                         <div class="product-bid-area">
@@ -96,7 +96,7 @@
                             </form>
                         </div>
                         <div class="buy-now-area">
-                            <a href="#0" class="custom-button">Buy Now: $4,200</a>
+                            <a href="#0" class="custom-button">Buy Now: DH {{ $cars->estValue }}0</a>
                             <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
                             <div class="share-area">
                                 <span>Share to:</span>
@@ -123,7 +123,7 @@
                         <div class="product-single-sidebar mb-3">
                             <h6 class="title">This Auction Ends in:</h6>
                             <div class="countdown">
-                                <div id="bid_counter1"></div>
+                                <div data-countdown="{{ $cars->saleDate  }}"></div>
                             </div>
                             <div class="side-counter-area">
                                 <div class="side-counter-item">
@@ -131,7 +131,7 @@
                                         <img src="{{ asset('images/product/icon1.png') }}" alt="product">
                                     </div>
                                     <div class="content">
-                                        <h3 class="count-title"><span class="counter">61</span></h3>
+                                        <h3 class="count-title"><span class="counter">{{ $cars->uninque }}</span></h3>
                                         <p>Active Bidders</p>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@
                                         <img src="{{ asset('images/product/icon2.png') }}" alt="product">
                                     </div>
                                     <div class="content">
-                                        <h3 class="count-title"><span class="counter">203</span></h3>
+                                        <h3 class="count-title"><span class="counter">0</span></h3>
                                         <p>Watching</p>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                         <img src="{{ asset('images/product/icon3.png') }}" alt="product">
                                     </div>
                                     <div class="content">
-                                        <h3 class="count-title"><span class="counter">82</span></h3>
+                                        <h3 class="count-title"><span class="counter">{{ $cars->bids }}</span></h3>
                                         <p>Total Bids</p>
                                     </div>
                                 </div>
@@ -203,41 +203,41 @@
                 <div class="tab-pane fade show active" id="details">
                     <div class="tab-details-content">
                         <div class="header-area">
-                            <h3 class="title">2012 Ford Escape Hybrid (Brooklyn, NY 11214)</h3>
+                            <h3 class="title">{{ $cars->year }} - {{ $cars->model }} ({{ $cars->location }})</h3>
                             <div class="item">
                                 <table class="product-info-table">
                                     <tbody>
                                         <tr>
                                             <th>Condition</th>
-                                            <td>New</td>
+                                            <td>{{ $cars->damage }}</td>
                                         </tr>
                                         <tr>
                                             <th>Mileage</th>
-                                            <td>15,000 miles</td>
+                                            <td>{{ $cars->km }} KM</td>
                                         </tr>
                                         <tr>
                                             <th>Year</th>
-                                            <td>09-2017</td>
+                                            <td>{{ $cars->year }}</td>
                                         </tr>
                                         <tr>
                                             <th>Engine</th>
-                                            <td>I-4 1,5 l</td>
+                                            <td>{{ $cars->engineType }}</td>
                                         </tr>
                                         <tr>
                                             <th>Fuel</th>
-                                            <td>Regular</td>
+                                            <td>{{ $cars->fuleType }}</td>
                                         </tr>
                                         <tr>
                                             <th>Transmission</th>
-                                            <td>Automatic</td>
+                                            <td>{{ $cars->transmittion }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Color</th>
-                                            <td>Blue</td>
+                                            <th>Seller</th>
+                                            <td>{{ $cars->saleName }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Doors</th>
-                                            <td>5</td>
+                                            <th>featured</th>
+                                            <td>{{ $cars->featured }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -245,16 +245,17 @@
                             <div class="item">
                                 <h5 class="subtitle">NYC Fleet / DCAS units may be located at either of two locations:</h5>
                                 <ul>
-                                    <li>Brooklyn, NY (1908 Shore Parkway)</li>
-                                    <li>Medford, NY (66 Peconic Ave)</li>
+                                    <li>{{ $cars->location }}</li>
+                                    <li>{{ auth()->user()->getAttribute('add-1') }}</li>
+
                                 </ul>
                             </div>
                             <div class="item">
                                 <h5 class="subtitle">This unit is located at:</h5>
                                 <ul>
-                                    <li>Kenben Industries Ltd.</li>
-                                    <li>1908 Shore Parkway</li>
-                                    <li>Brooklyn, NY 11214</li>
+                                    <li>{{ auth()->user()->getAttribute('country') }} , {{ auth()->user()->state }}</li>
+                                    <li>{{ auth()->user()->getAttribute('add-1') }}</li>
+                                    <li>{{ auth()->user()->getAttribute('add-2') }}</li>
                                 </ul>
                             </div>
                             <div class="item">
@@ -262,9 +263,9 @@
                                 <p>Vehicles and equipment often display significant wear and tear. Assets are sold AS IS with no warranty, express or implied, and we highly recommend previewing them before bidding. The preview period is the only opportunity to inspect an asset to verify condition and suitability. No refunds, adjustments or returns will be entertained. </p>
                                 <p>Vehicle preview inspections of the vehicle can be done at the below location on Monday and Tuesday from 10am - 2pm. See Preview Rules Here.</p>
                                 <ul>
-                                    <li>Kenben Industries Ltd.</li>
-                                    <li>1908 Shore Parkway</li>
-                                    <li>Brooklyn, NY 11214</li>
+                                    <li>{{ auth()->user()->getAttribute('country') }} , {{ auth()->user()->state }}</li>
+                                    <li>{{ auth()->user()->getAttribute('add-1') }}</li>
+                                    <li>{{ auth()->user()->getAttribute('add-2') }}</li>
                                 </ul>
                                 <p>BUYER is responsible for all storage fees at time of pick-up. See above under IMPORTANT PICK-UP TIMES for specific requirements for this asset, but generally assets must be picked up within 2 business days of payment otherwise additional storage fees will be applied.</p>
                             </div>
@@ -272,7 +273,7 @@
                                 <h5 class="subtitle">Legal Notice</h5>
                                 <p>Vehicles may not be driven off the lot except with a dealer plate affixed. By law, vehicles are not permitted to be parked on or to drive on the streets of New York without registration and plates registered to the vehicle. If the buyer cannot obtain the required registration and plates prior to pick up, they should have the vehicle towed at their own expense. The buyer should have the vehicle towed at their own expense.</p>
                                 <p>Condition: Untested - Sold As-Is</p>
-                                <p>Employees of Sbidu, its subcontractors and affiliated companies, employees of the NYC Government and those bidding on behalf of PropertyRoom.com, its subcontractors and affiliated companies and employees of the NYC Government are not permitted to bid on or purchase NYC Fleet/DCAS assets. </p>
+                                <p>Employees of Bid Maroc, its subcontractors and affiliated companies, employees of the NYC Government and those bidding on behalf of PropertyRoom.com, its subcontractors and affiliated companies and employees of the NYC Government are not permitted to bid on or purchase NYC Fleet/DCAS assets. </p>
                             </div>
                             <div class="item">
                                 <h5 class="subtitle">Condition</h5>
@@ -280,12 +281,12 @@
                             </div>
                             <div class="item">
                                 <h5 class="subtitle">Bidding</h5>
-                                <p>At this time Sbidu only accepts bidders from the United States, Canada and Mexico on Vehicles and Heavy Industrial Equipment. The Bid Now button will appear on auctions where you are qualified to place a bid.</p>
+                                <p>At this time Bid Maroc only accepts bidders from the United States, Canada and Mexico on Vehicles and Heavy Industrial Equipment. The Bid Now button will appear on auctions where you are qualified to place a bid.</p>
                             </div>
                             <div class="item">
                                 <h5 class="subtitle">Buyer Responsibility</h5>
                                 <p>The BUYER will receive an email notification from PropertyRoom.com following the close of an auction. After fraud verification and payment settlement, we will email the BUYER instructions for retrieving the ASSET from the Will-Call Location listed above.</p>
-                                <p>All applicable shipping, logistics, transportation, customs, fees, taxes, export/import activities and all associated costs are the sole responsibility of the BUYER. No shipping, customs, export or import assistance is available from Sbidu.</p>
+                                <p>All applicable shipping, logistics, transportation, customs, fees, taxes, export/import activities and all associated costs are the sole responsibility of the BUYER. No shipping, customs, export or import assistance is available from Bid Maroc.</p>
                                 <p>When applicable for a given ASSET, BUYER bears responsibility for determining motor vehicle registration requirements in the applicable jurisdiction as well as costs, including any fees, registration fees, taxes, etc., owed as a result of BUYER registering an ASSET; for example, BUYER bears sole responsibility for all title/registration/smog and other such fees.</p>
                                 <p>BUYER is responsible for all storage fees at time of pick-up. See above under IMPORTANT PICK-UP TIMES for specific requirements for this asset, but generally assets must be picked up within 2 business days of payment otherwise additional storage fees will be applied.</p>
                             </div>
@@ -324,7 +325,7 @@
                         <div class="item">
                             <h5 class="title">Notes</h5>
                             <p>Please carefully review our shipping and returns policy before committing to a bid.
-                            From time to time, and at its sole discretion, Sbidu may change the prevailing fee structure for shipping and handling.</p>
+                            From time to time, and at its sole discretion, Bid Maroc may change the prevailing fee structure for shipping and handling.</p>
                         </div>
                     </div>
                 </div>
@@ -435,7 +436,7 @@
                                     <img src="{{ asset('css/img/faq.png') }}" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
                                 </div>
                                 <div class="faq-content">
-                                    <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                                    <p>All successful bidders can confirm their winning bid by checking the “Bid Maroc”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -443,7 +444,7 @@
                                     <img src="{{ asset('css/img/faq.png') }}" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
                                 </div>
                                 <div class="faq-content">
-                                    <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                                    <p>All successful bidders can confirm their winning bid by checking the “Bid Maroc”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -451,7 +452,7 @@
                                     <img src="{{ asset('css/img/faq.png') }}" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
                                 </div>
                                 <div class="faq-content">
-                                    <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                                    <p>All successful bidders can confirm their winning bid by checking the “Bid Maroc”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -459,7 +460,7 @@
                                     <img src="{{ asset('css/img/faq.png') }}" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
                                 </div>
                                 <div class="faq-content">
-                                    <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                                    <p>All successful bidders can confirm their winning bid by checking the “Bid Maroc”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                                 </div>
                             </div>
                             <div class="faq-item open active">
@@ -467,7 +468,7 @@
                                     <img src="{{ asset('css/img/faq.png') }}" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
                                 </div>
                                 <div class="faq-content">
-                                    <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                                    <p>All successful bidders can confirm their winning bid by checking the “Bid Maroc”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -475,7 +476,7 @@
                                     <img src="{{ asset('css/img/faq.png') }}" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
                                 </div>
                                 <div class="faq-content">
-                                    <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                                    <p>All successful bidders can confirm their winning bid by checking the “Bid Maroc”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                                 </div>
                             </div>
                         </div>
