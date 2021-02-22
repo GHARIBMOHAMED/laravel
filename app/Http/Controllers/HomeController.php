@@ -22,16 +22,16 @@ class HomeController extends Controller
         $cars= Car::leftjoin('bids',function($join){
             $join->on('bids.car_id','=','cars.id');
         })
-            ->groupBy('cars.id')->take(4)
-            ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
+            ->groupBy('cars.id')
+            ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->random(4);
 
 
             $carsfu= Car::leftjoin('bids',function($join){
                 $join->on('bids.car_id','=','cars.id');
             })
             ->where('cars.year','>=','2019')
-                ->groupBy('cars.id')->take(3)
-                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
+                ->groupBy('cars.id')
+                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->random(3);
 
             return view('client/home')->with(['cars'=>$cars , 'carsfu'=>$carsfu]);
 
@@ -70,8 +70,15 @@ class HomeController extends Controller
         ->groupBy('cars.id')
         ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids'),DB::raw('count(DISTINCT bids.user_id) as uninque')])->first();
         //$details = Car::find($id);
-        return view('client/car-detail')->with('cars', $cars);
-        //return dd($details);
+
+        $bidders= Bid::where('bids.car_id',$id)
+        ->join('cars','bids.car_id','=','cars.id')
+        ->join('users','bids.user_id','=','users.id')
+
+        ->get(['cars.*','bids.*','users.*']);
+
+        return view('client/car-detail')->with(['cars'=> $cars , 'bidders'=>$bidders]);
+        //return dd(['cars'=> $cars , 'bidders'=>$bidders]);
     }
 
     public function bidin($id , $price)

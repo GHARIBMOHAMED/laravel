@@ -258,38 +258,8 @@
                                     <li>{{ auth()->user()->getAttribute('add-2') }}</li>
                                 </ul>
                             </div>
-                            <div class="item">
-                                <h5 class="subtitle">Acceptance of condition - buyer inspection/preview</h5>
-                                <p>Vehicles and equipment often display significant wear and tear. Assets are sold AS IS with no warranty, express or implied, and we highly recommend previewing them before bidding. The preview period is the only opportunity to inspect an asset to verify condition and suitability. No refunds, adjustments or returns will be entertained. </p>
-                                <p>Vehicle preview inspections of the vehicle can be done at the below location on Monday and Tuesday from 10am - 2pm. See Preview Rules Here.</p>
-                                <ul>
-                                    <li>{{ auth()->user()->getAttribute('country') }} , {{ auth()->user()->state }}</li>
-                                    <li>{{ auth()->user()->getAttribute('add-1') }}</li>
-                                    <li>{{ auth()->user()->getAttribute('add-2') }}</li>
-                                </ul>
-                                <p>BUYER is responsible for all storage fees at time of pick-up. See above under IMPORTANT PICK-UP TIMES for specific requirements for this asset, but generally assets must be picked up within 2 business days of payment otherwise additional storage fees will be applied.</p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Legal Notice</h5>
-                                <p>Vehicles may not be driven off the lot except with a dealer plate affixed. By law, vehicles are not permitted to be parked on or to drive on the streets of New York without registration and plates registered to the vehicle. If the buyer cannot obtain the required registration and plates prior to pick up, they should have the vehicle towed at their own expense. The buyer should have the vehicle towed at their own expense.</p>
-                                <p>Condition: Untested - Sold As-Is</p>
-                                <p>Employees of Bid Maroc, its subcontractors and affiliated companies, employees of the NYC Government and those bidding on behalf of PropertyRoom.com, its subcontractors and affiliated companies and employees of the NYC Government are not permitted to bid on or purchase NYC Fleet/DCAS assets. </p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Condition</h5>
-                                <p>This ASSET is being listed on behalf of a law enforcement agency or other partner ("SELLER") by PropertyRoom.com on a Sold AS IS, WHERE IS, WITH ALL FAULTS basis, with no representation or warranty from PropertyRoom.com or SELLER. In many cases, the car, boat, truck, motorcycle, aircraft, mowers/tractors, etc. ("ASSET") sold on PropertyRoom.com comes from seizure or forfeiture, and the SELLER typically does not possess use-based knowledge of the ASSET. Further, PropertyRoom.com does not physically inspect the ASSET and cannot attest to actual working conditions. PropertyRoom.com and SELLER gather information about the ASSET from authoritative sources; still, errors may appear from time to time in the listing. PropertyRoom.com cautions any website user, shopper, bidder, etc. ("BUYER") to attempt to confirm, with us, information material to a bidding/purchasing decision.</p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Bidding</h5>
-                                <p>At this time Bid Maroc only accepts bidders from the United States, Canada and Mexico on Vehicles and Heavy Industrial Equipment. The Bid Now button will appear on auctions where you are qualified to place a bid.</p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Buyer Responsibility</h5>
-                                <p>The BUYER will receive an email notification from PropertyRoom.com following the close of an auction. After fraud verification and payment settlement, we will email the BUYER instructions for retrieving the ASSET from the Will-Call Location listed above.</p>
-                                <p>All applicable shipping, logistics, transportation, customs, fees, taxes, export/import activities and all associated costs are the sole responsibility of the BUYER. No shipping, customs, export or import assistance is available from Bid Maroc.</p>
-                                <p>When applicable for a given ASSET, BUYER bears responsibility for determining motor vehicle registration requirements in the applicable jurisdiction as well as costs, including any fees, registration fees, taxes, etc., owed as a result of BUYER registering an ASSET; for example, BUYER bears sole responsibility for all title/registration/smog and other such fees.</p>
-                                <p>BUYER is responsible for all storage fees at time of pick-up. See above under IMPORTANT PICK-UP TIMES for specific requirements for this asset, but generally assets must be picked up within 2 business days of payment otherwise additional storage fees will be applied.</p>
-                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -339,91 +309,36 @@
                                         <tr>
                                             <th>Bidder</th>
                                             <th>date</th>
-                                            <th>time</th>
-                                            <th>unit price</th>
+                                            <th>location</th>
+                                            <th>country</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach ($bidders as $bid)
                                         <tr>
                                             <td data-history="bidder">
                                                 <div class="user-info">
                                                     <div class="thumb">
-                                                        <img src="{{ asset('images/history/01.png') }}" alt="history">
+                                                        <img src="{{ $bid->avatar }}" alt="history">
                                                     </div>
                                                     <div class="content">
-                                                        Moses Watts
+                                                        {{ $bid->name }}
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td data-history="date">06/16/2021</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
+                                            <td data-history="date">{{ $bid->saleDate }}</td>
+                                            <td data-history="location">{{ $bid->location }}</td>
+                                            <td data-history="country">
+                                                @if (empty($bid->country))
+                                                Unknown
+                                                @else
+                                                    {{$bid->country }}
+                                                @endif</td>
                                         </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('images/history/02.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Pat Powell
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2021</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('images/history/03.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Jack Rodgers
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2021</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('images/history/04.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Arlene Paul
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2021</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('images/history/05.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Marcia Clarke
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2021</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
-                                <div class="text-center mb-3 mt-4">
-                                    <a href="#0" class="button-3">Load More</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
