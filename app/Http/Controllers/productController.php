@@ -48,7 +48,7 @@ class productController extends Controller
         $cars = QueryBuilder::for(Car::class)
 
         ->leftjoin('bids','bids.car_id','=','cars.id')
-        ->groupBy('cars.id')->allowedFilters([AllowedFilter::scope('price'),])
+        ->groupBy('cars.id')->allowedFilters([AllowedFilter::scope('price'),'model'])
         ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids'),DB::raw('count(DISTINCT bids.user_id) as uninque')]);
         $cars = $this->paginate2($cars);
         return view('client/product')->with('cars', $cars);
