@@ -23,7 +23,7 @@ class HomeController extends Controller
             $join->on('bids.car_id','=','cars.id');
         })
             ->groupBy('cars.id')
-            ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->random(4);
+            ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(4);
 
 
             $carsfu= Car::leftjoin('bids',function($join){
@@ -31,7 +31,7 @@ class HomeController extends Controller
             })
             ->where('cars.year','>=','2019')
                 ->groupBy('cars.id')
-                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->random(3);
+                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(3);
 
             return view('client/home')->with(['cars'=>$cars , 'carsfu'=>$carsfu]);
 

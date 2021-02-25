@@ -1,24 +1,7 @@
 @extends('client.layouts.app')
 
 @section('content')
-<!--============= Hero Section Starts Here =============-->
-<div class="hero-section style-2">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="#0">Pages</a>
-            </li>
-            <li>
-                <span>winning Bids</span>
-            </li>
-        </ul>
-    </div>
-    <div class="bg_img hero-bg bottom_center" data-background="{{ asset('images/banner/hero-bg.png') }}"></div>
-</div>
-<!--============= Hero Section Ends Here =============-->
+
 
 
 <!--============= Dashboard Section Starts Here =============-->

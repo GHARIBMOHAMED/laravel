@@ -2,21 +2,7 @@
 @section('content')
 
 
-    <!--============= Hero Section Starts Here =============-->
-    <div class="hero-section style-2">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <span>Detail</span>
-                </li>
-            </ul>
-        </div>
-        <div class="bg_img hero-bg bottom_center" data-background="{{ asset('images/banner/hero-bg.png') }}"></div>
-    </div>
-    <!--============= Hero Section Ends Here =============-->
+
 
 
     <!--============= Product Details Section Starts Here =============-->
@@ -97,7 +83,7 @@
                         </div>
                         <div class="buy-now-area">
                             <a href="#0" class="custom-button">Buy Now: DH {{ $cars->estValue }}0</a>
-                            <a href="{{ url('favorite/'.$cars->id) }}" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
+                            <a href="{{ url('favorite/'.$cars->id) }}" class="rating custom-button active border"><i class="flaticon-shopping-basket"></i> Add to Basket</a>
                             <div class="share-area">
                                 <span>Share to:</span>
                                 <ul>

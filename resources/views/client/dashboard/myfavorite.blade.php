@@ -2,25 +2,6 @@
 
 @section('content')
 
-    <!--============= Hero Section Starts Here =============-->
-    <div class="hero-section style-2">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="#0">My Account</a>
-                </li>
-                <li>
-                    <span>My Favorites</span>
-                </li>
-            </ul>
-        </div>
-        <div class="bg_img hero-bg bottom_center" data-background="{{ asset('images/banner/hero-bg.png') }}"></div>
-    </div>
-    <!--============= Hero Section Ends Here =============-->
-
 
     <!--============= Dashboard Section Starts Here =============-->
     <section class="dashboard-section padding-bottom mt--240 mt-lg--440 pos-rel">

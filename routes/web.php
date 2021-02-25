@@ -57,7 +57,7 @@ route::middleware(['auth'])->group(function(){
 Route::get('/', 'HomeController@index');
 Route::post('/fillpass/{pass}', 'HomeController@edit');
 Route::view('/about', 'client/about');
-
+Route::view('/faq', 'client/faq');
 Route::view('/contact', 'client/contact');
 Route::view('/signin', 'auth/login');
 Route::view('/signup', 'auth/register');
@@ -74,6 +74,6 @@ Route::view('/notification', 'client/dashboard/notification');
 Route::view('/profile', 'client/dashboard/profile');
 Route::view('/referal', 'client/dashboard/referal');
 Route::view('/wining', 'client/dashboard/wining');
-Route::view('/faq', 'client/dashboard/faq');
+
 
 

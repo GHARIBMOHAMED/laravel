@@ -14,6 +14,13 @@ output, ruby, section, summary, time, mark, audio, video {
 
   font-weight: 700;
      }
+     .activelink {
+        bottom: -1px;
+    left: 0;
+    color: #ff381e!important;
+    display: inline-block;
+	transition: color 0.5s;
+     }
  </style>
  <!--============= ScrollToTop Section Starts Here =============-->
  <div class="overlayer" id="overlayer">
@@ -55,7 +62,15 @@ output, ruby, section, summary, time, mark, audio, video {
 
                              <form action="{{ route('logout') }}" method="POST" hidden id="logout_form">@csrf</form>
                     </li>
-                </ul>@endif
+                    @else
+                    <li class="menu ml-auto">
+                        <a style="color: antiquewhite;" href="/signin">login</a>
+                    </li>
+                    <li class="menu ml-3">
+                        <a style="color: antiquewhite;" href="/signup">Register</a>
+                    </li>
+                    @endif
+                </ul>
             </div>
         </div>
     </div>
@@ -69,22 +84,22 @@ output, ruby, section, summary, time, mark, audio, video {
                 </div>
                 <ul class="menu ml-auto">
                     <li>
-                        <a href="/">home</a>
+                        <a class="{{ Request::path()=== '/' ? 'activelink' : ''  }}" href="/">home</a>
                     </li>
                     <li>
-                        <a href="/product">Auction</a>
+                        <a href="/product" class="{{ Request::path()=== 'product' ? 'activelink' : '' }}">Auction</a>
                     </li>
                     <li>
                         <li>
-                            <a href="/about">About Us</a>
+                            <a href="/about" class="{{ Request::path()=== 'about' ? 'activelink' : ''  }}" >About Us</a>
                         </li>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a href="/contact" class="{{ Request::path()=== 'contact' ? 'activelink' : ''  }}" >Contact</a>
                     </li>
                     @if(auth()->user())
                     <li>
-                        <a href="/dashboard">Dashboard</a>
+                        <a href="/dashboard" class="{{ Request::path()=== 'dashboard' ? 'activelink' : ''  }}" >Dashboard</a>
                     </li>
                     @endif
                 </ul>
@@ -135,6 +150,42 @@ output, ruby, section, summary, time, mark, audio, video {
     </div>
 </div>
 <!--============= Cart Section Ends Here =============-->
+@if(Request::path()==='/')
+@else
+<div class="hero-section style-2">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <span>
+                    {{ Request::path()=== 'product' ? 'product' : '' }}
+                    {{ Request::path()=== 'about' ? 'about' : ''  }}
+                    {{ Request::path()=== 'contact' ? 'contact' : ''  }}
+                    {{ Request::path()=== 'faq' ? 'FAQ' : ''  }}
+                </span>
+            </li>
+
+            <li>
+                <span>
+                    @if(Request::path()=== 'dashboard')
+
+                        <a href="">Dashboard</a> @endif
+                        {{ Request::path()=== 'mybid' ? 'mybid' : ''  }}
+                        {{ Request::path()=== 'profile' ? 'profile' : ''  }}
+                        {{ Request::path()=== 'wining' ? 'wining' : ''  }}
+                        {{ Request::path()=== 'notification' ? 'notification' : ''  }}
+                        {{ Request::path()=== 'myfavorite' ? 'my favorite' : ''  }}
+                        {{ Request::path()=== 'referal' ? 'referal' : ''  }}
+
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="bg_img hero-bg bottom_center" data-background="{{ asset('images/banner/hero-bg.png') }}"></div>
+</div>
+@endif
 <style>
     .swal2-title {
 

@@ -143,7 +143,12 @@
                             <span class="total-bids">{{ $car->bids }} Bids</span>
                         </div>
                         <div class="text-center">
-                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Submit a bid</a>
+                            @if(auth()->user())
+                                <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Submit a bid</a>
+                            @else
+                                <a href="/signin" class="custom-button">Login First</a>
+                            @endif
+
                         </div>
                     </div>
                 </div>
@@ -218,7 +223,12 @@
                             <div class="bids-area">
                                 Total Bids : <span class="total-bids"> Bids {{ $car->bids }}</span>
                             </div>
+                            @if(auth()->user())
                             <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Bid 500 DH</a>
+                        @else
+                            <a href="/signin" class="custom-button">Login First</a>
+                        @endif
+
                         </div>
                     </div>
                 </div>
