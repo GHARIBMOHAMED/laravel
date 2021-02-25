@@ -19,6 +19,7 @@ class CreateBidsTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('car_id')->constrained('cars');
             $table->boolean('winningBid')->default(false);
+            $table->string('bid')->nullable();
             $table->timestamps();
         });
     }

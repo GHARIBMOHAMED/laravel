@@ -21,6 +21,25 @@ output, ruby, section, summary, time, mark, audio, video {
     display: inline-block;
 	transition: color 0.5s;
      }
+     .swal2-actions {
+    display: flex;
+    z-index: 1;
+
+     flex-wrap: nowrap!important;
+    /* align-items: center; */
+    justify-content: center;
+    width: 100%;
+    margin: 1.25em auto 0;
+    padding: 0 1.6em;
+}
+.swal2-popup {
+
+    font-size: 0.8rem!important;
+}
+.swal2-title {
+    font-style: italic;
+    font-size: 20px !important;
+}
  </style>
  <!--============= ScrollToTop Section Starts Here =============-->
  <div class="overlayer" id="overlayer">
@@ -195,24 +214,27 @@ output, ruby, section, summary, time, mark, audio, video {
 </style>
 <script>
     $('#log').click(function(){
-        Swal.fire({icon: 'error',
-        title: 'Do you want to log out',
-        showCloseButton: 'true',
-        width:'25%',
-        confirmButtonClass: 'btn btn-warning w-25 mr-05',
-        buttonsStyling: false,
-        }).then((result)=>{
-                if(result.isConfirmed){
-                    event.preventDefault();
-            document.getElementById('logout_form').submit();
-        }else{
-            Swal.close()
-        }
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, logout'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                event.preventDefault();
+                    document.getElementById('logout_form').submit();
+                }else{
+                        Swal.close()
+                    }
 
-
-       });
+            });
 
     });
+
+
 
     @if(empty(auth()->user()->password) && auth()->user())
 
@@ -223,16 +245,16 @@ output, ruby, section, summary, time, mark, audio, video {
 
 
         const { value: password } = await Swal.fire({
-  title: 'Enter your password',
-  input: 'password',
-  inputLabel: 'Password',
-  inputPlaceholder: 'Enter your password',
-  width:'35%',
-  inputAttributes: {
-    maxlength: 10,
-    autocapitalize: 'off',
-    autocorrect: 'off'
-  }
+        title: 'Enter your password',
+        input: 'password',
+        inputLabel: 'Password',
+        inputPlaceholder: 'Enter your password',
+        width:'35%',
+        inputAttributes: {
+            maxlength: 10,
+            autocapitalize: 'off',
+            autocorrect: 'off'
+        }
 });
 
 if (password) {

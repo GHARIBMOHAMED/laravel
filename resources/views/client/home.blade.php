@@ -144,9 +144,9 @@
                         </div>
                         <div class="text-center">
                             @if(auth()->user())
-                                <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Submit a bid</a>
+                                <a data-name="{{ $car->id }}" data-price="{{ $car->price }}" onclick="event.preventDefault()" href="{{ url('bidin/'.$car->id .'/'.$car->price) }}"   class="custom-button">Submit a bid</a>
                             @else
-                                <a href="/signin" class="custom-button">Login First</a>
+                                <a onclick="event.preventDefault()" href="/signin" class="custom-button">Login First</a>
                             @endif
 
                         </div>
@@ -173,74 +173,12 @@
             </div>
             <a href="{{ url('product') }}" class="normal-button">View All</a>
         </div>
-        <div class="row justify-content-center mb-30-none">
-            @if(count($cars) > 0)
-            @foreach($cars as $car)
+        <div id="carsdetail">
 
-            <div class="col-md-6 col-lg-12"  id="component{{ $car->id }}">
-                <div class="auction-item-6">
-                    <div class="auction-inner">
-                        <div class="auction-thumb">
-                            <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[7] }}" alt="trending"></a>
-                            <a href="#0"  class="rating"><i class="far fa-star"></i></a>
-                        </div>
-                        <div class="auction-content">
-                            <h5 class="title row">
-                                <div class="col-lg-2">
-                                    <img src="{{ $car->brand }}-logo.png" alt="" height="40px" width="50px">
-                                </div>
-                                <div class="col-lg-8">
-                                    <a  class="mt-1" href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }} </a>
-                                </div>
-                            </h5>
-                            <div class="item-information">
-                                <ul>
-                                    <li><span>Number</span>{{ $car->plate }}</li>
-                                    <li><span>VIN</span>2G1WG5EK3B1312245</li>
-                                    <li><span>Milage</span> ({{ $car->km }} km)</li>
-                                    <li><span>Location</span>{{ $car->location }}</li>
-                                </ul>
-                                <ul>
-                                    <li><span>Engine</span>{{ $car->fuleType }}</li>
-                                    <li><span>Transmission</span>{{ $car->transmittion }}</li>
-                                    <li><span>Body</span>{{ $car->vehicleType }}</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="auction-bidding">
-                            <div class="countdown">
-                                <div data-countdown="{{ $car->saleDate  }}"></div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount">DH {{ $car->price }}</div>
-                                </div>
-                            </div>
-                            <div class="bids-area">
-                                Total Bids : <span class="total-bids"> Bids {{ $car->bids }}</span>
-                            </div>
-                            @if(auth()->user())
-                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Bid 500 DH</a>
-                        @else
-                            <a href="/signin" class="custom-button">Login First</a>
-                        @endif
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-
-            @endif
         </div>
     </div>
 </section>
 <!--============= Trending Section Ends Here =============-->
-
 
 
 <!--============= Call In Section Starts Here =============-->
@@ -337,6 +275,10 @@
         </div>
     </div>
 </section>
+<script>
+    $('#carsdetail').load("{{ url('/carsdetail') }}").fadeIn('slow')
 
+
+</script>
 
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\View;
 use App\Models\Car;
 use App\Models\Bid;
 use App\Models\User;
@@ -33,10 +34,29 @@ class HomeController extends Controller
                 ->groupBy('cars.id')
                 ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(3);
 
-            return view('client/home')->with(['cars'=>$cars , 'carsfu'=>$carsfu]);
+            return view('client.home')->with(['cars'=>$cars , 'carsfu'=>$carsfu]);
 
     }
 
+    static function componant()
+    {
+        $cars= Car::leftjoin('bids',function($join){
+            $join->on('bids.car_id','=','cars.id');
+        })
+            ->groupBy('cars.id')
+            ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(4);
+
+
+            $carsfu= Car::leftjoin('bids',function($join){
+                $join->on('bids.car_id','=','cars.id');
+            })
+            ->where('cars.year','>=','2019')
+                ->groupBy('cars.id')
+                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(3);
+
+                return with(['cars'=>$cars , 'carsfu'=>$carsfu]);
+
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -81,17 +101,17 @@ class HomeController extends Controller
         //return dd(['cars'=> $cars , 'bidders'=>$bidders]);
     }
 
-    public function bidin($id , $price)
+    public function bidin($id , $prices)
     {
         $car = Car::find($id);
-        $car->price = $price+50;
+        $car->price = $prices;
         $bids = new Bid();
         $bids->user_id = auth()->user()->id;
         $bids->car_id = $id;
         $bids->save();
         $car->save();
-
-        return redirect(url()->previous().'#component'.$id);
+        $html = View::make('client.home',compact('client.home'))->render();
+        return response()->json(['html' => $html], 200);
     }
 
     /**
