@@ -83,7 +83,7 @@ $(document).ready(function(){
         inputValue: price,
         inputAttributes: {
             min: price,
-            max: 5000,
+            max: 500000,
             step: 50
         },
         didOpen: () => {

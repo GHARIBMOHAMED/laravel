@@ -163,7 +163,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js" integrity="sha512-aWlTsIGUhEq2+LQNA7Wq+OsLaouCcGGaHBWzoU9duKy26ImHe12gRtQnj4688p7QUHG+J4CMb+XwgZ8LYqQ+kQ==" crossorigin="anonymous"></script>
     <script src=" {{ asset('js/jquery-ui.min.js') }}"></script>
     <script src=" {{ asset('js/main.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
         $('[data-countdown]').each(function() {
      var $this = $(this), finalDate = $(this).data('countdown');
@@ -177,4 +177,41 @@
    });
 
    </script>
+     <script>
+        @if(Session::has('message'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.success("{{ session('message') }}");
+        @endif
+
+        @if(Session::has('error'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.error("{{ session('error') }}");
+        @endif
+
+        @if(Session::has('info'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.info("{{ session('info') }}");
+        @endif
+
+        @if(Session::has('warning'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.warning("{{ session('warning') }}");
+        @endif
+      </script>
 @endsection

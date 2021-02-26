@@ -61,7 +61,7 @@
                         <ul class="price-table mb-30">
                             <li class="header">
                                 <h5 class="current">Current Price</h5>
-                                <h3 class="price">DH {{ $cars->price }}0</h3>
+                                <h3 class="price">DH {{ $cars->price }}</h3>
                             </li>
                             <li>
                                 <span class="details">Buyer's Premium</span>
@@ -82,8 +82,8 @@
                             </form>
                         </div>
                         <div class="buy-now-area">
-                            <a href="#0" class="custom-button">Buy Now: DH {{ $cars->estValue }}0</a>
-                            <a href="{{ url('favorite/'.$cars->id) }}" class="rating custom-button active border"><i class="flaticon-shopping-basket"></i> Add to Basket</a>
+                            <a href="#0" class="custom-button">Buy Now: DH {{ $cars->estValue }}</a>
+                            <a href="{{ url('favorite/'.$cars->id) }}" class="rating custom-button active border"><i class="flaticon-star"></i> Add to Favorite</a>
                             <div class="share-area">
                                 <span>Share to:</span>
                                 <ul>

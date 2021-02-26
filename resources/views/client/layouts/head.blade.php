@@ -1,4 +1,5 @@
  @section('head')
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
  <style>
      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap");
      html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
@@ -149,6 +150,9 @@ output, ruby, section, summary, time, mark, audio, video {
         </a>
         <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
     </div>
+    @if(auth()->user())
+
+
     @foreach ($cart as $ct)
 
 
@@ -172,6 +176,7 @@ output, ruby, section, summary, time, mark, audio, video {
         </div>
     </div>
     @endforeach
+    @endif
 </div>
 <!--============= Cart Section Ends Here =============-->
 @if(Request::path()==='/')

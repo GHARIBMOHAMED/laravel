@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Pagination\Paginator;
 use App\Models\Car;
 use App\Models\Bid;
+use App\Models\Favorite;
+use App\Models\User;
 use Spatie\QueryBuilder\Filter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -34,12 +36,40 @@ class productController extends Controller
 
     public function favorite($id)
     {
-        $bids = new Bid();
-        $bids->user_id = auth()->user()->id;
-        $bids->car_id = $id;
-        $bids->favorite='true';
-        $bids->save();
-        return dd($bids);
+        $fav = Favorite::where('user_id',auth()->user()->id)->first();
+        //dd($fav);
+        if (!is_null($fav)) {
+
+            $favorite = new Favorite();
+            $carid = $fav->car_id;
+            $userid = $fav->user_id;
+            $currentuser = auth()->user()->id;
+
+            if ($carid == $id && $userid==$currentuser) {
+                return back()->with('info','this car is alredy added to favorite');
+            }else
+            {
+                $favorite->user_id = auth()->user()->id;
+                $favorite->car_id = $id;
+                $favorite->favorite='true';
+                $favorite->liked='true';
+                $favorite->won='false';
+                $favorite->save();
+                return back()->with('message','car added to favorite');
+            }
+        } else {
+                $favorite = new Favorite();
+                $favorite->user_id = auth()->user()->id;
+                $favorite->car_id = $id;
+                $favorite->favorite='true';
+                $favorite->liked='true';
+                $favorite->won='false';
+                $favorite->save();
+                return back()->with('message','car added to favorite');
+
+        }
+
+
     }
 
 

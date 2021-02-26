@@ -53,14 +53,21 @@ class BidToCart extends Command
                 {
                     if ($bid->bidValue >= $maxBid) {
 
-                        $cart = new Cart();
-                        $cart->user_id = $bid->user_id;
-                        $cart->car_id = $bid->car_id;
-                        $cart->save();
+                        $carts = Cart::where(['user_id'=>$bid->user_id,'car_id'=>$bid->car_id])->first();
+                        if (is_null($carts)) {
+                            $cart = new Cart();
+                            $cart->user_id = $bid->user_id;
+                            $cart->car_id = $bid->car_id;
+                            $cart->save();
+                        }else
+                        {
+
+                        }
+
                     }
                 }
             }
-            return with('cart',$cart);
+            //return with('cart',$cart);
 
     }
 }

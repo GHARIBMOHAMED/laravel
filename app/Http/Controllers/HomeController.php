@@ -27,11 +27,10 @@ class HomeController extends Controller
             ->groupBy('cars.id')
             ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(4);
 
-            $cart = Car::where('user_id',Auth::user()->id)->join('carts','carts.car_id','=','cars.id')
-                            ->get();
 
 
-            return view('client.home')->with(['cars' =>$cars ,'cart'=>$cart]);
+
+            return view('client.home')->with(['cars' =>$cars]);
     }
 
     static function componant()
