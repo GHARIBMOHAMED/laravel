@@ -37,6 +37,7 @@
 
 <!--============= How Section Starts Here =============-->
 <section class="how-section padding-bottom pos-rel" style="padding-top: 5%">
+
     <div class="container">
         <div class="section-header text-lg-left">
             <h2 class="title">How it works</h2>
@@ -84,98 +85,19 @@
 
 
 
-
+<!--============= Trending Section Starts Here =============-->
 <section class="car-auction-section padding-bottom pos-rel oh">
     <div class="car-bg"><img src=" /images/auction/car/car-bg.png" alt="car"></div>
     <div class="container">
         <div class="section-header-3">
             <div class="left d-block">
-                <h2 class="title mb-3">Featured Items</h2>
-                <p>Start winning cars with comfort</p>
+                <h3>The Best </h3>
             </div>
-            <a href="/productw" class="normal-button">View All</a>
+            <a href="{{ url('product') }}" class="custom-button yellow btn-large">View All</a>
         </div>
-        <div class="row justify-content-center mb-30-none">
 
-            @if(count($carsfu) > 0)
-            @foreach($carsfu as $car)
+        <div id="carsdetail"></div>
 
-            <div class="col-sm-10 col-md-6 col-lg-4" id="component{{ $car->id }}">
-                <div class="auction-item-2">
-                    <div class="auction-thumb">
-                        <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[7] }}" alt="trending"></a>
-                        <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                        <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
-                    </div>
-                    <div class="auction-content">
-                        <h5 class="title row">
-                            <div class="col-lg-2 col-md-12 d-flex justify-content-center">
-                                <img src="{{ $car->brand }}-logo.png" alt="" height="40px" width="50px">
-                            </div>
-                            <div class="col-lg-10 col-md-12 ">
-                                <a  class="mt-1 d-flex justify-content-center" href="{{ url('cardetail/'.$car->id) }}">{{ $car->year }} - {{ $car->model }} </a>
-                            </div>
-                        </h5>
-                        <div class="bid-area">
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-auction"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current" >Buy Now</div>
-                                    <div class="amount" style="font-size: 15px;!important">DH {{ $car->estValue }}</div>
-                                </div>
-                            </div>
-                            <div class="bid-amount">
-                                <div class="icon">
-                                    <i class="flaticon-money"></i>
-                                </div>
-                                <div class="amount-content">
-                                    <div class="current">Current Bid</div>
-                                    <div class="amount" style="font-size: 15px;">DH {{ $car->price }}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="countdown-area">
-                            <div class="countdown">
-                                <div data-countdown="{{ $car->saleDate  }}"></div>
-                            </div>
-                            <span class="total-bids">{{ $car->bids }} Bids</span>
-                        </div>
-                        <div class="text-center">
-                            @if(auth()->user())
-                                <a data-name="{{ $car->id }}" data-price="{{ $car->price }}" onclick="event.preventDefault()" href="{{ url('bidin/'.$car->id .'/'.$car->price) }}"   class="custom-button">Submit a bid</a>
-                            @else
-                                <a onclick="event.preventDefault()" href="/signin" class="custom-button">Login First</a>
-                            @endif
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-
-            @endif
-
-
-        </div>
-    </div>
-</section>
-
-
-
-<!--============= Trending Section Starts Here =============-->
-<section class="trending-section padding-bottom padding-top">
-    <div class="container">
-        <div class="section-header-3">
-            <div class="left d-block">
-                <h3>The best </h3>
-            </div>
-            <a href="{{ url('product') }}" class="normal-button">View All</a>
-        </div>
-        <div id="carsdetail">
-
-        </div>
     </div>
 </section>
 <!--============= Trending Section Ends Here =============-->
@@ -276,8 +198,7 @@
     </div>
 </section>
 <script>
-    $('#carsdetail').load("{{ url('/carsdetail') }}").fadeIn('slow')
-
+    $('#carsdetail').load("{{ url('/carsdetail') }}").fadeIn()
 
 </script>
 

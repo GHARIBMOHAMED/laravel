@@ -133,7 +133,7 @@
                                                 </div>
                                                 <div class="amount-content">
                                                     <div class="current">Current Bid</div>
-                                                    <div class="amount">${{ $car->price }}.00</div>
+                                                    <div class="amount">{{ $car->price }}.00 DH</div>
                                                 </div>
                                             </div>
                                             <div class="bid-amount">
@@ -142,18 +142,18 @@
                                                 </div>
                                                 <div class="amount-content">
                                                     <div class="current">Buy Now</div>
-                                                    <div class="amount">${{ $car->estValue }}.00</div>
+                                                    <div class="amount">{{ $car->estValue }}.00 DH</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="countdown-area">
                                             <div class="countdown">
-                                                <div data-countdown="{{ $car->saleDate  }}"></div>
+                                                <div data-countdown="{{ $car->created_at  }}"></div>
                                             </div>
                                             <span class="total-bids">{{ $car->bids }} Bids</span>
                                         </div>
                                         <div class="text-center">
-                                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Increace bid by 50$</a>
+                                            <a href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Increace bid </a>
                                         </div>
                                     </div>
                                 </div>

@@ -8,7 +8,7 @@
         <div class="auction-item-6">
             <div class="auction-inner">
                 <div class="auction-thumb">
-                    <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[7] }}" alt="trending"></a>
+                    <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[1] }}" alt="trending"></a>
                     <a href="#0"  class="rating"><i class="far fa-star"></i></a>
                 </div>
                 <div class="auction-content">
@@ -51,7 +51,7 @@
                         Total Bids : <span class="total-bids"> Bids {{ $car->bids }}</span>
                     </div>
                     @if(auth()->user())
-                    <a data-name="{{ $car->id }}" data-price="{{ $car->price }}" onclick="event.preventDefault()" href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Bid 500 DH</a>
+                    <a data-name="{{ $car->id }}" data-price="{{ $car->price }}" onclick="event.preventDefault()" href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Add bid</a>
                 @else
                     <a  href="/signin" class="custom-button">Login First</a>
                 @endif
@@ -66,8 +66,12 @@
     @endif
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
+
+
+$(document).ready(function(){
+
     $('[data-name]').click(function(){
         var price = this.dataset.price;
         var id = this.dataset.name;
@@ -101,14 +105,26 @@
                             }
                             });
                 $('#carsdetail').load("{{ url('/carsdetail') }}").fadeIn('slow')
+                Swal.fire('Saved!', '', 'success')
+
 
             }else{
                         Swal.close()
+                        $('#carsdetail').load("{{ url('/carsdetail') }}").fadeIn()
                     }
 
             });
     });
 
+    $('[data-countdown]').each(function() {
+  var $this = $(this), finalDate = $(this).data('countdown');
+  $this.countdown(finalDate, function(event) {
 
+    $this.html(event.strftime('%D days %H:%M:%S'));
+
+  })
+});
+});
 
 </script>
+

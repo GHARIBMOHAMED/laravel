@@ -1,5 +1,4 @@
  @section('head')
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <style>
      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap");
      html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
@@ -29,7 +28,7 @@ output, ruby, section, summary, time, mark, audio, video {
     /* align-items: center; */
     justify-content: center;
     width: 100%;
-    margin: 1.25em auto 0;
+    margin: 0!important;
     padding: 0 1.6em;
 }
 .swal2-popup {
@@ -40,7 +39,9 @@ output, ruby, section, summary, time, mark, audio, video {
     font-style: italic;
     font-size: 20px !important;
 }
+
  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <!--============= ScrollToTop Section Starts Here =============-->
  <div class="overlayer" id="overlayer">
     <div class="loader">
@@ -71,7 +72,7 @@ output, ruby, section, summary, time, mark, audio, video {
                 </ul>
                @if(auth()->user()) <ul class="cart-button-area">
                     <li>
-                        <a href="#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">01</span></a>
+                        <a href="#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">{{ count($cart) }}</span></a>
                     </li>
                     <li>
 
@@ -148,16 +149,19 @@ output, ruby, section, summary, time, mark, audio, video {
         </a>
         <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
     </div>
+    @foreach ($cart as $ct)
+
+
     <div class="bottom-content">
         <div class="cart-products">
             <h4 class="title">Shopping cart</h4>
             <div class="single-product-item">
                 <div class="thumb">
-                    <a href="#0"><img src=" {{ asset('images/shop/shop01.jpg') }}" alt="shop"></a>
+                    <a href="#0"><img src="/media/{{ $ct->images[6] }}" alt="shop"></a>
                 </div>
                 <div class="content">
-                    <h4 class="title"><a href="#0">Color Pencil</a></h4>
-                    <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
+                    <h4 class="title"><a href="#0">{{ $ct->model }}</a></h4>
+                    <div class="price"><span class="pprice">{{ $ct->price }}.00 DH</span> </div>
                     <a href="#" class="remove-cart">Remove</a>
                 </div>
             </div>
@@ -167,6 +171,7 @@ output, ruby, section, summary, time, mark, audio, video {
             </div>
         </div>
     </div>
+    @endforeach
 </div>
 <!--============= Cart Section Ends Here =============-->
 @if(Request::path()==='/')

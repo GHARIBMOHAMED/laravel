@@ -50,24 +50,24 @@ class CarController extends Controller
            }
         }
 
-        $post = new Car();
-        $post->images=$images_data;
-        $post->saleDate = $request->Available_date;
-        $post->year = $request->Production_year;
-        $post->location = $request->state;
-        $post->estValue = $request->Estimated_Value;
-        $post->saleName = $request->Seller;
-        $post->plate = $request->Plate_Number;
-        $post->km = $request->Millage;
-        $post->price = $request->Price;
-        $post->brand = $request->Brand;
-        $post->damage = $request->Damage;
-        $post->fuleType = $request->Fule_Type;
-        $post->vehicleType = $request->Vehicle_Type;
-        $post->engineType = $request->Engin_Type;
-        $post->model = $request->Model;
-        $post->transmittion = $request->Transmittion_Type;
-        $post->featured = $request->Featured;
+            $post = new Car();
+            $post->images=$images_data;
+            $post->saleDate = $request->Available_date;
+            $post->year = $request->Production_year;
+            $post->location = $request->state;
+            $post->estValue = $request->Estimated_Value;
+            $post->saleName = $request->Seller;
+            $post->plate = $request->Plate_Number;
+            $post->km = $request->Millage;
+            $post->price = $request->Price;
+            $post->brand = $request->Brand;
+            $post->damage = $request->Damage;
+            $post->fuleType = $request->Fule_Type;
+            $post->vehicleType = $request->Vehicle_Type;
+            $post->engineType = $request->Engin_Type;
+            $post->model = $request->Model;
+            $post->transmittion = $request->Transmittion_Type;
+            $post->featured = $request->Featured;
 
 
         $post->save();

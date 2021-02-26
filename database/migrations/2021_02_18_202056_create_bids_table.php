@@ -15,7 +15,7 @@ class CreateBidsTable extends Migration
     {
         Schema::create('bids', function (Blueprint $table) {
             $table->id();
-            $table->string('favorite')->nullable();
+            $table->string('bidValue')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('car_id')->constrained('cars');
             $table->boolean('winningBid')->default(false);

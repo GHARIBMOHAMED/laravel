@@ -146,23 +146,10 @@
         </div>
     </footer>
     <!--============= Footer Section Ends Here =============-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js" integrity="sha512-aWlTsIGUhEq2+LQNA7Wq+OsLaouCcGGaHBWzoU9duKy26ImHe12gRtQnj4688p7QUHG+J4CMb+XwgZ8LYqQ+kQ==" crossorigin="anonymous"></script>
-    <script>
-        $('[data-countdown]').each(function() {
-      var $this = $(this), finalDate = $(this).data('countdown');
-      $this.countdown(finalDate, function(event) {
-
-        $this.html(event.strftime('%D days %H:%M:%S'));
-
-      }).on('finish.countdown', function(event) {
-        $this.html(event.strftime('FINISED'));
-      });
-    });
-
-    </script>
 
 
-    <script src=" {{ asset('js/jquery-3.3.1.min.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src=" {{ asset('js/modernizr-3.6.0.min.js') }}"></script>
     <script src=" {{ asset('js/plugins.js') }}"></script>
     <script src=" {{ asset('js/bootstrap.min.js') }}"></script>
@@ -173,7 +160,21 @@
     <script src=" {{ asset('js/counterup.min.js') }}"></script>
     <script src=" {{ asset('js/owl.min.js') }}"></script>
     <script src=" {{ asset('js/magnific-popup.min.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js" integrity="sha512-aWlTsIGUhEq2+LQNA7Wq+OsLaouCcGGaHBWzoU9duKy26ImHe12gRtQnj4688p7QUHG+J4CMb+XwgZ8LYqQ+kQ==" crossorigin="anonymous"></script>
     <script src=" {{ asset('js/jquery-ui.min.js') }}"></script>
     <script src=" {{ asset('js/main.js') }}"></script>
+
+    <script>
+        $('[data-countdown]').each(function() {
+     var $this = $(this), finalDate = $(this).data('countdown');
+     $this.countdown(finalDate, function(event) {
+
+       $this.html(event.strftime('%D days %H:%M:%S'));
+
+     }).on('finish.countdown', function(event) {
+       $this.html(event.strftime('FINISED'));
+     });
+   });
+
+   </script>
 @endsection

@@ -590,8 +590,8 @@ ul li {
 
 select,
 input,
-textarea,
-button {
+textarea
+ {
     width: 100%;
     background-color: #ffffff;
     border: 1px solid #bccaea;
@@ -2329,7 +2329,7 @@ header {
 
 /*Cart Area Sidebar Starts*/
 .cart-sidebar-area {
-    background-color: #0a3d62;
+    background-color: #4836bd;
     max-width: 350px;
     width: 100%;
     height: 100vh;

@@ -295,6 +295,7 @@
                                         <tr>
                                             <th>Bidder</th>
                                             <th>date</th>
+                                            <th>Bid value</th>
                                             <th>location</th>
                                             <th>country</th>
                                         </tr>
@@ -313,6 +314,7 @@
                                                 </div>
                                             </td>
                                             <td data-history="date">{{ $bid->saleDate }}</td>
+                                            <td data-history="value">{{ $bid->bidValue }}</td>
                                             <td data-history="location">{{ $bid->location }}</td>
                                             <td data-history="country">
                                                 @if (empty($bid->country))

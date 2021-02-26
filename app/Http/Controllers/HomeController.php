@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\View;
 use App\Models\Car;
 use App\Models\Bid;
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -26,16 +27,11 @@ class HomeController extends Controller
             ->groupBy('cars.id')
             ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(4);
 
+            $cart = Car::where('user_id',Auth::user()->id)->join('carts','carts.car_id','=','cars.id')
+                            ->get();
 
-            $carsfu= Car::leftjoin('bids',function($join){
-                $join->on('bids.car_id','=','cars.id');
-            })
-            ->where('cars.year','>=','2019')
-                ->groupBy('cars.id')
-                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(3);
 
-            return view('client.home')->with(['cars'=>$cars , 'carsfu'=>$carsfu]);
-
+            return view('client.home')->with(['cars' =>$cars ,'cart'=>$cart]);
     }
 
     static function componant()
@@ -47,14 +43,7 @@ class HomeController extends Controller
             ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(4);
 
 
-            $carsfu= Car::leftjoin('bids',function($join){
-                $join->on('bids.car_id','=','cars.id');
-            })
-            ->where('cars.year','>=','2019')
-                ->groupBy('cars.id')
-                ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->take(3);
-
-                return with(['cars'=>$cars , 'carsfu'=>$carsfu]);
+                return with(['cars'=>$cars , 'carsfu'=>[]]);
 
     }
     /**
@@ -108,6 +97,7 @@ class HomeController extends Controller
         $bids = new Bid();
         $bids->user_id = auth()->user()->id;
         $bids->car_id = $id;
+        $bids->bidValue = $prices;
         $bids->save();
         $car->save();
         $html = View::make('client.home',compact('client.home'))->render();
