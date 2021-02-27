@@ -73,11 +73,12 @@
                             </li>
                         </ul>
                         <div class="product-bid-area">
-                            <form class="product-bid-form">
+                            <form class="product-bid-form" method="GET" action="/bidindetail">
                                 <div class="search-icon">
                                     <img src="{{ asset('images/product/search-icon.png') }}" alt="product">
                                 </div>
-                                <input type="text" placeholder="Enter you bid amount">
+                                <input type="text" name="prices" placeholder="Enter you bid amount">
+                                <input type="text" name="id" hidden value="{{ $cars->id }}">
                                 <button type="submit" class="custom-button">Submit a bid</button>
                             </form>
                         </div>
@@ -170,7 +171,7 @@
                             <div class="thumb">
                                 <img src="{{ asset('images/product/tab3.png') }}" alt="product">
                             </div>
-                            <div class="content">Bid History (36)</div>
+                            <div class="content">Bid History ({{ count($bidders) }})</div>
                         </a>
                     </li>
                     <li>

@@ -8,7 +8,7 @@
         <div class="auction-item-6">
             <div class="auction-inner">
                 <div class="auction-thumb">
-                    <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[1] }}" alt="trending"></a>
+                    <a href="{{ url('cardetail/'.$car->id) }}"><img src="/media/{{ $car->images[9] }}" alt="trending"></a>
                     <a href="#0"  class="rating"><i class="far fa-star"></i></a>
                 </div>
                 <div class="auction-content">
@@ -51,7 +51,7 @@
                         Total Bids : <span class="total-bids"> Bids {{ $car->bids }}</span>
                     </div>
                     @if(auth()->user())
-                    <a data-name="{{ $car->id }}" data-price="{{ $car->price }}" onclick="event.preventDefault()" href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Add bid</a>
+                    <a data-name="{{ $car->id }}" data-maxprice="{{ $car->estValue }}" data-price="{{ $car->price }}" onclick="event.preventDefault()" href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Add bid</a>
                 @else
                     <a  href="/signin" class="custom-button">Login First</a>
                 @endif
@@ -75,6 +75,7 @@ $(document).ready(function(){
     $('[data-name]').click(function(){
         var price = this.dataset.price;
         var id = this.dataset.name;
+        var maxprice = this.dataset.maxprice;
         var prices;
         Swal.fire({
         title: 'How much you wanna bid?',
@@ -83,7 +84,7 @@ $(document).ready(function(){
         inputValue: price,
         inputAttributes: {
             min: price,
-            max: 500000,
+            max: maxprice,
             step: 50
         },
         didOpen: () => {

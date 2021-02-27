@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Pagination\Paginator;
 use App\Models\Car;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -34,6 +34,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with('cart',$cart);
         }
         });
+
+
+
     }
     }
 

@@ -44,25 +44,28 @@ class BidToCart extends Command
     {
         $highBid= Bid::join('cars','bids.car_id','=','cars.id')
         ->join('users','bids.user_id','=','users.id')
-        ->get(['cars.*','bids.*','users.*']);
+        ->get(['cars.*','bids.*','users.*','bids.id as theone']);
             foreach ($highBid as $bid ) {
                 $date = Carbon::parse($bid->saleDate)->toDatetimeString();
                 $time = Carbon::now();
-                $maxBid = Bid::max('bidValue');
+                $maxBid = Bid::where('car_id',$bid->car_id)->max('bidValue');
+                //->where('car_id',$bid->car_id)
                 if($date <= $time)
                 {
                     if ($bid->bidValue >= $maxBid) {
 
                         $carts = Cart::where(['user_id'=>$bid->user_id,'car_id'=>$bid->car_id])->first();
-                        if (is_null($carts)) {
-                            $cart = new Cart();
-                            $cart->user_id = $bid->user_id;
-                            $cart->car_id = $bid->car_id;
-                            $cart->save();
-                        }else
-                        {
+                        $bids = Bid::find($bid->theone);
+                        $bids->update([
+                            'winningBid' => 1
+                        ]);
 
-                        }
+                            if (is_null($carts)) {
+                                $cart = new Cart();
+                                $cart->user_id = $bid->user_id;
+                                $cart->car_id = $bid->car_id;
+                                $cart->save();
+                            }
 
                     }
                 }

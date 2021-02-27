@@ -26,12 +26,18 @@ class productController extends Controller
     {
         $cars= Car::leftjoin('bids','bids.car_id','=','cars.id')
         ->groupBy('cars.id')
-        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')]);
-        //$cars = QueryBuilder::for(Car::class)->AllowedFilter()->get();
-        $cars = $this->paginate($cars);
-
+        ->select(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->paginate(6);
         //return dd($cars);
         return view('client/product')->with('cars', $cars);
+    }
+
+    public static function productComponant()
+    {
+        $cars= Car::leftjoin('bids','bids.car_id','=','cars.id')
+        ->groupBy('cars.id')
+        ->select(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids')])->Paginate(6);
+        $cars->withPath('product');
+        return with(['cars'=>$cars]);
     }
 
     public function favorite($id)
@@ -79,52 +85,14 @@ class productController extends Controller
 
         ->leftjoin('bids','bids.car_id','=','cars.id')
         ->groupBy('cars.id')->allowedFilters([AllowedFilter::scope('price'),'model'])
-        ->get(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids'),DB::raw('count(DISTINCT bids.user_id) as uninque')]);
-        $cars = $this->paginate2($cars);
-        return view('client/product')->with('cars', $cars);
+        ->select(['cars.*','bids.user_id', DB::raw('count(bids.id) as bids'),DB::raw('count(DISTINCT bids.user_id) as uninque')])->paginate(6);
+       // $cars = $this->paginate2($cars);
+        return view('client/home/product-componant')->with('cars', $cars);
 
 
     }
 
-    public function paginate2($cars, $perPage = 10, $page = null,
-    $baseUrl = 'product1',
-         $options = [])
-        {
-            $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
 
-            $cars = $cars instanceof Collection ?
-                           $cars : Collection::make($cars);
-
-            $lap = new LengthAwarePaginator($cars->forPage($page, $perPage),
-                               $cars->count(),
-                               $perPage, $page, $options);
-
-            if ($baseUrl) {
-                $lap->setPath($baseUrl);
-            }
-
-            return $lap;
-        }
-
-    public function paginate($cars, $perPage = 6, $page = null,
-    $baseUrl = 'product',
-         $options = [])
-        {
-            $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
-
-            $cars = $cars instanceof Collection ?
-                           $cars : Collection::make($cars);
-
-            $lap = new LengthAwarePaginator($cars->forPage($page, $perPage),
-                               $cars->count(),
-                               $perPage, $page, $options);
-
-            if ($baseUrl) {
-                $lap->setPath($baseUrl);
-            }
-
-            return $lap;
-        }
     /**
      * Show the form for creating a new resource.
      *

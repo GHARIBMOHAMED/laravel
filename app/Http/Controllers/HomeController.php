@@ -103,6 +103,22 @@ class HomeController extends Controller
         return response()->json(['html' => $html], 200);
     }
 
+
+    public function bidindetail(Request $request)
+    {
+        $id = $request->input('id');
+        $prices = $request->input('prices');
+        $car = Car::find($id);
+        $car->price = $prices;
+        $bids = new Bid();
+        $bids->user_id = auth()->user()->id;
+        $bids->car_id = $id;
+        $bids->bidValue = $prices;
+        $bids->save();
+        $car->save();
+        return back()->with('message','Bid added');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

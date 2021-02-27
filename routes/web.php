@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Admin\UserController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\productController;
 
 // Google login
 Route::get('login/google', [App\Http\Controllers\LoginController::class, 'redirectToGoogle'])->name('login.google');
@@ -49,6 +49,7 @@ Route::view('/signup', 'auth/register');
 
 
 Route::get('/bidin/{id}/{prices}', 'HomeController@bidin');
+Route::get('/bidindetail', 'HomeController@bidindetail');
 
 
 // dashboard
@@ -64,6 +65,9 @@ Route::view('/wining', 'client/dashboard/wining');
 Route::view('carsdetail', 'client.home.carsfutered',[
 'carsall'=> HomeController::componant()
 ]);
+Route::view('product-comp', 'client.home.product-componant',
+    productController::productComponant()
+    );
 
 
 

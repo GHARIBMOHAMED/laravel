@@ -8,6 +8,14 @@ use App\Models\Car;
 use App\Models\User;
 class Bid extends Model
 {
+    protected $fillable = [
+        'bidValue',
+        'user_id',
+        'car_id',
+        'winningBid',
+        'bid',
+    ];
+
     use HasFactory;
     function car(){
         return $this->belongsTo(Car::class,'car_id','id');
