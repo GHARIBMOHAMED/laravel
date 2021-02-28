@@ -32,7 +32,7 @@
                     </div>
                     <div class="newslater-content">
                         <div class="section-header left-style mb-low">
-                            <h5 class="cate">Subscribe to Sbidu</h5>
+                            <h5 class="cate">Subscribe to BidMaroc</h5>
                             <h3 class="title">To Get Exclusive Benefits</h3>
                         </div>
                         <form class="subscribe-form">
