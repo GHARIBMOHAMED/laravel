@@ -24,7 +24,7 @@
                                 <ul class="dash-pro-body">
                                     <li>
                                         <div class="info-name">Name</div>
-                                        <div class="info-value">Albert Owens</div>
+                                        <input class="form-group" type="text" value="{{ auth()->user()->name }}">
                                     </li>
                                     <li>
                                         <div class="info-name">Date of Birth</div>

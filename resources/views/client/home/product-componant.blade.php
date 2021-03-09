@@ -48,7 +48,7 @@
                         <span class="total-bids">{{ $car->bids }} Bids</span>
                     </div>
                     <div class="text-center">
-                        <a data-name="{{ $car->id }}" data-price="{{ $car->price }}" data-maxprice="{{ $car->estValue }}" onclick="event.preventDefault()" href="{{ url('bidin/'.$car->id .'/'.$car->price) }}" class="custom-button">Increace bid </a>
+                        <a  href="" class="custom-button">Increace bid </a>
                     </div>
                 </div>
             </div>

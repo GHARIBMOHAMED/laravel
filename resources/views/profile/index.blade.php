@@ -3,11 +3,6 @@
 @section('main')
 
 
-	<link rel="stylesheet" type="text/css"
-     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-     <link href="https://releases.transloadit.com/uppy/v1.25.0/uppy.min.css" rel="stylesheet">
-
-
 <!--begin::Card-->
 <div class="card card-custom">
 	<div class="card-header flex-wrap border-0 pt-6 pb-0">

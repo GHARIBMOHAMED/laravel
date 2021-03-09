@@ -39,35 +39,40 @@ route::middleware(['auth'])->group(function(){
     Route::get('/favorite/{id}', 'productController@favorite');
 
 });
-Route::get('/', 'HomeController@index');
-Route::post('/fillpass/{pass}', 'HomeController@edit');
-Route::view('/about', 'client/about');
-Route::view('/faq', 'client/faq');
-Route::view('/contact', 'client/contact');
-Route::view('/signin', 'auth/login');
-Route::view('/signup', 'auth/register');
+    Route::get('/', 'HomeController@index');
+    Route::post('/fillpass/{pass}', 'HomeController@edit');
+    Route::view('/about', 'client/about');
+    Route::view('/faq', 'client/faq');
+    Route::view('/contact', 'client/contact');
+    Route::view('/signin', 'auth2/login');
+    Route::view('/signup', 'auth2/register');
 
 
-Route::get('/bidin/{id}/{prices}', 'HomeController@bidin');
-Route::get('/bidindetail', 'HomeController@bidindetail');
+    Route::get('/bidin/{id}/{prices}', 'HomeController@bidin');
+    Route::get('/bidindetail', 'HomeController@bidindetail');
 
 
-// dashboard
-Route::view('/dashboard', 'client/dashboard/index');
-Route::view('/mybid', 'client/dashboard/mybids');
-Route::view('/myfavorite', 'client/dashboard/myfavorite');
-Route::view('/notification', 'client/dashboard/notification');
-Route::view('/profile', 'client/dashboard/profile');
-Route::view('/referal', 'client/dashboard/referal');
-Route::view('/wining', 'client/dashboard/wining');
+    // dashboard
+    Route::get('/dashboard', 'FavoriteController@index');
+    Route::view('/mybid', 'client/dashboard/mybids');
+    Route::view('/myfavorite', 'client/dashboard/myfavorite');
+    Route::view('/notification', 'client/dashboard/notification');
+    Route::view('/profile', 'client/dashboard/profile');
+    Route::view('/referal', 'client/dashboard/referal');
+    Route::view('/wining', 'client/dashboard/wining');
 
 //component
-Route::view('carsdetail', 'client.home.carsfutered',[
-'carsall'=> HomeController::componant()
-]);
-Route::view('product-comp', 'client.home.product-componant',
-    productController::productComponant()
-    );
+    Route::view('carsdetail', 'client.home.carsfutered',[
+    'carsall'=> HomeController::componant()
+    ]);
+    Route::view('product-comp', 'client.home.product-componant',
+        productController::productComponant()
+        );
 
 
 
+//backend
+
+Route::get('newhome', 'CarController@create');
+Route::get('/editcars/{id}', 'CarController@cardetail');
+Route::view('addcars', 'backend.addcar');

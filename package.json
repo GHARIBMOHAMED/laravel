@@ -19,6 +19,7 @@
         "@sweetalert2/theme-bulma": "^4.0.3",
         "bootstrap": "^4.6.0",
         "nouislider": "^14.6.3",
+        "perfect-scrollbar": "^1.5.0",
         "sweetalert2": "^10.15.5"
     }
 }

@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bid;
+use App\Models\Car;
 use App\Models\Favorite;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FavoriteController extends Controller
 {
@@ -14,7 +19,17 @@ class FavoriteController extends Controller
      */
     public function index()
     {
-        //
+       $fav= Favorite::where('user_id',Auth::user()->id)->count();
+       $won= Bid::where(['user_id'=> Auth::user()->id ,'winningBid'=>'1'])->count();
+       $bids= Bid::where(['user_id'=> Auth::user()->id])->count();
+
+       $table= Bid::where('bids.user_id',Auth::user()->id)
+       ->join('users','bids.user_id','=','users.id')
+       ->join('cars','cars.id','=','bids.car_id')
+       ->groupby('car_id')
+       ->get(['*', DB::raw('MAX(bidValue)as max'),DB::raw('MIN(bidValue)as min')]);
+
+       return view('client.dashboard.index')->with(['fav'=> $fav , 'bids'=>$bids,'won'=>$won ,'table' =>$table]);
     }
 
     /**

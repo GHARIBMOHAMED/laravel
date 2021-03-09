@@ -26,15 +26,20 @@ class CarController extends Controller
     public function create()
     {
         $cars = Car::all();
-        return response()->json($cars);
+        //dd($cars);
+         return view('backend.index')->with('cars',$cars);
+
+        //response()->json($cars);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function cardetail($id)
+    {
+        $car = Car::find($id);
+        //dd($cars);
+        return view('backend.editcar')->with('car',$car);
+    }
+
+
     public function store(Request $request)
     {
 
@@ -71,7 +76,7 @@ class CarController extends Controller
 
 
         $post->save();
-        return back()->with('message' , 'car added successfully');
+        return view('backend.addcar')->with('message' , 'car added successfully');
     }
 
     /**

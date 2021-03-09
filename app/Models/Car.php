@@ -10,6 +10,21 @@ use Spatie\QueryBuilder\QueryBuilder;
 class Car extends Model
 
 {
+    protected $fillable = [
+        'saleDate',
+        'year',
+        'location',
+        'estValue',
+        'saleName',
+        'plate',
+        'price',
+        'damage',
+        'fuleType',
+        'engineType',
+        'model',
+        'transmittion',
+    ];
+
     protected $guarded = [];
 protected $casts = [
     'images' => 'array'

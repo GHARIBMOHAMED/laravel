@@ -13,7 +13,7 @@ var KTDatatableAutoColumnHideDemo = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: HOST_URL + '/api/datatables/demos/default.php',
+						url: 'https://preview.keenthemes.com/metronic/theme/html/tools/preview' + '/api/datatables/demos/default.php',
 					},
 				},
 				pageSize: 10,

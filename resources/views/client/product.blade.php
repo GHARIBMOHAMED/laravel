@@ -111,10 +111,9 @@
 
 
                 <div id="carsdetail"></div>
+
 @include('client.home.product-componant')
                     @yield('cars')
-
-
             </div>
         </div>
     </div>

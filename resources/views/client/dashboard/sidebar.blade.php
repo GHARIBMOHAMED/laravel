@@ -16,8 +16,8 @@
                 <input type="file" id="profile-pic" class="d-none">
             </div>
             <div class="content">
-                <h5 class="title"><a href="#0">Percy Reed</a></h5>
-                <span class="username">john@gmail.com</span>
+                <h5 class="title"><a href="#0">{{ auth()->user()->name }}</a></h5>
+                <span class="username">{{ auth()->user()->email }}</span>
             </div>
         </div>
         <ul class="dashboard-menu">
