@@ -50,13 +50,13 @@ if (localStorage.getItem('darkMode') === "on") {
 </script>
     <div class="login">
       <div class="login__row">
-        <div class="login__col"><a class="login__logo" href="index.html"><img src="img/logo_white.png" alt="" style="max-height: 70px"></a>
-          <h1 class="login__title h1">Best Auction <br>Buy & Sell</h1>
-          <div class="login__info h6">Number 1 in morocco</div>
+        <div class="login__col"><a class="login__logo" href="index.html"><img src="img/logo_white.png" alt="" style="max-height: 60px"></a>
+          <h4 class="login__title h1">Best Auction</h4>
           <div class="login__preview"><img src="img/figures-2.png" alt=""></div>
         </div>
         <div class="login__col"><a class="login__logo" href="index.html"><img src="img/logo_sm.png" alt=""></a>
         <form class="form"  method="POST" action="{{ route('login') }}">
+            @csrf
             <div class="login__form">
                 <div class="login__stage h4">Sign in to <br>Unity Exchange</div>
                 <div class="login__field field js-field">

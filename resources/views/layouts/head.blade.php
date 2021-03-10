@@ -365,7 +365,7 @@
                         <!--end::User-->
                         <script>
                             $('#loll').click(function(){
-                                Swal.fire({icon: 'error',title: 'DO you really want to log out',showCloseButton: 'true',
+                                Swal.fire({icon: 'error',title: 'Do you want to log out',showCloseButton: 'true',
                                 }).then((result)=>{
                                         if(result.isConfirmed){
                                             event.preventDefault();

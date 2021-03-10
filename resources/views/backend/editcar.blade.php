@@ -11,11 +11,11 @@
                     </div>
 
                   </div>
-                  <div class="details__btns"><button class="details__btn btn btn_border"><svg class="icon icon-share">
-                        <use xlink:href="{{ asset('img/sprite.svg#icon-share') }}"></use>
-                      </svg><span class="btn__text">Share</span></button><button class="details__btn btn btn_border"><svg class="icon icon-star-fill">
-                        <use xlink:href="{{ asset('img/sprite.svg#icon-star-fill') }}"></use>
-                      </svg><span class="btn__text">Watchlist</span></button>
+                  <div class="details__btns">
+                      <a class="details__btn btn btn_border" href="{{ url('newhome') }}" style="background-color: rgb(250, 104, 51)">
+                        <i class="fas fa-long-arrow-alt-left"></i>&nbsp;
+                         <span class="btn__text">back</span>
+                     </a>
                     </div>
                 </div>
                 <div class="details__flex">
@@ -33,8 +33,8 @@
                             <div class="col-lg-5 actions__field  ">
                                 <div class="actions__field">
                                     <div class="actions__label"> Available Until:</div>
-                                    <input type="date" class="actions__input" autocomplete="false" name="Available_date" placeholder="Select date" value="{{ $car->saleDate }}"/>
-                                    <div class="actions__currency color-orange">Date </div>
+                                    <input type="date" class="actions__input" autocomplete="false" name="Available_date"  value="{{ $car->saleDate }}"/>
+                                    <div class="actions__currency color-red">Date </div>
                                 </div>
 
                             </div>
@@ -43,7 +43,7 @@
                             <div class="col-lg-5 actions__field ">
                                 <div class="actions__label"> Production year:</div>
                                 <input  autocomplete="fals"  class="actions__input " name="Production_year" placeholder="Production year" value="{{ $car->year }}" />
-                                <div class="actions__currency color-green">YYYY </div>
+                                <div class="actions__currency color-red">YYYY </div>
                             </div>
 
 
@@ -69,7 +69,7 @@
                             <div class="col-lg-5 actions__field ">
                                 <div class="actions__label"> Buy Now Price:</div>
                                 <input  class="actions__input" name="Estimated_Value" placeholder="Enter Price" value="{{ $car->estValue }}" />
-                                <div class="actions__currency color-green">XXXX MAD </div>
+                                <div class="actions__currency color-red">MAD </div>
                             </div>
                             </div>
                             <br><br>
@@ -96,14 +96,14 @@
                             <div class="col-lg-5 actions__field">
                                 <div class="actions__label"> Millage</div>
                                 <input  autocomplete="fals" class="actions__input" name="Kilomiter" placeholder="Enter Millage "value="{{ $car->km }}" />
-                                <div class="actions__currency color-green">KM</div>
+                                <div class="actions__currency color-red">KM</div>
                             </div>
 
                             <label class="col-lg-1  col-form-label text-right"></label>
                             <div class="col-lg-5 actions__field">
                                 <div class="actions__label">Starting Price </div>
                                 <input  autocomplete="fals" class="actions__input" name="Price" placeholder="Enter Price"value="{{ $car->price }}" />
-                                <div class="actions__currency color-green">XXXX MAD</div>
+                                <div class="actions__currency color-red">MAD</div>
                             </div>
                         </div>
 

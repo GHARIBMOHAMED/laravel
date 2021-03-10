@@ -1734,12 +1734,12 @@ body.dark .page__col:nth-child(2) {
 }
 
 .btn_blue {
-  background: #355DFF;
+  background: rgb(250, 104, 51);
   color: #ffffff;
 }
 
 .btn_blue:hover {
-  background: #1140ff;
+  background: rgb(250, 104, 51);
 }
 
 .btn_border {
@@ -1765,7 +1765,7 @@ body.dark .page__col:nth-child(2) {
 }
 
 .btn_transparent:hover {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .btn_sm {
@@ -1824,7 +1824,7 @@ body.dark .btn_transparent {
 }
 
 body.dark .btn_transparent:hover {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .switch {
@@ -1876,7 +1876,7 @@ body.dark .btn_transparent:hover {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #3F8CFF;
+  background: rgb(250, 104, 51);
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
@@ -2752,7 +2752,7 @@ body.dark .sidebar__start .icon {
   flex-shrink: 0;
   width: 12px;
   height: 12px;
-  background: #3F8CFF;
+  background: rgb(250, 104, 51);
   border-radius: 50%;
 }
 
@@ -5289,7 +5289,7 @@ body.dark .promotions__flex:not(.promotions__flex_head):hover {
   align-items: center;
   margin-bottom: 32px;
   padding: 18px;
-  border: 2px solid #3F8CFF;
+  border: 2px solid rgb(250, 104, 51);
   border-radius: 8px;
   background: rgba(63, 140, 255, 0.1);
   font-weight: 600;
@@ -5311,7 +5311,7 @@ body.dark .promotions__flex:not(.promotions__flex_head):hover {
   height: 40px;
   margin-right: 20px;
   border-radius: 50%;
-  background: #3F8CFF;
+  background: rgb(250, 104, 51);
 }
 
 .promotion__category {
@@ -8512,7 +8512,7 @@ body.dark .actions .select.open {
 }
 
 .bg-blue-light {
-  background: #3F8CFF;
+  background: rgb(250, 104, 51);
 }
 
 .bg-blue-gradient {

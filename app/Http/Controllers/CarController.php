@@ -76,7 +76,7 @@ class CarController extends Controller
 
 
         $post->save();
-        return view('backend.addcar')->with('message' , 'car added successfully');
+        return back()->with('message' , 'car added successfully');
     }
 
     /**
@@ -145,7 +145,7 @@ class CarController extends Controller
     public function destroy($id)
     {
         Car::destroy($id);
-       back()->with('warning' , 'the car is deleted');
+        return back()->with('warning' , 'the car is deleted');
 
 
     }

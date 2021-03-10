@@ -27,6 +27,7 @@
     <meta property="og:description" content="The Premium Production-ready Crypto Asset Exchange Kit">
     <meta property="og:site_name" content="Unity Dashboard Kit: Exchange 🤑">
     <meta property="fb:admins" content="132951670226590">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet">
 
@@ -109,8 +110,38 @@ if (localStorage.getItem('darkMode') === "on") {
             </svg></div>
           <div class="sidebar__text">Profile</div>
         </a>
+
+        <a class="sidebar__item " href="{{ url('/newhome') }}">
+          <div class="sidebar__icon"><svg class="icon icon-home">
+              <img src="{{ asset('img/activity.png')}}"/>
+            </svg></div>
+          <div class="sidebar__text">Activities</div>
+        </a>
+
+        <a class="sidebar__item " href="{{ url('/newhome') }}">
+          <div class="sidebar__icon"><svg class="icon icon-home">
+              <img src="{{ asset('img/notification.png')}}"/>
+            </svg></div>
+          <div class="sidebar__text">Notification</div>
+        </a>
+
+        <a class="sidebar__item " href="{{ url('/newhome') }}">
+          <div class="sidebar__icon"><svg class="icon icon-home">
+              <img src="{{ asset('img/settings.png')}}"/>
+            </svg></div>
+          <div class="sidebar__text">Settings</div>
+        </a>
+
+        <a class="sidebar__item " href="" id="loll" onclick="event.preventDefault();">
+          <div class="sidebar__icon"><svg class="icon icon-home">
+              <img src="{{ asset('img/logout.png')}}"/>
+            </svg></div>
+          <div class="sidebar__text">Logout</div>
+        </a>
         </nav>
 
+        <form action="{{ route('logout') }}" method="POST" hidden id="logout_form">
+@csrf</form>
 
       <form class="sidebar__search"><input class="sidebar__input" type="text" placeholder="Search" /><button class="sidebar__start"><svg class="icon icon-search">
             <use xlink:href=" {{ asset('img/sprite.svg#icon-search')}}"></use>
@@ -220,6 +251,27 @@ if (localStorage.getItem('darkMode') === "on") {
           <path d="M7 7l-5 5 5 5" stroke="#11142d"></path>
         </svg></button>
     </div>
+
+
+    <script>
+                            $('#loll').click(function(){
+                                Swal.fire({icon: 'error',title: 'Do you want to log out',showCloseButton: 'true',
+                                }).then((result)=>{
+                                        if(result.isConfirmed){
+                                            event.preventDefault();
+                                    document.getElementById('logout_form').submit();
+                                }else{
+                                    Swal.close()
+                                }
+
+
+                               });
+
+                            });
+
+                        </script>
+
+
 @endsection
 
 

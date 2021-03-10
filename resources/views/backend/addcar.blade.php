@@ -11,13 +11,12 @@
                     </div>
 
                   </div>
-                  <div class="details__btns"><button class="details__btn btn btn_border"><svg class="icon icon-share">
-                        <use xlink:href="{{ asset('img/sprite.svg#icon-share') }}"></use>
-                      </svg><span class="btn__text">Share</span></button>
-                      <button class="details__btn btn btn_border"><svg class="icon icon-star-fill">
-                        <use xlink:href="{{ asset('img/sprite.svg#icon-star-fill') }}"></use>
-                      </svg><span class="btn__text">Watchlist</span></button>
-                    </div>
+                  <div class="details__btns">
+                    <a class="details__btn btn btn_border" href="{{ url('newhome') }}" style="background-color: rgb(250, 104, 51)">
+                      <i class="fas fa-long-arrow-alt-left"></i>&nbsp;
+                       <span class="btn__text">back</span>
+                   </a>
+                  </div>
                 </div>
                 <div class="details__flex">
                   <div class="details__money" style="padding-left: 10%">Add Car</div>
@@ -35,7 +34,7 @@
                                 <div class="actions__field">
                                     <div class="actions__label"> Available Until:</div>
                                     <input type="date" class="actions__input" autocomplete="false" name="Available_date" placeholder="Select date" />
-                                    <div class="actions__currency color-orange">Date </div>
+                                    <div class="actions__currency color-red">Date </div>
                                 </div>
 
                             </div>
@@ -44,7 +43,7 @@
                             <div class="col-lg-5 actions__field ">
                                 <div class="actions__label"> Production year:</div>
                                 <input  autocomplete="fals"  class="actions__input " name="Production_year" placeholder="Production year" />
-                                <div class="actions__currency color-green">YYYY </div>
+                                <div class="actions__currency color-red">YYYY </div>
                             </div>
 
 
@@ -71,7 +70,7 @@
                             <div class="col-lg-5 actions__field ">
                                 <div class="actions__label"> Buy Now Price:</div>
                                 <input  class="actions__input" name="Estimated_Value" placeholder="Enter Price" />
-                                <div class="actions__currency color-green">XXXX MAD </div>
+                                <div class="actions__currency color-red"> MAD </div>
                             </div>
                             </div>
                             <br><br>
@@ -98,14 +97,14 @@
                             <div class="col-lg-5 actions__field">
                                 <div class="actions__label"> Millage</div>
                                 <input  autocomplete="fals" class="actions__input" name="Kilomiter" placeholder="Enter Millage " />
-                                <div class="actions__currency color-green">KM</div>
+                                <div class="actions__currency color-red">KM</div>
                             </div>
 
                             <label class="col-lg-1  col-form-label text-right"></label>
                             <div class="col-lg-5 actions__field">
                                 <div class="actions__label">Starting Price </div>
                                 <input  autocomplete="fals" class="actions__input" name="Price" placeholder="Enter Price" />
-                                <div class="actions__currency color-green">XXXX MAD</div>
+                                <div class="actions__currency color-red"> MAD</div>
                             </div>
                         </div>
 
@@ -117,45 +116,45 @@
                             <div class="col-lg-5 actions__field" >
                                 <select class="select" id="container" name="Brand">
                                     <option >Brand</option>
-                                    <option >BMW</option>
-                                    <option>Ford</option>
-                                    <option >Honda</option>
-                                    <option >Hyundai</option>
-                                    <option >Isuzu</option>
-                                    <option >Kia</option>
-                                    <option >Lexus</option>
-                                    <option >Mazda</option>
-                                    <option >Mitsubishi</option>
-                                    <option >Nissan</option>
-                                    <option >Peugeot</option>
-                                    <option >Suzuki</option>
-                                    <option >Toyota</option>
-                                    <option >Volkswagen</option>
-                                    <option >Audi</option>
-                                    <option >Aston Martin</option>
-                                    <option >Alfa Romeo</option>
-                                    <option >Bently</option>
-                                    <option >Bugatti</option>
-                                    <option >Cadilac</option>
-                                    <option >Maserati</option>
-                                    <option >Chevrolet</option>
-                                    <option >Citroen</option>
-                                    <option >Corvet</option>
-                                    <option >Dacia</option>
-                                    <option >Dodge</option>
-                                    <option >Ferrari</option>
-                                    <option >Fiat</option>
-                                    <option >Infinity</option>
-                                    <option >jaguar</option>
-                                    <option >Jeep</option>
-                                    <option >Mercedes</option>
-                                    <option >Mini</option>
-                                    <option >Land rover</option>
-                                    <option >Opel</option>
-                                    <option >porsche</option>
-                                    <option >skoda</option>
-                                    <option >tesla</option>
-                                    <option >Volvo</option>
+                                    <option value="images/cars/bmw">BMW</option>
+                                    <option value="images/cars/ford">Ford</option>
+                                    <option value="images/cars/honda">Honda</option>
+                                    <option value="images/cars/hyundai">Hyundai</option>
+                                    <option value="images/cars/isuzu">Isuzu</option>
+                                    <option value="images/cars/kia">Kia</option>
+                                    <option value="images/cars/lexus">Lexus</option>
+                                    <option value="images/cars/mazda">Mazda</option>
+                                    <option value="images/cars/mitsubishi">Mitsubishi</option>
+                                    <option value="images/cars/nissan">Nissan</option>
+                                    <option value="images/cars/peugeot">Peugeot</option>
+                                    <option value="images/cars/suzuki">Suzuki</option>
+                                    <option value="images/cars/toyota">Toyota</option>
+                                    <option value="images/cars/volkswagen">Volkswagen</option>
+                                    <option value="images/cars/audi">Audi</option>
+                                    <option value="images/cars/aston-martin">Aston Martin</option>
+                                    <option value="images/cars/alfa-romeo">Alfa Romeo</option>
+                                    <option value="images/cars/bently">Bently</option>
+                                    <option value="images/cars/bugatti">Bugatti</option>
+                                    <option value="images/cars/cadilac">Cadilac</option>
+                                    <option value="images/cars/maserati">Maserati</option>
+                                    <option value="images/cars/chevrolet">Chevrolet</option>
+                                    <option value="images/cars/citroen">Citroen</option>
+                                    <option value="images/cars/corvet">Corvet</option>
+                                    <option value="images/cars/dacia">Dacia</option>
+                                    <option value="images/cars/dodge">Dodge</option>
+                                    <option value="images/cars/ferrari">Ferrari</option>
+                                    <option value="images/cars/fiat">Fiat</option>
+                                    <option value="images/cars/infinity">Infinity</option>
+                                    <option value="images/cars/jaguar">jaguar</option>
+                                    <option value="images/cars/jeep">Jeep</option>
+                                    <option value="images/cars/mercedes">Mercedes</option>
+                                    <option value="images/cars/mini">Mini</option>
+                                    <option value="images/cars/land-rover">Land rover</option>
+                                    <option value="images/carsopel/">Opel</option>
+                                    <option value="images/cars/porsche">porsche</option>
+                                    <option value="images/cars/skoda">skoda</option>
+                                    <option value="images/cars/tesla">tesla</option>
+                                    <option value="images/cars/volvo">Volvo</option>
 
                                 </select>
                             </div>
