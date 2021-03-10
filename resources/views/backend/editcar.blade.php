@@ -78,7 +78,7 @@
                             <label class="col-form-label text-right col-lg-1 "></label>
                             <div class="col-lg-5 actions__field ">
                                 <div class="actions__label"> Seller Name:</div>
-                                <input type="text" autocomplete="fals" class="actions__input " name="Seller" placeholder="Full name" />
+                                <input type="text" autocomplete="fals" class="actions__input " name="Seller" placeholder="Full name" value="{{ $car->saleName }}"/>
 
                             </div>
 
@@ -271,7 +271,7 @@
                 <br><br><br><br>
                 </div>
                 <br>
-                <button class="details__btn btn btn_blue btn_wide btn_big">Add Car</button>
+                <button class="details__btn btn btn_wide btn_big" style="background-color: rgb(250, 104, 51)"><span style="color: bisque">Edit Car</span> </button>
             </form>
 
 

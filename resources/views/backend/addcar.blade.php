@@ -66,6 +66,7 @@
                                     <option >Dakhla-Oued Ed-Dahab Region</option>
                                 </select>
                             </div>
+
                             <label class="col-form-label text-right col-lg-1 "></label>
                             <div class="col-lg-5 actions__field ">
                                 <div class="actions__label"> Buy Now Price:</div>
@@ -264,7 +265,7 @@
                 <br><br><br><br>
                 </div>
                 <br>
-                <button class="details__btn btn btn_blue btn_wide btn_big">Add Car</button>
+                <button class="details__btn btn btn_wide btn_big" style="background-color: rgb(250, 104, 51)"><span style="color: bisque">Add Car</span> </button>
             </form>
 
 
