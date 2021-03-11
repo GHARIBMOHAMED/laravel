@@ -69,70 +69,70 @@ if (localStorage.getItem('darkMode') === "on") {
         </svg></button></div>
     <div class="sidebar__body">
       <nav class="sidebar__nav">
-        <a class="sidebar__item active" href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'dashboard' ? 'active' : '' }}"  href="{{ url('/dashboard') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/dashboard.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Dashboard</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'cars' ? 'active' : '' }}" href="{{ url('/cars') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/car.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Cars</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'users' ? 'active' : '' }}" href="{{ url('/users') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/users.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Users</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'bids' ? 'active' : '' }}" href="{{ url('/bids') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/bids.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Bids</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'orders' ? 'active' : '' }}" href="{{ url('/orders') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/orders.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Orders</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'profile' ? 'active' : '' }}" href="{{ url('/profile') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/profile.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Profile</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'activity' ? 'active' : '' }}" href="{{ url('/activity') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/activity.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Activities</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'notification' ? 'active' : '' }}" href="{{ url('/notification') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/notification.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Notification</div>
         </a>
 
-        <a class="sidebar__item " href="{{ url('/newhome') }}">
+        <a class="sidebar__item {{ Request::path()=== 'settings' ? 'active' : '' }}" href="{{ url('/settings') }}">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/settings.png')}}"/>
             </svg></div>
           <div class="sidebar__text">Settings</div>
         </a>
 
-        <a class="sidebar__item " href="" id="loll" onclick="event.preventDefault();">
+        <a class="sidebar__item" href="" id="loll" onclick="event.preventDefault();">
           <div class="sidebar__icon"><svg class="icon icon-home">
               <img src="{{ asset('img/logout.png')}}"/>
             </svg></div>

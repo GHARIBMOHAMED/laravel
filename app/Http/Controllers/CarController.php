@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
-use Session;
+
 
 class CarController extends Controller
 {
@@ -25,7 +25,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        $cars = Car::all();
+        $cars = Car::paginate(10);
         //dd($cars);
          return view('backend.car')->with('cars',$cars);
 

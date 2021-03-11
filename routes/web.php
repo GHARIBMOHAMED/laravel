@@ -71,8 +71,11 @@ route::middleware(['auth'])->group(function(){
 
 
 
-//backend
+    //backend
 
-Route::get('car', 'CarController@create');
-Route::get('/editcars/{id}', 'CarController@cardetail');
-Route::view('addcars', 'backend.addcar');
+    Route::get('cars', 'CarController@create');
+    Route::get('/editcars/{id}', 'CarController@cardetail');
+    Route::view('addcars', 'backend.addcar');
+
+    Route::get('users', 'Admin\UserController@index');
+

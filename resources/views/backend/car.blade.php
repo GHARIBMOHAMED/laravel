@@ -60,7 +60,9 @@
 
       </div>
     </div>
-    <div class="prices__btns"><button class="prices__btn btn btn_blue" style="background-color: rgb(250, 104, 51)">Load more</button></div>
+    <div class="" style="padding-top: 1.5%">
+    {{ $cars->links('pagination::custom') }}
+    </div>
   </div>
 </div>
 

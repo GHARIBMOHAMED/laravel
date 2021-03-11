@@ -1226,8 +1226,8 @@ img {
 }
 
 .select:not(.select_empty).open {
-  -webkit-box-shadow: inset 0 0 0 2px #355DFF;
-  box-shadow: inset 0 0 0 2px #355DFF;
+  -webkit-box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
+  box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
   background: #ffffff;
 }
 
@@ -1276,7 +1276,7 @@ img {
 }
 
 .select .option.selected {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .select .option.selected:before {
@@ -1355,7 +1355,7 @@ body.dark .select .option:hover {
 }
 
 body.dark .select .option.selected {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .select_arrows:before {
@@ -1532,7 +1532,7 @@ body.dark .select.open {
 }
 
 .pagination__item:hover, .pagination__next:hover {
-  border-color: #355DFF;
+  border-color: rgb(250, 104, 51);
 }
 
 .pagination__item {
@@ -1548,8 +1548,8 @@ body.dark .select.open {
 }
 
 .pagination__item.active {
-  background: #355DFF;
-  border-color: #355DFF;
+  background: rgb(250, 104, 51);
+  border-color: rgb(250, 104, 51);
   color: #ffffff;
 }
 
@@ -1563,7 +1563,7 @@ body.dark .pagination__item .icon, body.dark .pagination__next .icon {
 }
 
 body.dark .pagination__item:hover, body.dark .pagination__next:hover {
-  border-color: #355DFF;
+  border-color: rgb(250, 104, 51);
 }
 
 .favorite {
@@ -2054,11 +2054,11 @@ body.dark .switch__box {
 }
 
 .sidebar__item:hover, .sidebar__item.active {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .sidebar__item:hover .icon, .sidebar__item.active .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .sidebar__item.active {
@@ -2216,7 +2216,7 @@ body.dark .switch__box {
 }
 
 .sidebar__start:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .sidebar__bottom {
@@ -2381,11 +2381,11 @@ body.dark .sidebar__item:hover .icon {
 
 body.dark .sidebar__item.active {
   background: #191B20;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .sidebar__item.active .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .sidebar__mail .sidebar__close {
@@ -2480,7 +2480,7 @@ body.dark .sidebar__start .icon {
 }
 
 .header__start:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .header__logo {
@@ -2516,7 +2516,7 @@ body.dark .sidebar__start .icon {
   align-items: center;
   margin-right: 40px;
   padding: 0 12px 0 6px;
-  background: #355DFF;
+  background: rgb(250, 104, 51);
   border-radius: 16px;
   font-weight: 600;
   line-height: 32px;
@@ -2576,7 +2576,7 @@ body.dark .sidebar__start .icon {
 
 .header__item_notifications .header__head:hover .icon,
 .header__item_download .header__head:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .header__item_lang .header__head {
@@ -2828,7 +2828,7 @@ body.dark .sidebar__start .icon {
 }
 
 .header__link:hover, .header__link.active {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .header__link:not(:last-child) {
@@ -2881,7 +2881,7 @@ body.dark .header__start .icon {
 }
 
 body.dark .header__start:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .header__body {
@@ -2917,7 +2917,7 @@ body.dark .header__link:hover {
 }
 
 body.dark .header__link.active {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .header__item_download .header__body {
@@ -3149,7 +3149,7 @@ body.dark .slider__close .icon {
 }
 
 .widgets__variants .widgets__link.active {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .widgets__list {
@@ -3229,7 +3229,7 @@ body.dark .slider__close .icon {
   font-weight: 700;
   letter-spacing: 1.5px;
   line-height: 24px;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .widgets__body {
@@ -3306,8 +3306,8 @@ body.dark .slider__close .icon {
 }
 
 .widgets__box:hover {
-  -webkit-box-shadow: inset 0 0 0 2px #355DFF;
-  box-shadow: inset 0 0 0 2px #355DFF;
+  -webkit-box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
+  box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
 }
 
 .widgets__box:not(:last-child) {
@@ -3368,7 +3368,7 @@ body.dark .slider__close .icon {
 }
 
 .widgets__favorite:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .widgets__box:hover .widgets__favorite {
@@ -3383,7 +3383,7 @@ body.dark .widgets__variants .widgets__link:hover {
 
 body.dark .widgets__variants .widgets__link.active {
   background: #191B20;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .widgets__item, body.dark .widgets__box {
@@ -3403,7 +3403,7 @@ body.dark .widgets__favorite .icon {
 }
 
 body.dark .widgets__favorite:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .card {
@@ -3432,7 +3432,7 @@ body.dark .widgets__favorite:hover .icon {
 }
 
 .card__next:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .card__chart_total-balance {
@@ -3565,7 +3565,7 @@ body.dark .widgets__favorite:hover .icon {
   align-items: center;
   margin-top: 26px;
   font-weight: 600;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .card__view .icon {
@@ -3573,7 +3573,7 @@ body.dark .widgets__favorite:hover .icon {
 }
 
 .card__view:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .card__filters {
@@ -3628,7 +3628,7 @@ body.dark .widgets__favorite:hover .icon {
 }
 
 .card__reset:hover {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .card_widget {
@@ -3679,7 +3679,7 @@ body.dark .card__next .icon {
 }
 
 body.dark .card__next:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .card__details {
@@ -3691,7 +3691,7 @@ body.dark .card__view .icon {
 }
 
 body.dark .card__view:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .card__reset {
@@ -3732,7 +3732,7 @@ body.dark .card_widget:after {
 }
 
 .dropdown__head:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .dropdown__body {
@@ -3784,7 +3784,7 @@ body.dark .card_widget:after {
 }
 
 .dropdown__link.selected {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .dropdown__link.selected:before {
@@ -3800,7 +3800,7 @@ body.dark .card_widget:after {
 }
 
 .dropdown.active .dropdown__head .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .dropdown.active .dropdown__body {
@@ -3817,7 +3817,7 @@ body.dark .dropdown__head .icon {
 }
 
 body.dark .dropdown__head:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .dropdown__body {
@@ -3830,7 +3830,7 @@ body.dark .dropdown__link:hover {
 }
 
 body.dark .dropdown__link.selected {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .login__row {
@@ -3917,7 +3917,7 @@ body.dark .dropdown__link.selected {
   align-items: center;
   font-size: 13px;
   font-weight: 700;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
   -webkit-transition: color .2s;
   -o-transition: color .2s;
   transition: color .2s;
@@ -3988,7 +3988,7 @@ body.dark .dropdown__link.selected {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   border-radius: 50%;
-  border: 1px solid #355DFF;
+  border: 1px solid rgb(250, 104, 51);
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
@@ -4004,7 +4004,7 @@ body.dark .dropdown__link.selected {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background: #355DFF;
+  background: rgb(250, 104, 51);
   border-radius: 50%;
 }
 
@@ -4048,7 +4048,7 @@ body.dark .dropdown__link.selected {
 }
 
 .login__note a {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .login__note a:hover {
@@ -4060,11 +4060,11 @@ body.dark .login__link .icon {
 }
 
 body.dark .login__link:hover {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .login__link:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .login__verify {
@@ -4126,7 +4126,7 @@ body.dark .login__verify.success .icon {
   top: 0;
   right: 0;
   text-transform: none;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .field__input {
@@ -4146,7 +4146,7 @@ body.dark .login__verify.success .icon {
 }
 
 .field__input:focus {
-  border-color: #355DFF;
+  border-color: rgb(250, 104, 51);
   background: #ffffff;
 }
 
@@ -4243,12 +4243,12 @@ body.dark .field__input {
 }
 
 .checkbox:hover .checkbox__tick {
-  border-color: #355DFF;
+  border-color: rgb(250, 104, 51);
 }
 
 .checkbox__input:checked + .checkbox__in .checkbox__tick {
-  background: #355DFF;
-  border-color: #355DFF;
+  background: rgb(250, 104, 51);
+  border-color: rgb(250, 104, 51);
 }
 
 .checkbox__input:checked + .checkbox__in .checkbox__tick:before {
@@ -4293,7 +4293,7 @@ body.dark .checkbox__input:checked + .checkbox__in .checkbox__text {
 
 .notifications__tags .notifications__link.active {
   background: rgba(228, 228, 228, 0.3);
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .notifications__sorting {
@@ -4360,7 +4360,7 @@ body.dark .checkbox__input:checked + .checkbox__in .checkbox__text {
 }
 
 .notifications__start:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .notifications__container {
@@ -4519,7 +4519,7 @@ body.dark .notifications__tags .notifications__link:hover {
 
 body.dark .notifications__tags .notifications__link.active {
   background: #191B20;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .notifications__input {
@@ -4532,7 +4532,7 @@ body.dark .notifications__start .icon {
 }
 
 body.dark .notifications__start:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .notifications__container {
@@ -4596,7 +4596,7 @@ body.dark .notifications__item.disabled .notifications__icon {
 
 .activity__tags .activity__link.active {
   background: rgba(228, 228, 228, 0.3);
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .activity__select {
@@ -4662,8 +4662,8 @@ body.dark .notifications__item.disabled .notifications__icon {
 }
 
 .activity__row:not(.activity__row_head):hover {
-  -webkit-box-shadow: 0 0 0 2px #355DFF;
-  box-shadow: 0 0 0 2px #355DFF;
+  -webkit-box-shadow: 0 0 0 2px rgb(250, 104, 51);
+  box-shadow: 0 0 0 2px rgb(250, 104, 51);
   background: none;
 }
 
@@ -4923,7 +4923,7 @@ body.dark .activity__tags .activity__link:hover {
 
 body.dark .activity__tags .activity__link.active {
   background: #191B20;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .activity__select .activity__icon .icon {
@@ -5110,7 +5110,7 @@ body.dark .activity__parameter {
 }
 
 .promotions__item:hover .promotions__info {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .promotions__transactions {
@@ -5415,13 +5415,13 @@ body.dark .promotion__line:first-child .icon {
 }
 
 .popup__nav .popup__link:hover {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .popup__nav .popup__link.active {
   background: rgba(228, 228, 228, 0.3);
   border-color: transparent;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .popup__item {
@@ -5497,7 +5497,7 @@ body.dark .promotion__line:first-child .icon {
   align-items: center;
   min-width: 131px;
   height: 48px;
-  border: 2px solid #355DFF;
+  border: 2px solid rgb(250, 104, 51);
   border-radius: 12px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
@@ -5509,12 +5509,12 @@ body.dark .promotion__line:first-child .icon {
 }
 
 .popup__loading:hover .popup__upload {
-  background: #355DFF;
+  background: rgb(250, 104, 51);
   color: #ffffff;
 }
 
 .popup__default {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .popup__fieldset {
@@ -5576,8 +5576,8 @@ body.dark .promotion__line:first-child .icon {
 }
 
 .popup__input:focus {
-  -webkit-box-shadow: inset 0 0 0 2px #355DFF;
-  box-shadow: inset 0 0 0 2px #355DFF;
+  -webkit-box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
+  box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
   background: #ffffff;
 }
 
@@ -5783,7 +5783,7 @@ body.dark .promotion__line:first-child .icon {
 }
 
 .popup__scan .popup__text a {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .popup__scan .popup__text a:hover {
@@ -5821,8 +5821,8 @@ body.dark .promotion__line:first-child .icon {
 }
 
 .popup__number input:focus {
-  -webkit-box-shadow: inset 0 0 0 2px #355DFF;
-  box-shadow: inset 0 0 0 2px #355DFF;
+  -webkit-box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
+  box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
   background: #ffffff;
 }
 
@@ -5848,7 +5848,7 @@ body.dark .promotion__line:first-child .icon {
 }
 
 .popup__table tr:not(:first-child):hover {
-  background: #355DFF;
+  background: rgb(250, 104, 51);
 }
 
 .popup__table tr:not(:first-child):hover .popup__close .icon {
@@ -6024,7 +6024,7 @@ body.dark .popup__nav .popup__link:hover {
 
 body.dark .popup__nav .popup__link.active {
   background: #191B20;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .popup__user {
@@ -6507,8 +6507,8 @@ body.dark .wallets__parameter {
 
 .balances__row:not(.balances__row_head):hover {
   background: none;
-  -webkit-box-shadow: 0 0 0 2px #355DFF;
-  box-shadow: 0 0 0 2px #355DFF;
+  -webkit-box-shadow: 0 0 0 2px rgb(250, 104, 51);
+  box-shadow: 0 0 0 2px rgb(250, 104, 51);
 }
 
 .balances__cell {
@@ -6739,7 +6739,7 @@ body.dark .balances__row:nth-child(2n+1) {
 
 .operations__copy .icon {
   font-size: 14px;
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
   -webkit-transition: opacity .2s;
   -o-transition: opacity .2s;
   transition: opacity .2s;
@@ -6770,7 +6770,7 @@ body.dark .balances__row:nth-child(2n+1) {
 }
 
 .operations__info a {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .operations__info a:hover {
@@ -6861,7 +6861,7 @@ body.dark .operations__text strong {
 }
 
 .search__btn:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .search__preview {
@@ -6907,9 +6907,9 @@ body.dark .operations__text strong {
 }
 
 .categories__item:hover {
-  -webkit-box-shadow: 0 0 0 4px #355DFF;
-  box-shadow: 0 0 0 4px #355DFF;
-  color: #355DFF;
+  -webkit-box-shadow: 0 0 0 4px rgb(250, 104, 51);
+  box-shadow: 0 0 0 4px rgb(250, 104, 51);
+  color: rgb(250, 104, 51);
 }
 
 .categories__preview {
@@ -6978,7 +6978,7 @@ body.dark .operations__text strong {
 }
 
 .categories .owl-carousel button.owl-dot.active {
-  background: #355DFF;
+  background: rgb(250, 104, 51);
 }
 
 .categories .owl-carousel button.owl-dot:not(:last-child) {
@@ -6999,7 +6999,7 @@ body.dark .categories .owl-carousel button.owl-dot {
 }
 
 body.dark .categories .owl-carousel button.owl-dot.active {
-  background: #355DFF;
+  background: rgb(250, 104, 51);
 }
 
 .prices__head {
@@ -7475,7 +7475,7 @@ body.dark .prices__row:not(.prices__row_head):hover {
   font-size: 13px;
   line-height: 1.53846;
   font-weight: 700;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .details__link .icon {
@@ -7486,7 +7486,7 @@ body.dark .prices__row:not(.prices__row_head):hover {
 }
 
 .details__link:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .details__link:not(:last-child) {
@@ -7532,7 +7532,7 @@ body.dark .details__link .icon {
 }
 
 body.dark .details__link:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .exchange__top {
@@ -7829,7 +7829,7 @@ body.dark .details__link:hover .icon {
 }
 
 .exchange__menu .exchange__link.active .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .exchange__top {
@@ -7910,7 +7910,7 @@ body.dark .exchange__menu {
 
 .market__menu .market__link.active {
   background: rgba(228, 228, 228, 0.3);
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .market__actions {
@@ -7949,11 +7949,11 @@ body.dark .exchange__menu {
 }
 
 .market__action:hover {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .market__action:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 .market__action:not(:last-child) {
@@ -8055,7 +8055,7 @@ body.dark .market__menu .market__link:hover {
 
 body.dark .market__menu .market__link.active {
   background: #191B20;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .market__action {
@@ -8067,11 +8067,11 @@ body.dark .market__action .icon {
 }
 
 body.dark .market__action:hover {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .market__action:hover .icon {
-  fill: #355DFF;
+  fill: rgb(250, 104, 51);
 }
 
 body.dark .market__tabs, body.dark .market__cell {
@@ -8322,7 +8322,7 @@ body.dark .orders__price {
 
 .actions__link.active {
   background: rgba(228, 228, 228, 0.3);
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .actions__fieldset {
@@ -8374,8 +8374,8 @@ body.dark .orders__price {
 
 .actions__input:focus {
   background: #ffffff;
-  -webkit-box-shadow: 0 0 0 2px #355DFF;
-  box-shadow: 0 0 0 2px #355DFF;
+  -webkit-box-shadow: 0 0 0 2px rgb(250, 104, 51);
+  box-shadow: 0 0 0 2px rgb(250, 104, 51);
 }
 
 .actions__currency {
@@ -8401,7 +8401,7 @@ body.dark .actions__link:hover {
 
 body.dark .actions__link.active {
   background: #191B20;
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 body.dark .actions__input {
@@ -8492,7 +8492,7 @@ body.dark .actions .select.open {
 }
 
 .color-blue {
-  color: #355DFF;
+  color: rgb(250, 104, 51);
 }
 
 .color-red {
@@ -8508,7 +8508,7 @@ body.dark .actions .select.open {
 }
 
 .bg-blue {
-  background: #355DFF;
+  background: rgb(250, 104, 51);
 }
 
 .bg-blue-light {
@@ -9668,8 +9668,8 @@ body.dark .actions .select.open {
     margin-top: 7px;
   }
   .select_empty.open {
-    -webkit-box-shadow: inset 0 0 0 2px #355DFF;
-    box-shadow: inset 0 0 0 2px #355DFF;
+    -webkit-box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
+    box-shadow: inset 0 0 0 2px rgb(250, 104, 51);
     background: #ffffff;
   }
   .select_arrows {

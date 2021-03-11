@@ -17,9 +17,9 @@ class UserController extends Controller
     public function index()
     {
 
-      return view('profile.edit');
-      $user = User::all();
-        return response()->json($user);
+      $user = User::paginate(10);
+      //return dd($user);
+        return view('backend.user')->with('user',$user);
 
     }
 
