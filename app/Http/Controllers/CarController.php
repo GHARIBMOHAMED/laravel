@@ -27,7 +27,7 @@ class CarController extends Controller
     {
         $cars = Car::all();
         //dd($cars);
-         return view('backend.index')->with('cars',$cars);
+         return view('backend.car')->with('cars',$cars);
 
         //response()->json($cars);
     }
@@ -145,7 +145,7 @@ class CarController extends Controller
     public function destroy($id)
     {
         Car::destroy($id);
-        return back()->with('warning' , 'the car is deleted');
+        return with('warning' , 'the car is deleted');
 
 
     }

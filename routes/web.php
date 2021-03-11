@@ -73,6 +73,6 @@ route::middleware(['auth'])->group(function(){
 
 //backend
 
-Route::get('newhome', 'CarController@create');
+Route::get('car', 'CarController@create');
 Route::get('/editcars/{id}', 'CarController@cardetail');
 Route::view('addcars', 'backend.addcar');

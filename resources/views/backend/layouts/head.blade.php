@@ -255,7 +255,14 @@ if (localStorage.getItem('darkMode') === "on") {
 
     <script>
                             $('#loll').click(function(){
-                                Swal.fire({icon: 'error',title: 'Do you want to log out',showCloseButton: 'true',
+                                Swal.fire({
+                                title: 'Do you want to log out?',
+                                text: "You will have login to acces this page",
+                                icon: 'info',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Yes, logout!'
                                 }).then((result)=>{
                                         if(result.isConfirmed){
                                             event.preventDefault();
